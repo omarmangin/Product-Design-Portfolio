@@ -1,0 +1,324 @@
+{
+  "slug": "pawnshop-os",
+  "order": 5,
+  "featuredOnHome": true,
+  "showInFooterCarousel": true,
+  "title": "Multiapoyo’s Pawnshop OS",
+  "cardTitle": "Pawnshop OS",
+  "shortTitle": "Pawnshop OS",
+  "subtitle": "A SaaS for administrating and operating pawn shops and more.",
+  "timelineBadge": "2022 - 2024",
+  "thumbnail": "/assets/framer/avmsKP4SvSkdItohGmWTIvSAI.png",
+  "thumbnailHover": "/assets/framer/pLuLXr11B628gY0B154Ox9HjM.png",
+  "thumbnailDescription": "An OS for administrating, operating pawnshops… and more.",
+  "theme": {
+    "gradient": "linear-gradient(-60deg, #0D166B -2.72%, rgba(90, 90, 255, 1) 84%)",
+    "sectionGradient": "linear-gradient(-60deg, #0D166B -3.03%, rgba(90, 90, 255, 1) 55.28%)",
+    "accentColor": "rgb(90, 90, 255)",
+    "borderColor": "#5A5AFF"
+  },
+  "heroLayout": "three-equal",
+  "heroImages": [
+    "/assets/framer/a6eAGjNUKOQLSlrzJdg3zqqJVcw.png",
+    "/assets/framer/af3QVm0zaILuyadv2hIVSBAuCY.png",
+    "/assets/framer/Mp6JAazAmlcYRRyKEary9sw0sw.png"
+  ],
+  "sections": [
+    {
+      "type": "about",
+      "heading": "About the project",
+      "company": "Multiapoyo",
+      "timeline": "2022 - 2024",
+      "role": "UX & UI design, research and user testing in a 4 members team"
+    },
+    {
+      "type": "challenges",
+      "heading": "The challenges",
+      "overviewTitle": "Problem",
+      "overviewBody": "Multiapoyo was developing solution for users to administrate and operate pawnshops, that also unlocks an online pawnshop experience for customers. The product is looking to become a SAAS for other companies.",
+      "items": [
+        {
+          "title": "Challenge 1",
+          "description": "Take previous design and UX and adapt it to a new era without completely disrupting the previous one."
+        },
+        {
+          "title": "Challenge 2",
+          "description": "Leave behind old practices, adapt the team to new workflows and show leadership the importance of UX process."
+        },
+        {
+          "title": "Challenge 3",
+          "description": "Create a design that works for multiple types of users, while preparing for the future expansion of the product."
+        }
+      ]
+    },
+    {
+      "type": "cards-grid",
+      "heading": "The solution",
+      "description": "A 3 platform solution unified by design and branding.",
+      "columns": 2,
+      "cards": [
+        {
+          "title": "Admin platform (B2B)",
+          "description": "For creating and administrating a new or existing pawnshop. Allows users to start from scratch or import their company data.",
+          "image": "/assets/framer/yTH5WgBYfBYKfbXu3rsqhb285Pc.png"
+        },
+        {
+          "title": "Ops platform",
+          "description": "For employees to operate online and physical shops. An all-in-one solution to buy, sell, audit, and manage products, clients and funds.",
+          "image": "/assets/framer/5UtJSz2pLluyH1UwKwHbmzEVMI.png"
+        },
+        {
+          "title": "Customer platform (B2C)",
+          "description": "For customers to interact with the shops, have almost no need to visit a physical shop, and will be able to see all of their information online",
+          "colSpan": 2,
+          "horizontalSplit": true,
+          "images": [
+            "/assets/framer/jnxc3FfQNBhoJxrpsjqYbTPD4.png",
+            "/assets/framer/LHJlZbqYpmSY2SwUEgW74JDawAg.png"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "research-showcase",
+      "heading": "The research",
+      "leftCard": {
+        "title": "Competition",
+        "description": "We looked into platforms that similarly meet the needs, like:",
+        "competitors": [
+          {
+            "name": "Golden Star",
+            "logo": "/assets/framer/7Ryp8KtA3xiQkwkeM2OsIbhPrdA.png"
+          },
+          {
+            "name": "G. Workspace",
+            "logo": "/assets/framer/0exgHoH5BAPMH8RKT55Ltho9tM.png"
+          },
+          {
+            "name": "PawnMaster",
+            "logo": "/assets/framer/fWOtkwbqkrNLWdlTG39fre4JcGc.png"
+          },
+          {
+            "name": "PawnMate",
+            "logo": "/assets/framer/KfCA2xvbvPcvbFwovhDxFkBa94.png"
+          },
+          {
+            "name": "Shopify",
+            "logo": "/assets/framer/UAFTrEpY8or4Ai38SpfmGIOAyII.png"
+          }
+        ]
+      },
+      "rightCards": [
+        {
+          "title": "User interviews and surveys",
+          "description": "We interviewed business owners, pawnshop staff and customers as our 2 main users."
+        },
+        {
+          "title": "Data research and analysis",
+          "description": "Multiapoyo’s staff and customer behavioral data."
+        }
+      ]
+    },
+    {
+      "type": "design-showcase",
+      "heading": "Information architecture",
+      "flows": [
+        {
+          "slides": [
+            {
+              "title": "Sitemap for Ops platform",
+              "image": "/assets/framer/z5xJSFhKMpLLYOGkg6xVLMFIEaY.png"
+            },
+            {
+              "title": "Sitemap for Admin platform",
+              "image": "/assets/framer/PQJgYigW21j77lZsojr45SVODbk.png"
+            },
+            {
+              "title": "Sitemap for customer platform",
+              "image": "/assets/framer/8H92QPUd4Je1pXeJaJsph4qWtt8.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cards-grid",
+      "heading": "The insights",
+      "columns": 2,
+      "accentTitles": true,
+      "cards": [
+        {
+          "title": "Keep it simple",
+          "description": "Employees will go for the simplest, most straightforward process."
+        },
+        {
+          "title": "Security is key",
+          "description": "Guardrails, security and contingency features are a most."
+        },
+        {
+          "title": "Easy switch",
+          "description": "Admin users will feel the need to access Ops version from time to time."
+        },
+        {
+          "title": "Don’t get to techie",
+          "description": "Target customers will have limited access to tech and will rarely trust it."
+        }
+      ]
+    },
+    {
+      "type": "design-showcase",
+      "heading": "The design",
+      "description": "Due to confidentiality, I can only share a limited view of the project. Here are a few examples of the flows and designs our team created.\nI’d be happy to walk you through the details and answer any questions during a call.",
+      "flows": [
+        {
+          "slides": [
+            {
+              "title": "Audit selection screen",
+              "image": "/assets/framer/owv47sarxEuyj7EvvcXMW2hTA.png"
+            },
+            {
+              "title": "Onboarding screens",
+              "image": "/assets/framer/MfrejbibE3H6EEMWGwWTxe1aVo.png"
+            },
+            {
+              "title": "Stock audit process",
+              "image": "/assets/framer/9aT6lJL8ExoKZaqTc87NLi4houU.png"
+            },
+            {
+              "title": "Product return process",
+              "image": "/assets/framer/clWo1Myo08ME69wZNHNcAjzjGk.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "video-showcase",
+      "heading": "Amazing interaction design",
+      "borderColor": "#5A5AFF",
+      "items": [
+        {
+          "title": "Pop ups",
+          "fullWidth": true,
+          "videos": [
+            "/assets/framer/yr9JqaonaxMlveyKeviR75jmAYc.mp4"
+          ]
+        },
+        {
+          "title": "Collapsable menus",
+          "videos": [
+            "/assets/framer/Rx6ZXnsN44RplRsrCkQSotHAajc.mp4"
+          ]
+        },
+        {
+          "title": "Banners",
+          "videos": [
+            "/assets/framer/GXm4825qBmzeyl3RQsjYCgm8.mp4"
+          ]
+        },
+        {
+          "title": "Micro interactions",
+          "horizontalSplit": true,
+          "videos": [
+            "/assets/framer/QzJU0WNUPRoTwqnxzuZuQLt03Y.mp4",
+            "/assets/framer/TnCLTRmNaMlBPAjVPh3nmYMCaBg.mp4"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "iterations-showcase",
+      "heading": "The iterations",
+      "cards": [
+        {
+          "title": "First version",
+          "images": [
+            "/assets/framer/4RRWhSfX8O1fSTOk1IC4U8fg86U.png",
+            "/assets/framer/vgDTbkHX0GZUr5KtW9nCGzpJW10.png"
+          ]
+        },
+        {
+          "title": "Brand redesign",
+          "images": [
+            "/assets/framer/iBE9jQ7sKqBUMC2Htzibc3rrlI.png",
+            "/assets/framer/jMIMDex7d5EQTD5XBDuZf8ek3oY.png"
+          ]
+        }
+      ],
+      "beforeAfter": {
+        "title": "Before vs after",
+        "beforeImage": "/assets/framer/bRRtj8cjasAc23EleGpcrN2I.png",
+        "afterImage": "/assets/framer/TrY7Yc6rF0tGxOpUxT5QgfWdZo.png"
+      }
+    },
+    {
+      "type": "results",
+      "heading": "The user testing and results",
+      "leftColumn": {
+        "title": "User testing",
+        "items": [
+          {
+            "number": "1",
+            "description": "Users tested the prototypes on virtual sessions for us to understand expectations and use of the product, the team asked the users to speak their mind out loud."
+          },
+          {
+            "number": "2",
+            "description": "We interviewed the user about what their experience was, what worked and what didn’t."
+          },
+          {
+            "number": "3",
+            "description": "Field testing, we went to pawn shops to overview the user interacting with a first version of the product in real time and compare it to the previous solution."
+          }
+        ]
+      },
+      "rightColumn": {
+        "title": "Results",
+        "items": [
+          {
+            "title": "Less time for most flows",
+            "description": "After the second user test, we were able to reduce the time and clicks it takes to register a product on the system and to sell a product by 3 to 4 minutes."
+          },
+          {
+            "title": "Less screens, more feedback",
+            "description": "After A/B testing, we got rid of redundant screens and provided key useful feedback using banners, alerts and confirmation screens, missing from the previous solution, that forced users to double check processes that were already completed."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cards-grid",
+      "heading": "Key takeaways",
+      "columns": 2,
+      "cards": [
+        {
+          "title": "Challenges along the way",
+          "description": "After the MVP was released, a brand design team was introduced, so we had to adapt and pivot our UI to accommodate the new branding.\nWe solved it by creating our own design system from the start so we could update the UI way faster."
+        },
+        {
+          "title": "Conclusion",
+          "description": "I believe the fact that the product is made by industry collaborators set the product apart.\nOur best achieved goal so far has been mostly eliminating the need for software training for shop employees."
+        },
+        {
+          "title": "What I would do differently",
+          "description": "I’ve would do more information architecture if possible, a card sorting for the menu organization, and I would limit some features and contain sub flows that were specific for Multiapoyo but not for the intended purpose of turning the product into a SAAS",
+          "colSpan": 2
+        }
+      ]
+    },
+    {
+      "type": "cards-grid",
+      "heading": "Next steps",
+      "columns": 1,
+      "cards": [
+        {
+          "title": "",
+          "description": "The customer platform is being deeloped, which will allows users to interact directly with the shop online, and even allowing other types of users to compete by selling used products on their own.",
+          "images": [
+            "/assets/framer/dHbrOZDSKZKdcMx7xALAxS86Ng.png",
+            "/assets/framer/fqzbYIPqyvecB7RdxIuNMU2MG04.png"
+          ]
+        }
+      ]
+    }
+  ]
+}

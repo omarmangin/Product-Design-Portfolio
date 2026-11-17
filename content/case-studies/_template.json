@@ -1,0 +1,47 @@
+{
+  "slug": "example-case-study",
+  "order": 99,
+  "featuredOnHome": true,
+  "showInFooterCarousel": true,
+  "title": "New Case Study Title",
+  "subtitle": "One-sentence summary shown in the Hero section.",
+  "timelineBadge": "2026",
+  "thumbnail": "/assets/Thumbnails/Vision.png",
+  "thumbnailHover": "/assets/Thumbnails/Vision 2.png",
+  "thumbnailDescription": "Short description for the project thumbnail card.",
+  "theme": {
+    "gradient": "linear-gradient(-60deg, rgb(0, 163, 224) -2.72%, rgb(0, 43, 73) 84%)",
+    "accentColor": "rgb(0, 163, 224)"
+  },
+  "heroImages": [
+    "/assets/Thumbnails/Vision.png"
+  ],
+  "sections": [
+    {
+      "type": "about",
+      "company": "Company Name",
+      "timeline": "2026",
+      "role": "Lead Product Designer"
+    },
+    {
+      "type": "challenges",
+      "heading": "Challenge",
+      "overviewTitle": "Context",
+      "overviewBody": "High-level problem statement and background context.",
+      "items": [
+        {
+          "title": "Challenge 1",
+          "description": "First core challenge."
+        },
+        {
+          "title": "Challenge 2",
+          "description": "Second core challenge."
+        },
+        {
+          "title": "Challenge 3",
+          "description": "Third core challenge."
+        }
+      ]
+    }
+  ]
+}

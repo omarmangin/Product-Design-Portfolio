@@ -1,0 +1,103 @@
+{
+  "title": "About me",
+  "greeting": "Hello, I'm Omar",
+  "portrait": "/assets/framer/xAqjhbyCb3R1ILsiQUHqIhJM.jpeg",
+  "bio": [
+    "I’m a product designer with 4+ years of experience crafting user-centered SaaS platforms and AI-powered products that improve lives, meet business needs, and encourage tech adoption. I collaborate closely with multidisciplinary international teams and cross-functional stakeholders, leveraging systems thinking, conversational design, and WCAG-compliant accessibility standards to deliver scalable, inclusive, and high-quality user experiences.",
+    "Thanks for taking the time to get to know me, I look forward to get to know you too!"
+  ],
+  "focus": {
+    "heading": "My focus",
+    "body": "In 2 words, tech and people. I strongly believe that technology should be as invisible as possible, working to enhance lives. That’s why I majored in industrial design, where I was eager to create consumer electronics, but eventually found my way into UX & UI design and fell in love with it. That’s where I realized the lasting impact that I can have through technology and software."
+  },
+  "mentors": {
+    "heading": "My mentors",
+    "items": [
+      {
+        "name": "Jon Osses",
+        "description": "University professor who first introduced me to UX",
+        "image": "/assets/framer/J29A0eljPA9273HMMAJOlTUw3o.png"
+      },
+      {
+        "name": "Yeison Delrio",
+        "description": "Amazing designer and leader who helped me discover my skills",
+        "image": "/assets/framer/PzBVvTE6UpODzyYNsQLF4yEvoso.png"
+      },
+      {
+        "name": "Femke Van Schoonhoven",
+        "description": "Amazing designer and creator",
+        "image": "/assets/framer/pQpMcsUMBrS7B4pb2K0wqiAq7Y.png"
+      },
+      {
+        "name": "Nuri López",
+        "description": "My mom, of course, mentor in life",
+        "image": "/assets/framer/bk9g5Jhb5U84KoPXakifd8xR8.jpeg"
+      }
+    ]
+  },
+  "favoriteThings": {
+    "heading": "My favorite things",
+    "items": [
+      {
+        "title": "Good design",
+        "description": "I am a firm believer of Dieter Ram’s 10 rules for good design, and they are specially important with products in the digital age."
+      },
+      {
+        "title": "Nature",
+        "description": "I am one of those “Let’s go for a walk in nature” type of person, I love cold weather, dipping my feet on a river and feeling a morning breeze."
+      },
+      {
+        "title": "Movies",
+        "description": "Have you ever watch “The secret life of Walter Mitty”? I love talking about movies, composition, directors, scripts and how impactful a story can be."
+      },
+      {
+        "title": "Philosophy",
+        "description": "I’m a big fan of Marcus Aurelius' “Meditations” so I consider myself a student of stoicism, but most importantly, I believe the way is just to keep learning, acknowledging that we are all just students."
+      },
+      {
+        "title": "Food",
+        "description": "You'll always hear me say \"Let's grab a bite\", and my favorite thing to do is go out for brunch and coffee."
+      },
+      {
+        "title": "Family",
+        "description": "I'm always looking forward to hangout with my family, my partner and my dogs, I will bring them anywhere I can."
+      }
+    ]
+  },
+  "skills": {
+    "heading": "My skills",
+    "productSkills": [
+      "Systems thinking and design systems",
+      "AI UX and LLM interaction design",
+      "Conversational design and prompt UX",
+      "Digital accessibility (WCAG 2.2 AA)",
+      "Inclusive design and screen reader architecture",
+      "Information architecture",
+      "Wireframing",
+      "Rapid interactive prototyping",
+      "User research & usability testing",
+      "Cross-platform & responsive design",
+      "Product strategy and vision mapping",
+      "Executive stakeholder alignment",
+      "Cross-functional collaboration",
+      "Vision framing and strategic storytelling",
+      "User advocacy and inclusive design leadership",
+      "Ambiguity management in emerging tech"
+    ],
+    "toolkit": [
+      "Figma, FigJam, Dev Mode",
+      "Framer",
+      "Lovable, UXPilot, V0",
+      "Claude Code, Cursor",
+      "Copilot, ChatGPT, Gemini",
+      "AI Agents",
+      "Storybook",
+      "Miro",
+      "ProtoPie",
+      "Axe DevTools, VoiceOver, NVDA, JAWS, WAVE",
+      "Maze",
+      "UserTesting",
+      "Hotjar"
+    ]
+  }
+}

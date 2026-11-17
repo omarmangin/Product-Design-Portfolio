@@ -1,0 +1,184 @@
+{
+  "slug": "accessibility-agents",
+  "order": 2,
+  "featuredOnHome": true,
+  "showInFooterCarousel": true,
+  "title": "Accessibility Agents",
+  "cardTitle": "Accessibility Agents",
+  "shortTitle": "Accessibility Agents",
+  "subtitle": "Redesigning accessibility tools into intuitive, accessible and powerful conversational interfaces.",
+  "timelineBadge": "2026",
+  "thumbnail": "/assets/framer/UxjplMcWXoBE4W0NB7uufrbcSlI.png",
+  "thumbnailHover": "/assets/framer/vR0eiEs3TY74UpesIk0o5b4gCw.png",
+  "thumbnailDescription": "Redesigning accessibility tools into intuitive, accessible and powerful conversational interfaces.",
+  "theme": {
+    "gradient": "linear-gradient(-60deg, rgb(0, 163, 224) -2.72%, rgb(0, 43, 73) 84%)",
+    "sectionGradient": "linear-gradient(-60deg, rgb(0, 163, 224) -2.72%, rgb(0, 43, 73) 84%)",
+    "accentColor": "rgb(0, 163, 224)",
+    "borderColor": "rgb(0, 163, 224)"
+  },
+  "heroLayout": "three-equal",
+  "heroImages": [
+    "/assets/framer/5B7e1wniyYsZmH1gM0PqMlfGyRk.png",
+    "/assets/framer/IR9hrYbr4W7w2udQwRLd7bRRG50.png",
+    "/assets/framer/ue6HivBQ8dcYgXUk0ytruak.png"
+  ],
+  "sections": [
+    {
+      "type": "about",
+      "heading": "About the project",
+      "company": "Level Access",
+      "timeline": "April - October 2026",
+      "role": "Product designer, AI UX"
+    },
+    {
+      "type": "challenges",
+      "heading": "Challenge",
+      "overviewTitle": "Context",
+      "overviewBody": "The platform featured fragmented, underperforming AI tools. The Reporting Agent relied on rigid prompt flows, while the primary AI assistant failed to meet modern conversational UX expectations and accessibility standards. Consequently, AI features in the platform suffered from high abandonment and steep drop-off rates. The challenge was to overhaul these interactions into a seamless, conversational and inclusive experience that rebuilt user trust, reversed abandonment trends, and transformed underutilized tools into high-adoption drivers.",
+      "items": [
+        {
+          "title": "Conversational architecture",
+          "description": "Transitioning rigid forms into natural, vibe-coding style chat interfaces."
+        },
+        {
+          "title": "Accessibility-first AI",
+          "description": "Ensuring streaming LLM outputs met WCAG 2.2 AA standards."
+        },
+        {
+          "title": "Action-oriented flows",
+          "description": "Embedding contextual triggers to maintain momentum and close the find-fix-prove loop."
+        }
+      ]
+    },
+    {
+      "type": "design-showcase",
+      "heading": "Designs",
+      "description": "Due to confidentiality, I can only share a limited view of the project. Here are the core flows and strategies I implemented.",
+      "flows": [
+        {
+          "title": "Reporting agent overhaul",
+          "description": "Users struggled with conflicting edge cases and limited control over report outputs, resulting in high abandonment rates. New AI capabilities and components lacked accessibility compliance.",
+          "slides": [
+            {
+              "title": "Prompt refinement for conflicting requests",
+              "image": "/assets/framer/BgoV5a6CNplxOqzjZEtckL2o6g.png"
+            },
+            {
+              "title": "Artifact versions management",
+              "image": "/assets/framer/NhaJQ0PRb1zB34ilnQ78hiFbc.png"
+            },
+            {
+              "title": "Fully keyboard-navigable UI",
+              "image": "/assets/framer/xVooiJbsCyW5JFIs7dDAPYRlU.png"
+            }
+          ],
+          "whatIDid": [
+            "Architected a new vibe-coding style interface.",
+            "Integrated rapid prompt refining, robust report versioning and new output control capabilities to handle complex edge cases."
+          ],
+          "impact": [
+            "Increased generated reports by 23%.",
+            "Drastically reduced user friction during data extraction.",
+            "Reporting agent became fully keyboard navigable."
+          ]
+        },
+        {
+          "title": "Ask Level AI chat upgrade",
+          "description": "The Level AI assistant lacked the intuitive usability and accessibility features users expect from modern LLMs. Essential features were either buried or missing entirely, resulting in high cognitive load and high interaction drop-off.",
+          "slides": [
+            {
+              "title": "Platform context awareness",
+              "image": "/assets/framer/bzAjm6PaFE7I0PkBoWIHXytG3bM.png"
+            },
+            {
+              "title": "Action-oriented prompt suggestions and feedback signals",
+              "image": "/assets/framer/Vx4g2XiEvVXUaYg98yT6YPipEo.png"
+            },
+            {
+              "title": "Chat history and customization",
+              "image": "/assets/framer/wmU5abM7uh3JLqKH4r6cApyMt30.png"
+            }
+          ],
+          "whatIDid": [
+            "Integrated modern AI UX patterns, including contextual feedback triggers, chat history flows.",
+            "Designed suggested follow-up actions, and action-oriented features, transforming them into natural, accessible conversation flows."
+          ],
+          "impact": [
+            "Increase in overall active AI feature usage across the platform.",
+            "New action-oriented flows empowered the find-fix-prove loop."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "split-cards",
+      "heading": "Considerations",
+      "cards": [
+        {
+          "title": "Designing for accessible consumption",
+          "accentTitle": true,
+          "description": "Conversational UIs often fail accessibility standards. The entire experience was built to keep screen-reader and keyboard users in control; from prompt inputs with explicit keyboard logic to prevent accidental submissions, to aria-live regions to safely manage streaming LLM outputs.",
+          "image": "/assets/framer/MgvFfw5tdVta4ztxLqxfgKncZk.png"
+        }
+      ]
+    },
+    {
+      "type": "results",
+      "heading": "Results",
+      "leftColumn": {
+        "title": "Metrics",
+        "items": [
+          {
+            "title": "Higher engagement",
+            "bullets": [
+              "23% increase in report generation and exports.",
+              "Increase in daily active users engaging with Level AI features."
+            ]
+          },
+          {
+            "title": "Zero accessibility blockers",
+            "description": "The redesigned streaming text outputs successfully passed strict accessibility QA for screen reader compatibility."
+          }
+        ]
+      },
+      "rightColumn": {
+        "title": "Next steps",
+        "items": [
+          {
+            "title": "Scale logic",
+            "description": "Expand the newly architected reporting logic to support additional enterprise data formats, artifacts, and evolve the chat UI to predict user needs based on dashboard data."
+          },
+          {
+            "title": "Measure and iterate",
+            "description": "Continue benchmark testing with native screen-reader users to validate complex conversational edge cases."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cards-grid",
+      "heading": "Key takeaways",
+      "columns": 2,
+      "accentTitles": true,
+      "cards": [
+        {
+          "title": "Novel accessibility for novel AI",
+          "description": "Off-the-shelf LLM UI components rarely support WCAG out of the box. We had to architect custom interaction patterns for real-time streaming text, focus management, and dynamic ARIA live regions."
+        },
+        {
+          "title": "Edge cases define the experience",
+          "description": "When dealing with strict accessibility requirements and conflicting user prompts simultaneously, designing for the edge cases ultimately created a more robust and resilient product for all users."
+        },
+        {
+          "title": "System visibility builds user trust",
+          "description": "Users need to know what the AI is doing. Designing clear history flows and immediate feedback triggers proved non-negotiable for driving adoption."
+        },
+        {
+          "title": "Conversation reduce cognitive load",
+          "description": "Moving from rigid data-entry forms to natural language prompt refining provided a faster, more flexible way for users to handle complex edge cases in data extraction."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Omar Mangin",
+  "description": "Omar Mangin's product design portfolio. A compilation of UX & UI projects.",
+  "author": "Omar Mangin",
+  "nav": [
+    {
+      "label": "My work",
+      "href": "/"
+    },
+    {
+      "label": "About me",
+      "href": "/about-me"
+    },
+    {
+      "label": "Resume",
+      "href": "https://drive.google.com/file/d/1_-aqx1dRtBPv_UxuLV1JtrcHjIfCtKbC/view?usp=share_link",
+      "external": true
+    }
+  ],
+  "socials": [
+    {
+      "platform": "linkedin",
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/omarmangin/"
+    },
+    {
+      "platform": "email",
+      "label": "Email",
+      "href": "mailto:omarmangin@gmail.com"
+    }
+  ],
+  "home": {
+    "greeting": "Hello there!",
+    "bio": [
+      "I’m a product designer crafting user-centered products that improve lives, meet business needs, and encourage tech adoption. I collaborate closely with teams and stakeholders, leveraging systems thinking, conversational design and digital accessibility to deliver scalable, inclusive, and high-quality user experiences.",
+      "Here’s a compilation of some of the work that best represent my skills and experience."
+    ]
+  },
+  "footerMessage": "Thanks for checking my work, let’s talk soon!"
+}

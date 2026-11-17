@@ -1,0 +1,217 @@
+{
+  "slug": "ai-agents-in-m365",
+  "order": 3,
+  "featuredOnHome": true,
+  "showInFooterCarousel": true,
+  "title": "AI Agents in M365",
+  "cardTitle": "AI Agents in M365",
+  "shortTitle": "AI Agents in M365",
+  "subtitle": "Making AI agents easy to find, simple to create, and trusted collaborators.",
+  "timelineBadge": "2024 - 2026",
+  "thumbnail": "/assets/framer/c9vJg1wA4IQvzq8cvStIpbCsSs.png",
+  "thumbnailHover": "/assets/framer/kW3mezCo4tx5wtWNtwSMSG6EmgE.png",
+  "thumbnailDescription": "Making AI agents easy to find, simple to create, and trusted collaborators.",
+  "theme": {
+    "gradient": "linear-gradient(-60deg, rgb(59, 63, 178) -2.72%, rgb(70, 79, 235) 84%)",
+    "sectionGradient": "linear-gradient(-60deg, rgb(59, 63, 178) -2.72%, rgb(70, 79, 235) 84%)",
+    "accentColor": "rgb(70, 79, 235)",
+    "borderColor": "rgb(70, 79, 235)"
+  },
+  "heroLayout": "three-equal",
+  "heroImages": [
+    "/assets/framer/tYJ2YKjoKs9L1XO5VFQY4oOdfMg.png",
+    "/assets/framer/shW7cOCSn8VUikIyCLnvEEY.png",
+    "/assets/framer/K5kFrZgBbMmKTW1CCVtcU5cI.png"
+  ],
+  "sections": [
+    {
+      "type": "about",
+      "heading": "About the project",
+      "company": "Microsoft",
+      "timeline": "2024 - 2026",
+      "role": "UX designer, AI designer"
+    },
+    {
+      "type": "challenges",
+      "heading": "Challenge",
+      "overviewTitle": "Context",
+      "overviewBody": "I worked on shaping how AI agents become part of everyday work, designing holistic experiences that let people discover the right agent, create their own, and collaborate with agents as trusted teammates. Focused on interaction design, system thinking, and trust-building for AI, ensuring these experiences feel seamless, useful, and human-centered. My impact is measured in 3 stages:",
+      "items": [
+        {
+          "title": "Discovery",
+          "description": "Helping users explore, find and acquire agents in context through smart recommendations and a curated Agent Store."
+        },
+        {
+          "title": "Creation",
+          "description": "Making agent creation approachable with template-first flows, vibe coding-style and a simplified builder experience."
+        },
+        {
+          "title": "Collaboration",
+          "description": "Giving users visibility and control of Agent capabilities that transforms how they collaborate with agents, unlocking new ways to get work done."
+        }
+      ]
+    },
+    {
+      "type": "design-showcase",
+      "heading": "The designs",
+      "description": "Due to confidentiality, I can only share a limited view of the project. Here are a few examples of the flows and designs our team created.\nI’d be happy to walk you through the details and answer any questions during a call.",
+      "flows": [
+        {
+          "title": "Agent Discovery",
+          "description": "Users were overwhelmed by a growing catalog of agents and unsure which one fit their task. Discovery needed to feel contextual, trustworthy, and lightweight.",
+          "slides": [
+            {
+              "title": "Task-relevant agent suggestions",
+              "image": "/assets/framer/EORYOp7S8WuoGjGqXXyY2P3VuQ.png"
+            },
+            {
+              "title": "Agent store homepage",
+              "image": "/assets/framer/olAW9B6yWbNsMuRbLrHIabWFeRc.png"
+            }
+          ],
+          "whatIDid": [
+            "Designed in-chat recommendations for just-in-time discovery.",
+            "Created all-new Agent Store, entry points and added trust signals."
+          ],
+          "impact": [
+            "Reduced “catalog fatigue”.",
+            "Increased confidence in agent suggestions."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "split-cards",
+      "heading": "Considerations",
+      "cards": [
+        {
+          "title": "Response confidence levels",
+          "accentTitle": true,
+          "description": "As the LLM presents recommendations based on user context, different UI is presented to highlight a high-confidence recommendation or be less loud if the confidence level is low.",
+          "image": "/assets/framer/ICyDO4PxVFYQgENciPUCwct8.png"
+        }
+      ]
+    },
+    {
+      "type": "design-showcase",
+      "heading": "",
+      "flows": [
+        {
+          "title": "Agent Creation",
+          "description": "Agent Builder had high drop-off rates; users felt intimidated by a blank canvas. Needed a guided, approachable flow that scales from simple templates to advanced customization.",
+          "slides": [
+            {
+              "title": "Suggested templates",
+              "image": "/assets/framer/CvL9TjlYcKfCeoXyqY63F7wv54g.png"
+            },
+            {
+              "title": "Personalized pre-created templates",
+              "image": "/assets/framer/gfYuVHihmmvQ2bZqGSHpXsukMhY.png"
+            }
+          ],
+          "whatIDid": [
+            "Introduced template-first flow for quick starts.",
+            "Redesigned zero-state with clear guidance."
+          ],
+          "impact": [
+            "Lowered friction for non-dev users.",
+            "Improved completion rates in internal tests."
+          ]
+        },
+        {
+          "title": "Agent Collaboration",
+          "description": "Agents worked invisibly across apps; users lacked oversight and trust. Needed a way to see, steer, and audit agent actions across multiple surfaces.",
+          "slides": [
+            {
+              "title": "Agent activity dashboard",
+              "image": "/assets/framer/JNuzMpRiBJtDXV2qP965783kRHc.png"
+            },
+            {
+              "title": "In-chat activity overview",
+              "image": "/assets/framer/qukE3nf6IDBR5WrrZmL6JK1D90.png"
+            }
+          ],
+          "whatIDid": [
+            "Concepted Agent overview for cross-surface activity.",
+            "Defined task delegation flows for Agents in multiple canvases."
+          ],
+          "impact": [
+            "Made AI work visible & steerable.",
+            "Influenced Microsoft’s AI Agentic vision.",
+            "Contributed to guidance for assistive agents."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "results",
+      "heading": "Results",
+      "leftColumn": {
+        "title": "Metrics",
+        "items": [
+          {
+            "title": "Higher engagement",
+            "bullets": [
+              "Engagement increased with recommended agents.",
+              "Increased number of agents created per active user."
+            ]
+          },
+          {
+            "title": "Lower drop-off",
+            "bullets": [
+              "Reduced drop-off from Store browse to agent activation.",
+              "Significant reduction in abandonment during Builder flow after template-first design."
+            ]
+          },
+          {
+            "title": "Positive internal sentiment",
+            "bullets": [
+              "Positive sentiment in leadership demos."
+            ]
+          }
+        ]
+      },
+      "rightColumn": {
+        "title": "Next steps",
+        "items": [
+          {
+            "title": "Scale discovery",
+            "description": "Explore personalization for agent recommendations and richer context cues to improve trust and relevance."
+          },
+          {
+            "title": "Deepen collaboration",
+            "description": "Expand Agent reach with proactive insights and multi-agent coordination."
+          },
+          {
+            "title": "Measure and iterate",
+            "description": "Continue tracking engagement, completion rates, and sentiment to refine flows and validate design principles."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cards-grid",
+      "heading": "Key takeaways",
+      "columns": 2,
+      "accentTitles": true,
+      "cards": [
+        {
+          "title": "Discovery is powered by trust",
+          "description": "Users ignore catalogs; they respond to timely, explainable suggestions. Context beats quantity."
+        },
+        {
+          "title": "Creating is a confidence curve",
+          "description": "Start simple, then progressively reveal power. Blank canvases kill momentum."
+        },
+        {
+          "title": "Collaboration needs visibility",
+          "description": "AI “coworkers” succeed only when users can see what’s happening and intervene easily."
+        },
+        {
+          "title": "System thinking beats isolated screens",
+          "description": "Designing for AI means orchestrating flows across the system, not just polishing one UI."
+        }
+      ]
+    }
+  ]
+}

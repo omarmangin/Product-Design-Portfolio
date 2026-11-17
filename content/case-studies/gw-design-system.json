@@ -1,0 +1,470 @@
+{
+  "slug": "gw-design-system",
+  "order": 6,
+  "featuredOnHome": false,
+  "showInFooterCarousel": true,
+  "title": "GoldenWeb Design system",
+  "cardTitle": "GW Design System",
+  "shortTitle": "Design System",
+  "subtitle": "A guide to creating consistent, user-centric experiences",
+  "timelineBadge": "2022 - 2024",
+  "thumbnail": "/assets/framer/hnzDuqtfye4AoYTCEPnWa4IM.png",
+  "thumbnailHover": "/assets/framer/RzxvOhX2CLQRfXi5qnSEyVIWcs.png",
+  "thumbnailDescription": "A guide to creating consistent, user-centric experiences.",
+  "theme": {
+    "gradient": "linear-gradient(-60deg, rgb(53, 207, 68) 0%, rgba(90, 90, 255, 1) 100%)",
+    "sectionGradient": "linear-gradient(-60deg, rgb(53, 207, 68) 0%, rgba(90, 90, 255, 1) 100%)",
+    "accentColor": "rgb(90, 90, 255)",
+    "borderColor": "#5A5AFF"
+  },
+  "heroLayout": "single",
+  "heroImages": [
+    "/assets/framer/LYsCMWGC0pKpOdre7J4reQgWnps.png"
+  ],
+  "sections": [
+    {
+      "type": "about",
+      "heading": "About the project",
+      "company": "Multiapoyo",
+      "timeline": "2022 - 2023",
+      "role": "UI, UX, interaction design, and testing"
+    },
+    {
+      "type": "challenges",
+      "heading": "The goal",
+      "overviewTitle": "Overview",
+      "overviewBody": "Streamline the user experience, ensure brand consistency, and accelerate development while maintaining a user-centered approach. The GoldenWeb Design System, is a guide to creating consistent, user-centric, and straightforward experiences across the product.\nAt the core, this are our main goals:",
+      "items": [
+        {
+          "title": "Unify experience",
+          "description": "Create a cohesive and consistent user experience across the entire product."
+        },
+        {
+          "title": "Consistency",
+          "description": "Provide a set of standardized design components, patterns, and guidelines that ensure a cohesive and recognizable look and feel throughout our products."
+        },
+        {
+          "title": "Scalability",
+          "description": "Design a system that can accommodate future growth and expansion while maintaining visual and functional harmony."
+        },
+        {
+          "title": "Collaboration",
+          "description": "Facilitate collaboration between design, development, and other teams by establishing a shared design language."
+        },
+        {
+          "title": "Efficiency",
+          "description": "Increase design and development efficiency and speed by providing a centralized resource for UI components, patterns, and guidelines."
+        },
+        {
+          "title": "Accesibility",
+          "description": "Prioritize inclusive design principles to ensure the product is usable and enjoyable."
+        }
+      ]
+    },
+    {
+      "type": "results",
+      "heading": "The requirements",
+      "leftColumn": {
+        "title": "Deliverables",
+        "items": [
+          {
+            "number": "1",
+            "description": "Typography"
+          },
+          {
+            "number": "2",
+            "description": "Colors"
+          },
+          {
+            "number": "3",
+            "description": "Grids and layouts"
+          },
+          {
+            "number": "4",
+            "description": "Visual design"
+          },
+          {
+            "number": "5",
+            "description": "Iconography"
+          },
+          {
+            "number": "6",
+            "description": "Components"
+          },
+          {
+            "number": "7",
+            "description": "Interactions"
+          }
+        ]
+      },
+      "rightColumn": {
+        "title": "Devices",
+        "items": [
+          {
+            "title": "Desktop & Touch Screen",
+            "description": "Multiapoyo's Pawnshop OS is a web-based platform, so this design system is intended for desktop web usage, but considered to be used on a touch screen too."
+          }
+        ]
+      }
+    },
+    {
+      "type": "design-system-showcase",
+      "heading": "The solution V1",
+      "headingColor": "rgb(53, 207, 68)",
+      "description": "This was the first version of the GoldenWeb Design system",
+      "variant": "default",
+      "versions": [
+        {
+          "typography": {
+            "description": "We selected Work Sans because it works the best for web and it's available on Google fonts.",
+            "specimens": [
+              {
+                "fontName": "Work Sans",
+                "size": "24px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "24px",
+                "weightLabel": "Semibold",
+                "weight": 600
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "14px",
+                "weightLabel": "Light",
+                "weight": 300
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "14px",
+                "weightLabel": "Regular",
+                "weight": 400
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "14px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "14px",
+                "weightLabel": "Semibold",
+                "weight": 600
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "12px",
+                "weightLabel": "Light",
+                "weight": 300
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "12px",
+                "weightLabel": "Regular",
+                "weight": 400
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "12px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "12px",
+                "weightLabel": "Semibold",
+                "weight": 600
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "10px",
+                "weightLabel": "Regular",
+                "weight": 400
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "10px",
+                "weightLabel": "Medium",
+                "weight": 500
+              }
+            ]
+          },
+          "colors": {
+            "description": "We selected a green color for the main one, because we carried it from the legacy of the existing software on the company.",
+            "groups": [
+              {
+                "title": "Brand & Semantic",
+                "swatches": [
+                  "#35CF44",
+                  "#E2F9E4",
+                  "#FFBD00",
+                  "#FFF2CE",
+                  "#EF4F55",
+                  "#FFCCCC"
+                ]
+              },
+              {
+                "title": "Neutrals",
+                "swatches": [
+                  "#414042",
+                  "#6D6E71",
+                  "#A7A9AC",
+                  "#AFAFAF",
+                  "#E5E7E9",
+                  "#F3F3F3",
+                  "#FFFFFF"
+                ]
+              }
+            ]
+          },
+          "gridsCard": {
+            "title": "Grids and layouts",
+            "description": "The software is intended for low resolution desktop browser, so the main frame is 1280x832 and mobile is 360x800 because our target user uses mainly android phones with large screens.",
+            "image": "/assets/framer/enxVUKEqgdlO0joxvzi4s98.png"
+          },
+          "iconographyCard": {
+            "title": "Iconography",
+            "description": "We selected the Material design symbols library from Google because it was more time efficient for the design team and development team at the time.",
+            "image": "/assets/framer/Uc1x99Ctr1EN93p3iODLEdfGeoA.png"
+          },
+          "componentsCard": {
+            "title": "Components",
+            "image": "/assets/framer/nPoCeD7z7Poh7i35VjpAfypL7v8.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "design-system-showcase",
+      "heading": "The solution V2",
+      "headingColor": "rgb(90, 90, 255)",
+      "description": "After the MVP was released, management brought along a brand design team, so we had to adapt our Design system to accommodate the new brand design.",
+      "variant": "default",
+      "versions": [
+        {
+          "typography": {
+            "description": "The rebranding of the product included a second typeface, which we used only for heading and subtitles.",
+            "specimens": [
+              {
+                "fontName": "Tragic Grotesk",
+                "size": "32px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Tragic Grotesk",
+                "size": "24px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "24px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "20px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "16px",
+                "weightLabel": "Regular",
+                "weight": 400
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "16px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "12px",
+                "weightLabel": "Regular",
+                "weight": 400
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "12px",
+                "weightLabel": "Medium",
+                "weight": 500
+              }
+            ]
+          },
+          "colors": {
+            "description": "The rebranding introduced a completely new color palette, much more vibrant, but we adjusted it for accessibility.",
+            "groups": [
+              {
+                "title": "Brand & Semantic",
+                "swatches": [
+                  "#5A5AFF",
+                  "#E5E5FF",
+                  "#FF6AE8",
+                  "#FFE5FB",
+                  "#30D8FF",
+                  "#D0F6FF",
+                  "#FF6357",
+                  "#FFBFBA"
+                ]
+              },
+              {
+                "title": "Neutrals",
+                "swatches": [
+                  "#2A2C2F",
+                  "#54575C",
+                  "#71767D",
+                  "#E8E9EA",
+                  "#F4F5F5",
+                  "#F9F9F9",
+                  "#FFFFFF"
+                ]
+              }
+            ]
+          },
+          "gridsCard": {
+            "title": "Grids and layouts",
+            "description": "The software is intended for low resolution desktop browser, so the main frame is 1280x832 and mobile is 360x800 because our target user uses mainly android phones with large screens.",
+            "image": "/assets/framer/enxVUKEqgdlO0joxvzi4s98.png"
+          },
+          "iconographyCard": {
+            "title": "Iconography",
+            "description": "We selected the Material design symbols library from Google for design and development efficiency.",
+            "image": "/assets/framer/e57niS0BBjOS9rNP81vkDqaGSI.png"
+          },
+          "componentsCard": {
+            "title": "Components",
+            "image": "/assets/framer/v9yMpRorXmHGM4FT6Ab94HUMpc.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "video-showcase",
+      "heading": "Interactions & Micro interactions",
+      "borderColor": "#5A5AFF",
+      "items": [
+        {
+          "title": "Interactions",
+          "videos": [
+            "/assets/framer/Rx6ZXnsN44RplRsrCkQSotHAajc.mp4",
+            "/assets/framer/GXm4825qBmzeyl3RQsjYCgm8.mp4"
+          ]
+        },
+        {
+          "title": "Micro interactions",
+          "videos": [
+            "/assets/framer/QzJU0WNUPRoTwqnxzuZuQLt03Y.mp4",
+            "/assets/framer/TnCLTRmNaMlBPAjVPh3nmYMCaBg.mp4"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "design-showcase",
+      "heading": "Visual design",
+      "description": "Some instances of the new and current design system in use",
+      "gradient": "linear-gradient(-60deg, rgb(53, 207, 68) 0%, rgba(90, 90, 255, 1) 100%)",
+      "flows": [
+        {
+          "slides": [
+            {
+              "title": "Audit selection screen",
+              "image": "/assets/framer/owv47sarxEuyj7EvvcXMW2hTA.png"
+            },
+            {
+              "title": "Onboarding screens",
+              "image": "/assets/framer/MfrejbibE3H6EEMWGwWTxe1aVo.png"
+            },
+            {
+              "title": "Stock audit process",
+              "image": "/assets/framer/9aT6lJL8ExoKZaqTc87NLi4houU.png"
+            },
+            {
+              "title": "Product return process",
+              "image": "/assets/framer/clWo1Myo08ME69wZNHNcAjzjGk.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cards-grid",
+      "heading": "Atomic construction",
+      "columns": 2,
+      "cards": [
+        {
+          "title": "Atoms",
+          "description": "Foundational color tokens (#5A5AFF, #2A2C2F, #FFFFFF), typography scales (Tragic Grotesk & Work Sans), and Material Design action icons."
+        },
+        {
+          "title": "Molecules",
+          "description": "Interactive form fields with filter selects, help tooltips, and primary action buttons with directional chevrons."
+        },
+        {
+          "title": "Organisms",
+          "description": "Multi-field form groups combining labeled select inputs, required text fields, and validation states."
+        },
+        {
+          "title": "Templates",
+          "description": "Complete information-input modal dialogs with structured headers, grouped form sections, and Cancelar / Acción principal actions."
+        }
+      ]
+    },
+    {
+      "type": "results",
+      "heading": "The user testing and results",
+      "leftColumn": {
+        "title": "User testing",
+        "items": [
+          {
+            "number": "1",
+            "description": "We tested the integration of the first version of the design system on the development of the MVP and created a repository of components."
+          },
+          {
+            "number": "2",
+            "description": "We tested the accessibility of the typography, colors and icons."
+          },
+          {
+            "number": "3",
+            "description": "We tested the interactions and micro interactions at the same time as we tested the design prototype."
+          }
+        ]
+      },
+      "rightColumn": {
+        "title": "Results",
+        "items": [
+          {
+            "title": "Development acceleration",
+            "description": "According to management and front development leaders, the design system accelerated the creation of the MVP about 20%. And for the design team, we were able to ensure all the designs across the product were consistent and unified."
+          },
+          {
+            "title": "First version was too small",
+            "description": "On the testing of the first version, users struggled to read some of the text, specially on descriptions.We increased the size of the typographies across the board fot the second versión."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cards-grid",
+      "heading": "Key takeaways",
+      "columns": 2,
+      "cards": [
+        {
+          "title": "Challenges along the way",
+          "description": "After the MVP was released, management brought along a brand design team, so we had to adapt our Design system to accommodate the new brand design.\nWe planned ahead by creating a design system with powerful variants and properties that allowed us to change and redesign with ease."
+        },
+        {
+          "title": "What I would do differently",
+          "description": "I would have ensured that the whole design team and future members were aligned on terms of how to document and create components, variants and properties.\nI would have used a color palette that better suited web design and accessibility parameters, instead of aligning with the brand design that was intended for publicity."
+        }
+      ]
+    }
+  ]
+}

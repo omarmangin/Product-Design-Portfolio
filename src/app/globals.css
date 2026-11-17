@@ -1,26 +1,136 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Framer Baseline Color & Surface Tokens */
+  --background: #f5f5f5;
+  --surface: #ffffff;
+  --surface-subtle: #f5f5f5;
+  --surface-hover: #e9ecef;
+  --surface-overlay: rgba(245, 245, 245, 0.8);
+  --scrim-thumbnail: rgba(71, 88, 105, 0.24);
+  --control-pill: rgba(33, 37, 41, 0.16);
+
+  /* Framer Baseline Typography Colors */
+  --foreground: #212529;
+  --foreground-inverse: #f8f9fb;
+  --foreground-muted: #71767d;
+
+  /* Framer Baseline Case Study Accent Tokens */
+  --accent-teal: #00a3e0;
+  --accent-indigo: #464feb;
+  --accent-purple: #5a5aff;
+  --accent-blue: #455cff;
+  --accent-green: #35cf44;
+
+  /* Framer Baseline Radius & Spacing Tokens */
+  --radius-card: 24px;
+  --radius-media: 16px;
+  --radius-pill: 60px;
+  --shadow-card: 0px 4px 8px 0px rgba(0, 0, 0, 0.16);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-hover: var(--surface-hover);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-inverse: var(--foreground-inverse);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-accent-teal: var(--accent-teal);
+  --color-accent-indigo: var(--accent-indigo);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-green: var(--accent-green);
+
+  --font-display: var(--font-archivo-black), sans-serif;
+  --font-heading: var(--font-archivo), sans-serif;
+  --font-sans: var(--font-montserrat), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Reusable Baseline Section Spacing Utilities (Desktop 1280 / Desktop2 1024 / Tablet 744 / Phone 390) */
+.section-padding {
+  padding: 40px 16px;
+}
+
+.hero-padding {
+  padding: 40px 16px;
+}
+
+.grid-wrapper-padding {
+  padding: 0px 16px;
+}
+
+.header-padding {
+  padding: 16px;
+}
+
+.footer-padding {
+  padding: 40px 16px 24px 16px;
+}
+
+@media (min-width: 744px) {
+  .section-padding {
+    padding: 40px 32px;
+  }
+  .hero-padding {
+    padding: 40px 32px;
+  }
+  .grid-wrapper-padding {
+    padding: 0px 32px;
+  }
+  .header-padding {
+    padding: 16px 32px;
+  }
+  .footer-padding {
+    padding: 40px 32px 24px 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 40px;
+  }
+  .hero-padding {
+    padding: 48px 40px;
+  }
+  .grid-wrapper-padding {
+    padding: 0px 40px;
+  }
+  .header-padding {
+    padding: 16px 40px;
+  }
+  .footer-padding {
+    padding: 80px 40px 40px 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    padding: 40px 80px;
+  }
+  .hero-padding {
+    padding: 48px 80px;
+  }
+  .grid-wrapper-padding {
+    padding: 0px 80px;
+  }
+  .header-padding {
+    padding: 16px 80px;
+  }
+  .footer-padding {
+    padding: 80px 80px 40px 80px;
+  }
 }

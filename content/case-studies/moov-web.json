@@ -1,0 +1,313 @@
+{
+  "slug": "moov-web",
+  "order": 7,
+  "featuredOnHome": false,
+  "showInFooterCarousel": true,
+  "title": "MOOV Web",
+  "cardTitle": "MOOV Web",
+  "shortTitle": "MOOV Web",
+  "subtitle": "A website redesign for a new wave of users",
+  "timelineBadge": "2022",
+  "thumbnail": "/assets/framer/CCTVLPLIY27v8tU30fswjLk.png",
+  "thumbnailHover": "/assets/framer/mRWooev8aaMI2QBKLVEENTn4Rj4.png",
+  "thumbnailDescription": "Website redesign for a new wave of users.",
+  "theme": {
+    "gradient": "linear-gradient(-60deg, #EA9B29 0%, #455CFF 74.67%)",
+    "sectionGradient": "linear-gradient(-60deg, #EA9B29 0%, #455CFF 74.67%)",
+    "accentColor": "rgb(69, 92, 255)",
+    "borderColor": "#455CFF"
+  },
+  "heroLayout": "moov-devices",
+  "heroImages": [
+    "/assets/framer/7EeWID29P6v8yVj6USBzMiyyp1I.png",
+    "/assets/framer/jtmPuGoiHqu2CRi2TRusxe7YVI.png",
+    "/assets/framer/5msXgNgUw8tAYQbd5PovCrKN85s.png"
+  ],
+  "sections": [
+    {
+      "type": "about",
+      "heading": "About the project",
+      "company": "MOOV",
+      "timeline": "Oct - Dec 2022",
+      "role": "UX & UI design, UX research and handoff to development."
+    },
+    {
+      "type": "challenges",
+      "heading": "The challenges",
+      "overviewTitle": "Problem",
+      "overviewBody": "MOOV was transitioning to a second fase of the product, from web to a native app, the new website needs to be a place for new users to explore MOOV's value, answer common questions and ultimately lead them to download the new app.",
+      "items": [
+        {
+          "title": "Challenge 1",
+          "description": "Design a user experience that inform users what MOOV is about and the platform change."
+        },
+        {
+          "title": "Challenge 2",
+          "description": "Take on from the current brand and app UI design, and create a unified product."
+        },
+        {
+          "title": "Challenge 3",
+          "description": "Introduce new Enterprise feature as a new product from MOOV."
+        }
+      ]
+    },
+    {
+      "type": "cards-grid",
+      "heading": "The solution",
+      "columns": 2,
+      "cards": [
+        {
+          "title": "Complete UX redesign",
+          "description": "With updated information architecture. Tailored for existing and new users.",
+          "images": [
+            "/assets/framer/ixTcIZVnQLmNVMhUp7akwBWENY.png",
+            "/assets/framer/IoyfDyidLOFWMmehzHKkaeEYyP4.png"
+          ]
+        },
+        {
+          "title": "All new interaction design elements",
+          "description": "Fresh UI elements that unifies both ends of the product, and provides a clear path to complete the task (download app).",
+          "images": [
+            "/assets/framer/RVuCFvVgYjjqlPSRP7bilUbv6RM.png",
+            "/assets/framer/xTxUCxwKcTmfJfyPaJJnHqzvhQ.png"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "research-showcase",
+      "heading": "The research",
+      "leftCard": {
+        "title": "Competition",
+        "description": "I looked into platforms with similar goals and products like:",
+        "competitors": [
+          {
+            "name": "Commando",
+            "logo": "/assets/framer/cbH6BzEObFHuJ45IcwbutBpodDI.png"
+          },
+          {
+            "name": "Sweatcoin",
+            "logo": "/assets/framer/uTiAX3K5y1OvYuA06t61o5WpGyM.png"
+          },
+          {
+            "name": "Síclo",
+            "logo": "/assets/framer/bB0KyNgJwy7dnBJRsAERfNAQ2SY.png"
+          }
+        ]
+      },
+      "rightCards": [
+        {
+          "title": "Data analysis",
+          "description": "Understanding of who the users are and how the product has evolved since launch."
+        },
+        {
+          "title": "User surveys",
+          "description": "I did a surveys on 10 MOOV users from different ages, locations and lifestyles."
+        }
+      ]
+    },
+    {
+      "type": "cards-grid",
+      "heading": "The insights",
+      "columns": 2,
+      "accentTitles": true,
+      "cards": [
+        {
+          "title": "Where users come from",
+          "description": "Most users come from recommendations from friends or a social media ad."
+        },
+        {
+          "title": "Big brand rewards",
+          "description": "Users are mainly interested on the big brand rewards, that's what triggers the decision to download the app."
+        },
+        {
+          "title": "A lot of FAQs",
+          "description": "There was a lot of information that users weren't aware of, it was not available to them."
+        },
+        {
+          "title": "Rewards first",
+          "description": "Users are largely interested on the rewards more than any other value proposition from the product."
+        }
+      ]
+    },
+    {
+      "type": "design-showcase",
+      "heading": "Information architecture",
+      "flows": [
+        {
+          "slides": [
+            {
+              "title": "Sitemap",
+              "image": "/assets/framer/Xbp86jM1m1CXt3pm132Yym02s1I.png"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "design-showcase",
+      "heading": "The design",
+      "cardMaxWidth": 1000,
+      "flows": [
+        {
+          "slides": [
+            {
+              "title": "Home and navigation",
+              "images": [
+                "/assets/framer/3AiNyb9Yrp6YOkTxej7HmFC7ts8.png",
+                "/assets/framer/fpyG6D8ZGxhmD28QYsmnlUfVzow.png"
+              ]
+            },
+            {
+              "title": "How does it work",
+              "images": [
+                "/assets/framer/F6LCmuUasrc6Iy38lJm6l5gDA.png",
+                "/assets/framer/5sUQmk5WfwPAtxFDCpkllDbqk8.png"
+              ]
+            },
+            {
+              "title": "Contact forms",
+              "images": [
+                "/assets/framer/6tj6r7s2Srvt80BUfiYz6zuSUU.png",
+                "/assets/framer/KNGW2qiong4uaq9XGRzP0HEj8ik.png"
+              ]
+            },
+            {
+              "title": "Community and testimonials",
+              "images": [
+                "/assets/framer/C7HTXwkdxo83CFFQ2KKLezkw3w.png",
+                "/assets/framer/JumyAxrdX56eRNtrWhM8V0som7g.png"
+              ]
+            }
+          ]
+        }
+      ],
+      "prototypeEmbedUrl": "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FuUDxbFTojRW35ykDXUGRTb%2FMOOV-mobile-prototype%3Fpage-id%3D0%253A1%26type%3Ddesign%26node-id%3D1-8337%26viewport%3D166%252C-407%252C0.12%26t%3DPasrB3k1unuRr5wG-1%26scaling%3Dscale-down%26starting-point-node-id%3D1%253A8337%26mode%3Ddesign",
+      "prototypeCaption": "Check a live prototype for the mobile version of the website (Open on desktop for better experience)"
+    },
+    {
+      "type": "video-showcase",
+      "heading": "The interaction design",
+      "borderColor": "#455CFF",
+      "items": [
+        {
+          "title": "Hero section animation",
+          "videos": [
+            "/assets/framer/fNnN9CARPLR45WKmjvEICkuN4x4.mp4"
+          ]
+        },
+        {
+          "title": "Navigation animations",
+          "videos": [
+            "/assets/framer/oOGuPVKeCKZyp1VpzVMYrwuyW1E.mp4"
+          ]
+        },
+        {
+          "title": "Translucent materials",
+          "horizontalSplit": true,
+          "images": [
+            "/assets/framer/IrcKsr6QrPhwy6549FbzwnZgtA.png",
+            "/assets/framer/5JVumNMhyLyGIpqZFlmRZU3UG4.png"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "iterations-showcase",
+      "heading": "Before vs after",
+      "cards": [
+        {
+          "title": "Original website",
+          "images": [
+            "/assets/framer/ee6rna3I21mv1URGbuWvWrlozE.png",
+            "/assets/framer/oJpdoiduL7fkKCfsdn19WCc1UY.png"
+          ]
+        },
+        {
+          "title": "Redesign",
+          "images": [
+            "/assets/framer/zNZqPEXXH40eA3wlrgaTY2jS4.png",
+            "/assets/framer/ixTcIZVnQLmNVMhUp7akwBWENY.png"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "results",
+      "heading": "The user testing and impact",
+      "leftColumn": {
+        "title": "User testing",
+        "items": [
+          {
+            "number": "1",
+            "description": "I tested the prototype with users from different age ranges."
+          },
+          {
+            "number": "2",
+            "description": "I asked 3 users to complete 3 small tasks on the website, and at the end, I asked the users were would they find a specific piece of information, so they would navigate naturally."
+          }
+        ]
+      },
+      "rightColumn": {
+        "title": "Results",
+        "items": [
+          {
+            "title": "Better understanding",
+            "description": "3 out of 3 users were able to complete the tasks provided and found the information asked for."
+          },
+          {
+            "title": "Too quick to click",
+            "description": "On the first version of the product, the CTAs were fixed throughout the screen, this prompted users to click it way to soon without scanning the website first. I placed the CTAs in strategic places for the iterations."
+          }
+        ]
+      },
+      "bottomCard": {
+        "title": "Impact",
+        "items": [
+          {
+            "title": "Faster understanding of the product",
+            "description": "The overall impact of the redesign was that the improved information architecture, which allowed the user to understand and find information faster."
+          },
+          {
+            "title": "New methodologies",
+            "description": "I also was able to introduce the development team to agile sprints, and new software for the handoff. This allowed us to really accelerate the project."
+          },
+          {
+            "title": "My UX legacy",
+            "description": "In the end, the company went for a different UI design because it aligned with the upcoming app redesign tasked to another design team. But the company was very satisfied with my UX redesign so they applied the new design to my UX design, which I was glad it could be implemented."
+          }
+        ]
+      }
+    },
+    {
+      "type": "cards-grid",
+      "heading": "Key takeaways",
+      "columns": 2,
+      "cards": [
+        {
+          "title": "Challenges along the way",
+          "description": "The development team was not used to agile methodologies and the importance of mobile first design, which initially caused some minor delays.\nI did short workshops to align the team, explain how would we be working and introduce the new software."
+        },
+        {
+          "title": "Conclusion",
+          "description": "I was able to bring light to some of the misinterpreted user pain points and needs, which allowed me to create a much more streamlined product.\nBecause the UI was not used, some targets were missed only in minor ways."
+        }
+      ]
+    },
+    {
+      "type": "split-cards",
+      "heading": "Next steps",
+      "cards": [
+        {
+          "title": "I would love to redesign app",
+          "accentTitle": true,
+          "description": "The new website has been launched with the alternative UI, but I would love to approach the company in the future for a redesign of the app, to improve on those key user needs and pain points that were discovered during our collaboration.",
+          "images": [
+            "/assets/framer/S3LhrEDUPceI6iqT7nYS7ZiHaeY.png",
+            "/assets/framer/sIjLZERXuOI88xN9zQifyCnCIM.png"
+          ]
+        }
+      ]
+    }
+  ]
+}
