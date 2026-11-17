@@ -31,9 +31,12 @@ export function Footer({
             Check some of my other projects
           </h2>
           <nav aria-label="Other case studies" className="w-full">
-            <ul className="grid w-full grid-cols-1 gap-[16px] sm:grid-cols-2 lg:grid-cols-3 list-none p-0 m-0">
+            <ul className="flex w-full gap-[16px] overflow-x-auto pb-2 snap-x snap-mandatory list-none p-0 m-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
               {otherProjects.map((project) => (
-                <li key={project.slug} className="w-full">
+                <li
+                  key={project.slug}
+                  className="w-[272px] shrink-0 snap-start sm:w-[320px] lg:w-full"
+                >
                   <ProjectCard study={project} headingLevel="h3" />
                 </li>
               ))}
