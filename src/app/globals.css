@@ -29,6 +29,14 @@
   --shadow-card: 0px 4px 8px 0px rgba(0, 0, 0, 0.16);
 }
 
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 46.5rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 90rem;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
@@ -46,10 +54,6 @@
   --font-display: var(--font-archivo-black), sans-serif;
   --font-heading: var(--font-archivo), sans-serif;
   --font-sans: var(--font-montserrat), sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {

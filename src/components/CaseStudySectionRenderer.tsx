@@ -1,5 +1,7 @@
 import { BentoCard, BentoGrid, BentoSection } from "@/components/ui/BentoGrid";
+import { CompetitorCarousel } from "@/components/ui/CompetitorCarousel";
 import { FramerImage } from "@/components/ui/FramerImage";
+import { getImageDimensions } from "@/lib/asset-dimensions";
 import type { CaseStudy, CaseStudySection } from "@/types/content";
 import { Slideshow } from "./Slideshow";
 
@@ -100,8 +102,8 @@ export function CaseStudySectionRenderer({
                   }`}
                 >
                   <div
-                    className={`flex flex-col justify-start gap-[20px] ${
-                      hasBullets ? "lg:col-span-7" : ""
+                    className={`flex flex-col justify-center self-center gap-[20px] ${
+                      hasBullets ? "lg:col-span-6 xl:col-span-7" : ""
                     }`}
                   >
                     {hasBullets ? (
@@ -150,18 +152,25 @@ export function CaseStudySectionRenderer({
                   </div>
 
                   {card.image && (
-                    <div
-                      className={`w-full overflow-hidden rounded-[16px] ${
-                        hasBullets ? "lg:col-span-5 lg:max-h-[420px]" : ""
-                      }`}
-                    >
-                      <FramerImage
-                        src={card.image}
-                        alt={card.title || section.heading}
-                        sizes="(max-width: 1023px) 100vw, 680px"
-                        className="w-full h-auto rounded-[16px] object-cover object-top"
-                      />
-                    </div>
+                    hasBullets ? (
+                      <div className="mx-auto -mb-[24px] aspect-[1/0.98] w-full self-end overflow-hidden rounded-t-[12px] md:w-[80%] lg:col-span-6 lg:w-full xl:col-span-5">
+                        <FramerImage
+                          src={card.image}
+                          alt={card.title || section.heading}
+                          sizes="(max-width: 1023px) 85vw, 560px"
+                          className="h-full w-full object-cover object-top"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-full overflow-hidden rounded-[16px]">
+                        <FramerImage
+                          src={card.image}
+                          alt={card.title || section.heading}
+                          sizes="(max-width: 1023px) 100vw, 680px"
+                          className="w-full h-auto rounded-[16px] object-cover object-top"
+                        />
+                      </div>
+                    )
                   )}
 
                   {card.images && card.images.length > 0 && (
@@ -197,7 +206,7 @@ export function CaseStudySectionRenderer({
         <BentoSection heading={section.heading} headingId={headingId}>
           <div className="grid grid-cols-1 items-stretch gap-[24px] lg:grid-cols-2">
             {/* Left Column: Competition + Logo Row */}
-            <article className="flex flex-col justify-start gap-[24px] rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)]">
+            <article className="flex min-w-0 flex-col justify-start gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)]">
               <div className="flex flex-col justify-start gap-[8px]">
                 <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
                   {section.leftCard.title}
@@ -206,29 +215,7 @@ export function CaseStudySectionRenderer({
                   {section.leftCard.description}
                 </p>
               </div>
-              <ul
-                aria-label="Competitors analyzed"
-                className="flex flex-wrap items-center justify-around gap-[24px] py-[12px] list-none p-0 m-0"
-              >
-                {section.leftCard.competitors.map((comp) => (
-                  <li
-                    key={comp.name}
-                    className="flex flex-col items-center gap-[12px]"
-                  >
-                    <div className="flex h-[56px] w-[100px] items-center justify-center rounded-[12px] bg-[#F5F5F5] p-2">
-                      <FramerImage
-                        src={comp.logo}
-                        alt={comp.name}
-                        sizes="100px"
-                        className="max-h-[44px] w-auto object-contain"
-                      />
-                    </div>
-                    <span className="font-sans text-[12px] font-medium leading-[16px] text-[#212529]">
-                      {comp.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <CompetitorCarousel competitors={section.leftCard.competitors} />
             </article>
 
             {/* Right Column: Stacked Research Cards */}
@@ -266,7 +253,7 @@ export function CaseStudySectionRenderer({
                   <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#F8F9FB]">
                     {section.featureGridIntro.title}
                   </h3>
-                  <p className="max-w-[960px] font-sans text-[16px] leading-[24px] text-[#F8F9FB]">
+                  <p className="w-full max-w-[1440px] font-sans text-[16px] leading-[24px] text-[#F8F9FB]">
                     {section.featureGridIntro.description}
                   </p>
                 </div>
@@ -277,7 +264,7 @@ export function CaseStudySectionRenderer({
                     key={feat.title}
                     className="flex flex-col justify-start gap-[16px] rounded-[24px] bg-white p-[24px] shadow-[0px_4px_8px_rgba(0,0,0,0.12)]"
                   >
-                    <h4 className="font-display text-[16px] font-normal leading-[24px] text-[#212529]">
+                    <h4 className="line-clamp-2 min-h-[48px] font-display text-[16px] font-normal leading-[24px] text-[#212529]">
                       {feat.title}
                     </h4>
                     <div className="w-full overflow-hidden rounded-[8px]">
@@ -298,7 +285,7 @@ export function CaseStudySectionRenderer({
           {section.flows.map((flow, flowIdx) => (
             <div
               key={flow.title || `flow-${flowIdx}`}
-              className="flex flex-col gap-[24px]"
+              className="flex w-full min-w-0 flex-col gap-[24px]"
             >
               {(flow.title || flow.description) && (
                 <div className="flex flex-col justify-start gap-[8px]">
@@ -308,7 +295,7 @@ export function CaseStudySectionRenderer({
                     </h3>
                   )}
                   {flow.description && (
-                    <p className="max-w-[960px] font-sans text-[16px] leading-[24px] text-[#F8F9FB]">
+                    <p className="w-full max-w-[1440px] font-sans text-[16px] leading-[24px] text-[#F8F9FB]">
                       {flow.description}
                     </p>
                   )}
@@ -319,7 +306,7 @@ export function CaseStudySectionRenderer({
                 <Slideshow
                   slides={flow.slides}
                   label={flow.title || section.heading}
-                  cardMaxWidth={section.cardMaxWidth || 728}
+                  cardMaxWidth={section.cardMaxWidth || 896}
                   headingLevel={flow.title ? "h4" : "h3"}
                 />
               )}
@@ -407,7 +394,7 @@ export function CaseStudySectionRenderer({
                 return (
                   <article
                     key={card.title}
-                    className={`grid grid-cols-1 items-center gap-[24px] rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] lg:grid-cols-2 ${
+                    className={`grid grid-cols-1 items-center gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] lg:grid-cols-12 ${
                       resolvedSpan === 2
                         ? "md:col-span-2"
                         : resolvedSpan === 3
@@ -415,7 +402,7 @@ export function CaseStudySectionRenderer({
                         : ""
                     }`}
                   >
-                    <div className="flex flex-col justify-start gap-[8px]">
+                    <div className="flex flex-col justify-center self-center gap-[8px] lg:col-span-7">
                       <h3
                         className="font-heading text-[24px] font-bold leading-[32px]"
                         style={{
@@ -434,30 +421,153 @@ export function CaseStudySectionRenderer({
                     </div>
 
                     {card.image && (
-                      <div className="w-full overflow-hidden rounded-[12px]">
+                      <div className="w-full overflow-hidden rounded-[12px] lg:col-span-5">
                         <FramerImage
                           src={card.image}
                           alt={card.title}
-                          sizes="(max-width: 1023px) 100vw, 680px"
+                          sizes="(max-width: 1023px) 100vw, 520px"
                           className="w-full h-auto rounded-[12px] object-contain"
                         />
                       </div>
                     )}
 
                     {card.images && card.images.length > 0 && (
-                      <div className="flex flex-wrap items-center justify-center gap-[16px] sm:flex-nowrap">
+                      <div className="mx-auto grid w-full max-w-[406px] grid-cols-2 items-center gap-[16px] md:gap-[24px] lg:col-span-5">
                         {card.images.map((imgSrc, i) => (
-                          <div key={imgSrc} className="overflow-hidden rounded-[12px]">
+                          <div
+                            key={imgSrc}
+                            className="w-full overflow-hidden rounded-[12px]"
+                          >
                             <FramerImage
                               src={imgSrc}
                               alt={`${card.title} preview ${i + 1}`}
-                              sizes="320px"
-                              className="max-h-[366px] w-auto rounded-[12px] object-contain"
+                              sizes="(max-width: 743px) 45vw, 191px"
+                              className="mx-auto max-h-[366px] w-full rounded-[12px] object-contain"
                             />
                           </div>
                         ))}
                       </div>
                     )}
+                  </article>
+                );
+              }
+
+              // Pawnshop OS "Next steps": 1-column card with 2 wide images overflowing bottom padding on Tablet/Desktop
+              const isNextStepsOverflow =
+                section.columns === 1 &&
+                card.images &&
+                card.images.length >= 2 &&
+                getImageDimensions(card.images[0]).width >
+                  getImageDimensions(card.images[0]).height;
+
+              if (isNextStepsOverflow && card.images) {
+                return (
+                  <article
+                    key={card.title || `card-${idx}`}
+                    className={`flex flex-col justify-start gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] text-[#212529] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:h-[294px] lg:h-[338px] xl:h-[384px] ${
+                      resolvedSpan === 2
+                        ? "md:col-span-2"
+                        : resolvedSpan === 3
+                        ? "md:col-span-3"
+                        : ""
+                    }`}
+                  >
+                    {(card.title || card.description) && (
+                      <div className="flex flex-col gap-[8px]">
+                        {card.title && (
+                          <h3
+                            className="font-heading text-[24px] font-bold leading-[32px]"
+                            style={{
+                              color: section.accentTitles
+                                ? theme.accentColor
+                                : "#212529",
+                            }}
+                          >
+                            {card.title}
+                          </h3>
+                        )}
+                        {card.description && (
+                          <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                            {card.description}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                    <div className="grid grid-cols-1 gap-[24px] md:-mb-[24px] md:grid-cols-2">
+                      {card.images.map((imgSrc, i) => (
+                        <div
+                          key={imgSrc}
+                          className="w-full overflow-hidden rounded-[8px] shadow-[0px_4px_8px_rgba(0,0,0,0.16)]"
+                        >
+                          <FramerImage
+                            src={imgSrc}
+                            alt={`${card.title || section.heading} preview ${i + 1}`}
+                            sizes="(max-width: 743px) 100vw, 560px"
+                            className="w-full h-auto object-cover object-top"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </article>
+                );
+              }
+
+              // Check MOOV Web "The solution" asymmetric 2-image overflow card vs portrait pair
+              const hasTwoImages = card.images && card.images.length === 2;
+              const d0 = hasTwoImages && card.images ? getImageDimensions(card.images[0]) : null;
+              const d1 = hasTwoImages && card.images ? getImageDimensions(card.images[1]) : null;
+              const isAsymmetricOverflow =
+                d0 &&
+                d1 &&
+                Math.abs(d0.width / d0.height - d1.width / d1.height) > 0.1;
+
+              if (isAsymmetricOverflow && card.images) {
+                return (
+                  <article
+                    key={card.title}
+                    className={`flex h-[550px] flex-col justify-between gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] text-[#212529] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:h-[479px] ${
+                      resolvedSpan === 2
+                        ? "md:col-span-2"
+                        : resolvedSpan === 3
+                        ? "md:col-span-3"
+                        : ""
+                    }`}
+                  >
+                    <div className="flex flex-col gap-[8px]">
+                      <h3
+                        className="font-heading text-[24px] font-bold leading-[32px]"
+                        style={{
+                          color: section.accentTitles
+                            ? theme.accentColor
+                            : "#212529",
+                        }}
+                      >
+                        {card.title}
+                      </h3>
+                      {card.description && (
+                        <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                          {card.description}
+                        </p>
+                      )}
+                    </div>
+                    <div className="-mb-[24px] -mr-[24px] flex w-[500px] flex-row items-start gap-[24px] self-center md:self-start">
+                      <div className="w-[165px] shrink-0 overflow-hidden rounded-[12px]">
+                        <FramerImage
+                          src={card.images[0]}
+                          alt={`${card.title} preview 1`}
+                          sizes="165px"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                      <div className="w-[311px] shrink-0 overflow-hidden rounded-[12px]">
+                        <FramerImage
+                          src={card.images[1]}
+                          alt={`${card.title} preview 2`}
+                          sizes="311px"
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    </div>
                   </article>
                 );
               }
@@ -471,29 +581,32 @@ export function CaseStudySectionRenderer({
                   }
                   description={card.description}
                   colSpan={resolvedSpan}
+                  className={
+                    hasTwoImages ? "justify-between md:h-[479px]" : ""
+                  }
                 >
                   {card.image && (
                     <div className="w-full overflow-hidden rounded-[12px]">
                       <FramerImage
                         src={card.image}
                         alt={card.title}
-                        sizes="(max-width: 768px) 100vw, 680px"
+                        sizes="(max-width: 743px) 100vw, 680px"
                         className="w-full h-auto rounded-[12px] object-contain"
                       />
                     </div>
                   )}
                   {card.images && card.images.length > 0 && (
-                    <div className="grid grid-cols-1 items-center gap-[16px] sm:grid-cols-2">
+                    <div className="mx-auto grid w-full max-w-[354px] grid-cols-2 items-center gap-[16px] md:gap-[24px]">
                       {card.images.map((imgSrc, i) => (
                         <div
                           key={imgSrc}
-                          className="w-full overflow-hidden rounded-[12px]"
+                          className="aspect-[0.54/1] w-full overflow-hidden rounded-[12px]"
                         >
                           <FramerImage
                             src={imgSrc}
                             alt={`${card.title} preview ${i + 1}`}
-                            sizes="(max-width: 639px) 100vw, 480px"
-                            className="w-full h-auto rounded-[12px] object-contain"
+                            sizes="(max-width: 743px) 45vw, 165px"
+                            className="h-full w-full rounded-[12px] object-cover object-center"
                           />
                         </div>
                       ))}
@@ -515,42 +628,73 @@ export function CaseStudySectionRenderer({
         >
           {section.cards.length > 0 && (
             <BentoGrid columns={2}>
-              {section.cards.map((card) => (
-                <BentoCard
-                  key={card.title}
-                  title={card.title}
-                  titleColor="#212529"
-                  description={card.description}
-                >
-                  {card.images && card.images.length > 0 && (
-                    <div
-                      className={`grid grid-cols-1 items-center gap-[16px] ${
-                        card.images.length > 1 ? "sm:grid-cols-2" : ""
-                      }`}
-                    >
-                      {card.images.map((imgSrc, i) => (
-                        <div
-                          key={imgSrc}
-                          className="w-full overflow-hidden rounded-[12px]"
-                        >
+              {section.cards.map((card) => {
+                const imgs = card.images || [];
+                const isWidePair =
+                  imgs.length >= 2 &&
+                  getImageDimensions(imgs[0]).width >
+                    getImageDimensions(imgs[0]).height;
+
+                return (
+                  <BentoCard
+                    key={card.title}
+                    title={card.title}
+                    titleColor="#212529"
+                    description={card.description}
+                    className={isWidePair ? "md:h-[351px]" : ""}
+                  >
+                    {imgs.length > 0 &&
+                      (isWidePair ? (
+                        <div className="flex w-full flex-col items-center gap-[24px] md:-mb-[24px] md:w-[984px] md:flex-row md:items-start md:justify-center md:self-center">
+                          {imgs.map((imgSrc, i) => (
+                            <div
+                              key={imgSrc}
+                              className="w-full overflow-hidden rounded-[8px] shadow-[0px_4px_8px_rgba(0,0,0,0.16)] md:h-[304px] md:w-[480px] md:shrink-0"
+                            >
+                              <FramerImage
+                                src={imgSrc}
+                                alt={`${card.title} screenshot ${i + 1}`}
+                                sizes="(max-width: 743px) 100vw, 480px"
+                                className="h-auto w-full object-cover md:h-full"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      ) : imgs.length > 1 ? (
+                        <div className="grid grid-cols-2 items-start gap-[16px] md:gap-[24px]">
+                          {imgs.map((imgSrc, i) => (
+                            <div
+                              key={imgSrc}
+                              className="aspect-[0.54/1] w-full overflow-hidden rounded-[12px]"
+                            >
+                              <FramerImage
+                                src={imgSrc}
+                                alt={`${card.title} screenshot ${i + 1}`}
+                                sizes="(max-width: 743px) 45vw, 280px"
+                                className="h-full w-full rounded-[12px] object-cover object-center"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="w-full overflow-hidden rounded-[12px]">
                           <FramerImage
-                            src={imgSrc}
-                            alt={`${card.title} screenshot ${i + 1}`}
-                            sizes="(max-width: 639px) 100vw, 540px"
+                            src={imgs[0]}
+                            alt={`${card.title} screenshot 1`}
+                            sizes="(max-width: 743px) 100vw, 540px"
                             className="w-full h-auto rounded-[12px] object-contain"
                           />
                         </div>
                       ))}
-                    </div>
-                  )}
-                </BentoCard>
-              ))}
+                  </BentoCard>
+                );
+              })}
             </BentoGrid>
           )}
 
           {section.beforeAfter && (
-            <article className="grid grid-cols-1 items-center gap-[24px] rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] lg:grid-cols-12">
-              <div className="flex flex-col justify-start gap-[8px] lg:col-span-5">
+            <article className="flex flex-col items-center justify-between gap-[24px] rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:flex-row">
+              <div className="flex w-full flex-col justify-center self-center gap-[8px] md:w-auto">
                 <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
                   {section.beforeAfter.title}
                 </h3>
@@ -561,43 +705,43 @@ export function CaseStudySectionRenderer({
                 )}
               </div>
 
-              <div className="flex flex-col items-center justify-center gap-[20px] sm:flex-row lg:col-span-7">
-                <div className="flex flex-col items-center gap-[8px]">
+              <div className="flex w-full max-w-[374px] shrink-0 flex-row items-center justify-center gap-[8px]">
+                <div className="flex flex-1 justify-center overflow-hidden rounded-[12px]">
                   <FramerImage
                     src={section.beforeAfter.beforeImage}
                     alt="Before redesign"
-                    sizes="340px"
-                    className="max-h-[340px] w-auto rounded-[12px] object-contain"
+                    sizes="170px"
+                    className="max-h-[303px] w-full h-auto rounded-[12px] object-contain"
                   />
                 </div>
 
                 {/* Framer Arrow SVG between Before & After */}
                 <div
                   aria-hidden="true"
-                  className="flex h-[48px] w-[48px] shrink-0 items-center justify-center rounded-full bg-[#F5F5F5]"
+                  className="flex shrink-0 items-center justify-center"
                   style={{ color: theme.accentColor }}
                 >
                   <svg
                     width="24"
-                    height="24"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2.4"
+                    strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
+                    <line x1="4" y1="12" x2="20" y2="12" />
+                    <polyline points="13 5 20 12 13 19" />
                   </svg>
                 </div>
 
-                <div className="flex flex-col items-center gap-[8px]">
+                <div className="flex flex-1 justify-center overflow-hidden rounded-[12px]">
                   <FramerImage
                     src={section.beforeAfter.afterImage}
                     alt="After redesign"
-                    sizes="340px"
-                    className="max-h-[340px] w-auto rounded-[12px] object-contain"
+                    sizes="170px"
+                    className="max-h-[303px] w-full h-auto rounded-[12px] object-contain"
                   />
                 </div>
               </div>
@@ -755,7 +899,7 @@ export function CaseStudySectionRenderer({
           {section.atomicNote && (
             <div className="flex flex-col gap-[24px]">
               {section.atomicNote.description && (
-                <p className="max-w-[960px] font-sans text-[16px] leading-[24px] text-[#212529]">
+                <p className="w-full max-w-[1440px] font-sans text-[16px] leading-[24px] text-[#212529]">
                   {section.atomicNote.description}
                 </p>
               )}
@@ -782,14 +926,14 @@ export function CaseStudySectionRenderer({
                 return (
                   <article
                     key={item.title}
-                    className="grid grid-cols-1 items-center gap-[24px] rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:col-span-2 lg:grid-cols-12"
+                    className="grid grid-cols-1 items-center gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:col-span-2 lg:grid-cols-12"
                   >
-                    <div className="lg:col-span-4">
+                    <div className="flex flex-col justify-center self-center lg:col-span-4">
                       <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
                         {item.title}
                       </h3>
                     </div>
-                    <div className="grid grid-cols-1 gap-[24px] sm:grid-cols-2 lg:col-span-8">
+                    <div className="grid grid-cols-1 gap-[24px] md:grid-cols-2 lg:col-span-8">
                       {item.videos?.map((vSrc, i) => (
                         <video
                           key={vSrc}
@@ -835,10 +979,16 @@ export function CaseStudySectionRenderer({
                 );
               }
 
+              const isSingleHalfVideo =
+                !item.fullWidth && item.videos && item.videos.length === 1;
+              const borderColor =
+                section.borderColor || theme.borderColor || "#5A5AFF";
+
               return (
                 <BentoCard
                   key={item.title}
                   title={item.title}
+                  titleAlign="center"
                   colSpan={item.fullWidth ? 2 : 1}
                 >
                   {item.videos && item.videos.length > 0 && (
@@ -847,28 +997,41 @@ export function CaseStudySectionRenderer({
                         item.videos.length > 1 ? "md:grid-cols-2" : ""
                       }`}
                     >
-                      {item.videos.map((vSrc, i) => (
-                        <video
-                          key={vSrc}
-                          src={encodeURI(vSrc)}
-                          aria-label={`${item.title} interaction demonstration ${
-                            item.videos && item.videos.length > 1 ? i + 1 : ""
-                          }`}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          controls
-                          className="w-full rounded-[16px] object-contain"
-                          style={{
-                            border: `2px solid ${
-                              section.borderColor ||
-                              theme.borderColor ||
-                              "#5A5AFF"
-                            }`,
-                          }}
-                        />
-                      ))}
+                      {item.videos.map((vSrc, i) =>
+                        isSingleHalfVideo ? (
+                          <div
+                            key={vSrc}
+                            className="aspect-[1.83/1] w-full overflow-hidden rounded-[16px]"
+                            style={{ border: `2px solid ${borderColor}` }}
+                          >
+                            <video
+                              src={encodeURI(vSrc)}
+                              aria-label={`${item.title} interaction demonstration`}
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              controls
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
+                        ) : (
+                          <video
+                            key={vSrc}
+                            src={encodeURI(vSrc)}
+                            aria-label={`${item.title} interaction demonstration ${
+                              item.videos && item.videos.length > 1 ? i + 1 : ""
+                            }`}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            controls
+                            className="w-full rounded-[16px] object-contain"
+                            style={{ border: `2px solid ${borderColor}` }}
+                          />
+                        )
+                      )}
                     </div>
                   )}
                 </BentoCard>

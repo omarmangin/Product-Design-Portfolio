@@ -40,13 +40,13 @@ export function BentoSection({
     <section
       id={id}
       aria-labelledby={resolvedHeadingId}
-      className={`${paddingClass} flex w-full flex-col items-center ${
+      className={`${paddingClass} flex w-full min-w-0 flex-col items-center overflow-x-hidden ${
         variant === "brand" ? "gap-[40px] lg:gap-[64px]" : "gap-[24px]"
       } ${className}`}
       style={gradient ? { background: gradient } : undefined}
     >
       <div
-        className={`flex w-full max-w-[1440px] flex-col ${
+        className={`flex w-full min-w-0 max-w-[1440px] flex-col ${
           variant === "brand" ? "gap-[40px] lg:gap-[64px]" : "gap-[24px]"
         }`}
       >
@@ -65,7 +65,7 @@ export function BentoSection({
             )}
             {description && (
               <p
-                className={`max-w-[960px] font-sans text-[16px] font-normal leading-[24px] ${
+                className={`w-full max-w-[1440px] font-sans text-[16px] font-normal leading-[24px] ${
                   isInverse ? "text-[#F8F9FB]" : "text-[#212529]"
                 }`}
               >
@@ -131,6 +131,7 @@ interface BentoCardProps {
   title?: string;
   titleColor?: string;
   titleTag?: "h2" | "h3" | "h4";
+  titleAlign?: "left" | "center";
   description?: string;
   colSpan?: 1 | 2 | 3;
   variant?: "surface" | "glass" | "subtle";
@@ -146,6 +147,7 @@ export function BentoCard({
   title,
   titleColor,
   titleTag = "h3",
+  titleAlign = "left",
   description,
   colSpan = 1,
   variant = "surface",
@@ -171,13 +173,15 @@ export function BentoCard({
 
   return (
     <Component
-      className={`flex flex-col justify-start gap-[16px] rounded-[24px] p-[24px] ${surfaceClass} ${spanClass} ${className}`}
+      className={`flex flex-col justify-start gap-[16px] overflow-hidden rounded-[24px] p-[24px] ${surfaceClass} ${spanClass} ${className}`}
     >
       {(title || description) && (
         <div className="flex flex-col gap-[8px]">
           {title && (
             <HeadingTag
-              className="font-heading text-[24px] font-bold leading-[32px]"
+              className={`font-heading text-[24px] font-bold leading-[32px] ${
+                titleAlign === "center" ? "text-center" : ""
+              }`}
               style={titleColor ? { color: titleColor } : undefined}
             >
               {title}

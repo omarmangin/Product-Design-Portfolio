@@ -11,6 +11,12 @@ All site copy, metadata, and case studies live in this `content/` directory so y
 
 ## Adding a New Case Study
 
-1. Copy `content/case-studies/_template.json` to `content/case-studies/<your-new-slug>.json`.
-2. Place your project images/videos under `public/assets/<Project Folder>/`.
-3. Update `"slug"`, `"order"`, `"featuredOnHome"`, `"theme"`, and compose any combination of section blocks in `"sections"` (`"about"`, `"challenges"`, `"split-cards"`, `"design-showcase"`, `"cards-grid"`, `"video-showcase"`, `"results"`).
+1. Copy `content/case-studies/_template.json` to `content/case-studies/<your-new-slug>.json` (and optional `.mdx` mirror).
+2. Place your project images/videos under `public/assets/<Project Folder>/` (and record intrinsic dimensions in `src/lib/asset-dimensions.ts`).
+3. Update `"slug"`, `"order"`, `"featuredOnHome"`, `"theme"`, and compose any combination of section blocks in `"sections"` (`"about"`, `"challenges"`, `"split-cards"`, `"design-showcase"`, `"cards-grid"`, `"research-showcase"`, `"iterations-showcase"`, `"design-system-showcase"`, `"video-showcase"`, `"results"`).
+
+## Responsive Breakpoints & Media Guidelines
+
+- **Breakpoints:** Layouts follow Framer's 4 breakpoints (`Phone < 744px`, `Tablet md: 744px`, `Desktop 2 lg: 1024px`, `Desktop xl: 1280px`, `maxWidth: 1440px`).
+- **Hero Images:** 3-image heroes (`heroLayout: "three-equal"`) and device collages (`"moov-devices"`) bleed past section padding to the viewport edges and progressively reveal more as screen width widens.
+- **Slideshow & Carousel Titles:** Keep slide titles concise (up to 2 lines); `Slideshow.tsx` reserves 2 lines (`min-h-[48px]`) and locks a uniform media aspect ratio per carousel so cards never change height across slides.

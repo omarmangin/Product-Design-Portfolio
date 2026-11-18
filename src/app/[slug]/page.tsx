@@ -76,13 +76,13 @@ export default async function CaseStudyPage({
   return (
     <div
       id="hero"
-      className="flex min-h-screen w-full flex-col items-center bg-[#F5F5F5]"
+      className="flex min-h-screen w-full flex-col items-center overflow-x-clip bg-[#F5F5F5]"
     >
       <Header author={site.author} nav={site.nav} />
 
       <main
         id="main-content"
-        className="flex w-full flex-1 flex-col items-center"
+        className="flex w-full min-w-0 flex-1 flex-col items-center"
       >
         {/* Hero Section */}
         <section
@@ -97,7 +97,7 @@ export default async function CaseStudyPage({
             >
               {study.title}
             </h1>
-            <p className="max-w-[960px] font-heading text-[24px] font-normal leading-[32px] text-[#F8F9FB]">
+            <p className="w-full max-w-[1440px] font-heading text-[24px] font-normal leading-[32px] text-[#F8F9FB]">
               {study.subtitle}
             </p>
           </div>
@@ -115,11 +115,11 @@ export default async function CaseStudyPage({
                   />
                 </div>
               ) : study.heroLayout === "moov-devices" ? (
-                /* Horizontal non-stacking device collage matching Framer node Ymg0V2Prd */
-                <div className="mx-auto flex w-full max-w-[1440px] flex-row items-center justify-center gap-[12px] overflow-hidden sm:gap-[16px]">
-                  {/* Tablet left (300x429 ratio) */}
+                /* Horizontal full-bleed device collage matching Framer node Ymg0V2Prd */
+                <div className="flex w-max shrink-0 flex-row items-center justify-center gap-[12px] py-1 md:gap-[16px]">
+                  {/* Tablet left */}
                   {study.heroImages[0] && (
-                    <div className="w-[21%] min-w-[110px] max-w-[300px] shrink-0">
+                    <div className="w-[200px] shrink-0 md:w-[220px] lg:w-[300px]">
                       <FramerImage
                         src={study.heroImages[0]}
                         alt={`${study.title} tablet view`}
@@ -129,9 +129,9 @@ export default async function CaseStudyPage({
                       />
                     </div>
                   )}
-                  {/* Desktop center (900x523 ratio) */}
+                  {/* Desktop center */}
                   {study.heroImages[1] && (
-                    <div className="w-[63%] min-w-[260px] max-w-[900px] shrink-0">
+                    <div className="w-[600px] shrink-0 md:w-[653px] lg:w-[900px]">
                       <FramerImage
                         src={study.heroImages[1]}
                         alt={`${study.title} desktop view`}
@@ -141,43 +141,43 @@ export default async function CaseStudyPage({
                       />
                     </div>
                   )}
-                  {/* Phone right (189x364 ratio) */}
+                  {/* Phone right */}
                   {study.heroImages[2] && (
-                    <div className="w-[13.5%] min-w-[70px] max-w-[189px] shrink-0">
+                    <div className="w-[125px] shrink-0 md:w-[138px] lg:w-[189px]">
                       <FramerImage
                         src={study.heroImages[2]}
                         alt={`${study.title} mobile view`}
                         priority
-                        sizes="190px"
+                        sizes="189px"
                         className="w-full h-auto object-contain drop-shadow-[0px_8px_16px_rgba(0,0,0,0.2)]"
                       />
                     </div>
                   )}
                 </div>
               ) : (
-                /* Framer 3-image horizontal stack (never stacks vertically; side images bleed/clip off viewport on Tablet & Mobile like node aJs3OVAduIkEf8JA71) */
-                <div className="mx-auto flex w-full items-center justify-center overflow-hidden">
-                  <div className="flex w-[225%] min-w-[760px] max-w-[1744px] shrink-0 flex-row items-center justify-center gap-[16px] sm:w-[175%] lg:w-[115%] xl:w-full">
-                    {study.heroImages.map((imgSrc, idx) => {
-                      const isCenter = idx === 1;
-                      return (
-                        <div
-                          key={imgSrc}
-                          className={`overflow-hidden rounded-[8px] ${
-                            isCenter ? "flex-[1.212]" : "flex-[1]"
-                          }`}
-                        >
-                          <FramerImage
-                            src={imgSrc}
-                            alt={`${study.title} hero interface preview ${idx + 1}`}
-                            priority
-                            sizes="(max-width: 768px) 80vw, 646px"
-                            className="w-full h-auto rounded-[8px] object-contain drop-shadow-[0px_4px_8px_rgba(0,0,0,0.16)]"
-                          />
-                        </div>
-                      );
-                    })}
-                  </div>
+                /* Framer 3-image horizontal full-bleed row overflowing section padding to viewport edges */
+                <div className="flex w-max shrink-0 flex-row items-center justify-center gap-[16px] py-1">
+                  {study.heroImages.map((imgSrc, idx) => {
+                    const isCenter = idx === 1;
+                    return (
+                      <div
+                        key={imgSrc}
+                        className={`shrink-0 overflow-hidden rounded-[8px] ${
+                          isCenter
+                            ? "w-[360px] md:w-[565px] lg:w-[646px]"
+                            : "w-[230px] md:w-[383px] lg:w-[533px]"
+                        }`}
+                      >
+                        <FramerImage
+                          src={imgSrc}
+                          alt={`${study.title} hero interface preview ${idx + 1}`}
+                          priority
+                          sizes="(max-width: 743px) 360px, (max-width: 1023px) 565px, 646px"
+                          className="w-full h-auto rounded-[8px] object-contain drop-shadow-[0px_4px_8px_rgba(0,0,0,0.16)]"
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </>

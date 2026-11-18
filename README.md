@@ -72,7 +72,12 @@ A Next.js App Router + Tailwind CSS v4 product design portfolio featuring an MDX
 - **Card Radius (`--radius-card`):** `24px`
 - **Media Radius (`--radius-media`):** `16px`
 - **Pill Radius (`--radius-pill`):** `60px`
-- **Responsive Breakpoints:** Mobile (`< 744px`), Tablet (`744px`), Desktop 2 (`1024px`), Desktop (`1280px`), max container width `1440px`.
+- **Responsive Breakpoints (`src/app/globals.css` `@theme inline`):**
+  - **Phone (base `< 744px`, ref `390px`):** Section padding `40px 16px`, hero side-images bleed to viewport edges (`230px / 360px / 230px`).
+  - **Tablet (`md: 744px–1023.98px`, ref `744px`):** Section padding `40px 32px`, hero images `383px / 565px / 383px`.
+  - **Desktop 2 (`lg: 1024px–1279.98px`, ref `1024px`):** Section padding `40px` (Hero `48px 40px`), hero images `533px / 646px / 533px`.
+  - **Desktop (`xl: >= 1280px`, ref `1280px`):** Section padding `40px 80px` (Hero `48px 80px`), max content container `1440px` (`2xl: 1440px`).
+- **Carousels & Slideshows:** Reserve 2 lines of slide heading copy (`min-h-[48px]`) and lock a uniform media stage aspect ratio per carousel so slide heights never jump; include clickable prev/next chevrons, keyboard `ArrowLeft`/`ArrowRight`, and horizontal touch/pointer scrolling.
 
 ---
 
