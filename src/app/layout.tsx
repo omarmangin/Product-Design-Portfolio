@@ -107,7 +107,6 @@ export default function RootLayout({
         ],
         sameAs: [
           "https://www.linkedin.com/in/omar-mangin",
-          "https://www.linkedin.com/in/omarmangin/",
         ],
       },
       ...studies.map((study) => ({
