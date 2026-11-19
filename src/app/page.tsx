@@ -1,31 +1,34 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { HowIBuildWithAI } from "@/components/HowIBuildWithAI";
 import { ProjectCard } from "@/components/ProjectCard";
 import { BentoGrid } from "@/components/ui/BentoGrid";
 import { getAllCaseStudies, getSiteConfig } from "@/lib/content";
 
+const HOME_TITLE =
+  "Omar Mangin | Senior Product Designer · AI Systems & Agentic UX";
+const HOME_DESCRIPTION =
+  "Senior Product Designer specializing in end-to-end SaaS, design systems, AI & multi-agent UX, and WCAG 2.2 AA accessibility. Previously at Microsoft and Level Access.";
+
 export const metadata: Metadata = {
-  title: "Omar Mangin — Product Designer",
-  description:
-    "Product design portfolio of Omar Mangin — systems thinking, conversational AI UX, and WCAG 2.2 AA accessible product design.",
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   openGraph: {
-    title: "Omar Mangin — Product Designer",
-    description:
-      "Product design portfolio of Omar Mangin — systems thinking, conversational AI UX, and WCAG 2.2 AA accessible product design.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     type: "website",
     images: [
       {
         url: "/assets/Brand/social-og.png",
-        alt: "Omar Mangin Product Design Portfolio",
+        alt: HOME_TITLE,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omar Mangin — Product Designer",
-    description:
-      "Product design portfolio of Omar Mangin — systems thinking, conversational AI UX, and WCAG 2.2 AA accessible product design.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: ["/assets/Brand/social-og.png"],
   },
 };
@@ -37,47 +40,58 @@ export default function HomePage() {
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center bg-[#F5F5F5]">
-      <Header author={site.author} nav={site.nav} />
+      <Header author={site.author} nav={site.nav} socials={site.socials} />
 
       <main
         id="main-content"
         className="flex w-full flex-1 flex-col items-center"
       >
-        {/* Intro / Bio Section */}
+        {/* Intro / Positioning Hero Section */}
         <section
           aria-labelledby="home-intro-heading"
-          className="section-padding flex w-full flex-col items-center gap-[24px]"
+          className="section-padding flex w-full flex-col items-center gap-[20px]"
         >
-          <div className="flex w-full max-w-[1440px] flex-col gap-[24px]">
+          <div className="flex w-full max-w-[1440px] flex-col gap-[16px]">
             <h1
               id="home-intro-heading"
-              className="font-display text-[40px] font-normal leading-[1.4] tracking-[-0.04em] text-[#212529]"
+              className="w-full font-display text-[32px] font-normal leading-[1.25] tracking-[-0.04em] text-[#212529] md:text-[40px]"
             >
-              {site.home.greeting}
+              {site.home.headline}
             </h1>
-            <div className="flex flex-col gap-[20px]">
-              {site.home.bio.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="font-sans text-[16px] font-normal leading-[24px] text-[#212529]"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+
+            <p className="w-full font-sans text-[16px] font-normal leading-[26px] text-[#212529] md:text-[18px] md:leading-[28px]">
+              {site.home.subheadline}
+            </p>
+
+            {/* Discrete Proof Strip */}
+            {site.home.proofPills && site.home.proofPills.length > 0 && (
+              <ul
+                aria-label="Key career highlights"
+                className="flex flex-wrap gap-[8px] pt-[4px] list-none p-0 m-0"
+              >
+                {site.home.proofPills.map((pill) => (
+                  <li
+                    key={pill}
+                    className="rounded-[60px] bg-[#E9ECEF] px-[14px] py-[6px] font-sans text-[13px] font-medium leading-[18px] text-[#495057]"
+                  >
+                    {pill}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </section>
 
-        {/* Bento Projects Grid Section */}
+        {/* Bento Projects Grid Section (4 Flagship Case Studies in 4x1 row on Desktop) */}
         <section
           aria-labelledby="featured-projects-heading"
           className="grid-wrapper-padding flex w-full justify-center"
         >
           <h2 id="featured-projects-heading" className="sr-only">
-            Featured Product Design Projects
+            Featured product design case studies
           </h2>
           <BentoGrid
-            columns={2}
+            columns={4}
             asList
             ariaLabel="Featured product design case studies"
           >
@@ -87,11 +101,17 @@ export default function HomePage() {
                   study={study}
                   priority={idx < 4}
                   headingLevel="h3"
+                  showOutcome
                 />
               </li>
             ))}
           </BentoGrid>
         </section>
+
+        {/* AI Workflow & Prototyping Proof Section */}
+        <div className="mt-[24px] flex w-full flex-col items-center md:mt-[32px]">
+          <HowIBuildWithAI aiWorkflow={site.aiWorkflow} />
+        </div>
       </main>
 
       <Footer

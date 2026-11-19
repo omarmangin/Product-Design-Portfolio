@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { HowIBuildWithAI } from "@/components/HowIBuildWithAI";
 import { BentoCard, BentoGrid, BentoSection } from "@/components/ui/BentoGrid";
 import { getAboutContent, getSiteConfig } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About me",
   description:
-    "About Omar Mangin — Product Designer specializing in systems thinking, conversational AI UX, and WCAG 2.2 AA digital accessibility.",
+    "About Omar Mangin, Senior Product Designer specializing in systems thinking, conversational AI UX, and WCAG 2.2 AA digital accessibility.",
   openGraph: {
     title: "About me | Omar Mangin",
     description:
-      "About Omar Mangin — Product Designer specializing in systems thinking, conversational AI UX, and WCAG 2.2 AA digital accessibility.",
+      "About Omar Mangin, Senior Product Designer specializing in systems thinking, conversational AI UX, and WCAG 2.2 AA digital accessibility.",
     type: "profile",
     images: [
       {
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About me | Omar Mangin",
     description:
-      "About Omar Mangin — Product Designer specializing in systems thinking, conversational AI UX, and WCAG 2.2 AA digital accessibility.",
+      "About Omar Mangin, Senior Product Designer specializing in systems thinking, conversational AI UX, and WCAG 2.2 AA digital accessibility.",
     images: ["/assets/framer/xAqjhbyCb3R1ILsiQUHqIhJM.jpeg"],
   },
 };
@@ -39,97 +40,50 @@ export default function AboutMePage() {
       id="hero"
       className="flex min-h-screen w-full flex-col items-center bg-[#F5F5F5]"
     >
-      <Header author={site.author} nav={site.nav} />
+      <Header author={site.author} nav={site.nav} socials={site.socials} />
 
       <main
         id="main-content"
         className="flex w-full flex-1 flex-col items-center"
       >
-        {/* Bio & Portrait Section */}
+        {/* Bio & Portrait Section (Horizontal with portrait on left) */}
         <section
           aria-labelledby="about-greeting-heading"
           className="section-padding flex w-full flex-col items-center gap-[24px]"
         >
-          <div className="flex w-full max-w-[1440px] flex-col gap-[24px]">
+          <div className="flex w-full max-w-[1440px] flex-col items-start gap-[24px] md:flex-row md:items-center md:gap-[40px]">
             {about.portrait && (
-              <div className="relative h-[220px] w-[220px] overflow-hidden rounded-[200px] bg-white shadow-sm sm:h-[300px] sm:w-[300px]">
+              <div className="relative h-[200px] w-[200px] shrink-0 overflow-hidden rounded-[200px] bg-white shadow-sm sm:h-[240px] sm:w-[240px] lg:h-[260px] lg:w-[260px]">
                 <Image
                   src={about.portrait}
                   alt="Portrait of Omar Mangin"
                   fill
                   priority
-                  sizes="300px"
+                  sizes="(max-width: 639px) 200px, (max-width: 1023px) 240px, 260px"
                   quality={85}
                   className="object-cover"
                 />
               </div>
             )}
 
-            <div className="flex flex-wrap items-center justify-between gap-[24px]">
+            <div className="flex flex-1 flex-col gap-[16px]">
               <h1
                 id="about-greeting-heading"
-                className="font-display text-[32px] font-normal leading-[1.4] text-[#212529]"
+                className="font-display text-[32px] font-normal leading-[1.3] text-[#212529]"
               >
                 {about.greeting}
               </h1>
-              <nav aria-label="Direct contact links">
-                <ul className="flex items-center gap-[32px] list-none p-0 m-0">
-                  {site.socials.map((social) => (
-                    <li key={social.platform}>
-                      <a
-                        href={social.href}
-                        target={
-                          social.platform !== "email" ? "_blank" : undefined
-                        }
-                        rel={
-                          social.platform !== "email"
-                            ? "noopener noreferrer"
-                            : undefined
-                        }
-                        aria-label={
-                          social.platform !== "email"
-                            ? `${social.label} (opens in a new tab)`
-                            : `Send an email (${social.label})`
-                        }
-                        className="inline-flex rounded-[8px] p-1 text-[#212529] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6]"
-                      >
-                        {social.platform === "linkedin" ? (
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            aria-hidden="true"
-                          >
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                          </svg>
-                        ) : (
-                          <svg
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            aria-hidden="true"
-                          >
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
-                          </svg>
-                        )}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
 
-            <div className="flex flex-col gap-[20px]">
-              {about.bio.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="font-sans text-[16px] font-normal leading-[24px] text-[#212529]"
-                >
-                  {paragraph}
-                </p>
-              ))}
+              <div className="flex flex-col gap-[16px]">
+                {about.bio.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="font-sans text-[16px] font-normal leading-[24px] text-[#212529]"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -138,6 +92,9 @@ export default function AboutMePage() {
         <BentoSection heading={about.focus.heading} headingId="about-focus">
           <BentoCard description={about.focus.body} />
         </BentoSection>
+
+        {/* How I Build with AI Section */}
+        <HowIBuildWithAI aiWorkflow={site.aiWorkflow} />
 
         {/* My Mentors Section */}
         <BentoSection heading={about.mentors.heading} headingId="about-mentors">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CaseStudySectionRenderer } from "@/components/CaseStudySectionRenderer";
+import { ExecutiveSummaryCard } from "@/components/ExecutiveSummaryCard";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { FramerImage } from "@/components/ui/FramerImage";
@@ -9,6 +10,9 @@ import {
   getCaseStudyBySlug,
   getSiteConfig,
 } from "@/lib/content";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://omarmangin.com";
 
 export function generateStaticParams() {
   const studies = getAllCaseStudies();
@@ -29,14 +33,15 @@ export async function generateMetadata({
   }
   return {
     title: study.title,
-    description: study.subtitle,
+    description: study.cardOutcomeSummary || study.subtitle,
+    keywords: study.keywords || study.domainTags,
     robots: {
       index: true,
       follow: true,
     },
     openGraph: {
       title: study.title,
-      description: study.subtitle,
+      description: study.cardOutcomeSummary || study.subtitle,
       type: "article",
       images: [
         {
@@ -48,7 +53,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: study.title,
-      description: study.subtitle,
+      description: study.cardOutcomeSummary || study.subtitle,
       images: [study.thumbnail],
     },
   };
@@ -68,131 +73,127 @@ export default async function CaseStudyPage({
 
   const site = getSiteConfig();
   const allStudies = getAllCaseStudies();
-  // Show the same cases as on Home, minus the one currently open
   const otherProjects = allStudies.filter(
     (s) => s.featuredOnHome && s.slug !== study.slug
   );
+
+  const caseStudyJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: study.title,
+    headline: study.subtitle,
+    description: study.cardOutcomeSummary || study.subtitle,
+    url: `${SITE_URL}/${study.slug}`,
+    keywords: (study.keywords || study.domainTags || []).join(", "),
+    temporalCoverage: study.timelineBadge,
+    author: {
+      "@type": "Person",
+      name: site.author,
+      jobTitle: "Senior Product Designer · AI Systems & Agentic UX",
+      url: SITE_URL,
+    },
+  };
 
   return (
     <div
       id="hero"
       className="flex min-h-screen w-full flex-col items-center overflow-x-clip bg-[#F5F5F5]"
     >
-      <Header author={site.author} nav={site.nav} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(caseStudyJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      <Header author={site.author} nav={site.nav} socials={site.socials} />
 
       <main
         id="main-content"
         className="flex w-full min-w-0 flex-1 flex-col items-center"
       >
-        {/* Hero Section */}
-        <section
-          aria-labelledby="case-study-title"
-          className="hero-padding flex w-full flex-col items-center gap-[24px] overflow-hidden lg:gap-[32px]"
-          style={{ background: study.theme.gradient }}
-        >
-          <div className="flex w-full max-w-[1440px] flex-col gap-[16px]">
-            <h1
-              id="case-study-title"
-              className="font-display text-[40px] font-normal leading-[1.25] tracking-[-0.04em] text-[#F8F9FB]"
-            >
-              {study.title}
-            </h1>
-            <p className="w-full max-w-[1440px] font-heading text-[24px] font-normal leading-[32px] text-[#F8F9FB]">
-              {study.subtitle}
-            </p>
-          </div>
+        <article className="flex w-full min-w-0 flex-col items-center">
+          {/* Hero Section */}
+          <section
+            aria-labelledby="case-study-title"
+            className="hero-padding flex w-full flex-col items-center gap-[24px] overflow-hidden lg:gap-[32px]"
+            style={{ background: study.theme.gradient }}
+          >
+            <div className="flex w-full max-w-[1440px] flex-col gap-[16px]">
+              <h1
+                id="case-study-title"
+                className="font-display text-[40px] font-normal leading-[1.25] tracking-[-0.04em] text-[#F8F9FB]"
+              >
+                {study.title}
+              </h1>
+              <p className="w-full max-w-[1440px] font-heading text-[24px] font-normal leading-[32px] text-[#F8F9FB]">
+                {study.subtitle}
+              </p>
+            </div>
 
-          {study.heroImages && study.heroImages.length > 0 && (
-            <>
-              {study.heroImages.length === 1 || study.heroLayout === "single" ? (
-                <div className="mx-auto w-full max-w-[1120px] overflow-hidden rounded-[8px]">
-                  <FramerImage
-                    src={study.heroImages[0]}
-                    alt={`${study.title} hero interface preview`}
-                    priority
-                    sizes="(max-width: 1440px) 100vw, 1120px"
-                    className="w-full h-auto rounded-[8px] object-contain drop-shadow-[0px_8px_16px_rgba(0,0,0,0.18)]"
-                  />
-                </div>
-              ) : study.heroLayout === "moov-devices" ? (
-                /* Horizontal full-bleed device collage matching Framer node Ymg0V2Prd */
-                <div className="flex w-max shrink-0 flex-row items-center justify-center gap-[12px] py-1 md:gap-[16px]">
-                  {/* Tablet left */}
-                  {study.heroImages[0] && (
-                    <div className="w-[200px] shrink-0 md:w-[220px] lg:w-[300px]">
-                      <FramerImage
-                        src={study.heroImages[0]}
-                        alt={`${study.title} tablet view`}
-                        priority
-                        sizes="300px"
-                        className="w-full h-auto object-contain drop-shadow-[0px_8px_16px_rgba(0,0,0,0.2)]"
-                      />
-                    </div>
-                  )}
-                  {/* Desktop center */}
-                  {study.heroImages[1] && (
-                    <div className="w-[600px] shrink-0 md:w-[653px] lg:w-[900px]">
-                      <FramerImage
-                        src={study.heroImages[1]}
-                        alt={`${study.title} desktop view`}
-                        priority
-                        sizes="900px"
-                        className="w-full h-auto object-contain drop-shadow-[0px_8px_16px_rgba(0,0,0,0.2)]"
-                      />
-                    </div>
-                  )}
-                  {/* Phone right */}
-                  {study.heroImages[2] && (
-                    <div className="w-[125px] shrink-0 md:w-[138px] lg:w-[189px]">
-                      <FramerImage
-                        src={study.heroImages[2]}
-                        alt={`${study.title} mobile view`}
-                        priority
-                        sizes="189px"
-                        className="w-full h-auto object-contain drop-shadow-[0px_8px_16px_rgba(0,0,0,0.2)]"
-                      />
-                    </div>
-                  )}
-                </div>
-              ) : (
-                /* Framer 3-image horizontal full-bleed row overflowing section padding to viewport edges */
-                <div className="flex w-max shrink-0 flex-row items-center justify-center gap-[16px] py-1">
-                  {study.heroImages.map((imgSrc, idx) => {
-                    const isCenter = idx === 1;
-                    return (
-                      <div
-                        key={imgSrc}
-                        className={`shrink-0 overflow-hidden rounded-[8px] ${
-                          isCenter
-                            ? "w-[360px] md:w-[565px] lg:w-[646px]"
-                            : "w-[230px] md:w-[383px] lg:w-[533px]"
-                        }`}
-                      >
-                        <FramerImage
-                          src={imgSrc}
-                          alt={`${study.title} hero interface preview ${idx + 1}`}
-                          priority
-                          sizes="(max-width: 743px) 360px, (max-width: 1023px) 565px, 646px"
-                          className="w-full h-auto rounded-[8px] object-contain drop-shadow-[0px_4px_8px_rgba(0,0,0,0.16)]"
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </>
+            {study.heroImages && study.heroImages.length > 0 && (
+              <>
+                {study.heroImages.length === 1 ||
+                study.heroLayout === "single" ? (
+                  <div className="mx-auto w-full max-w-[1120px] overflow-hidden rounded-[8px]">
+                    <FramerImage
+                      src={study.heroImages[0]}
+                      alt={`${study.title} hero interface preview`}
+                      priority
+                      sizes="(max-width: 1440px) 100vw, 1120px"
+                      className="w-full h-auto rounded-[8px] object-contain drop-shadow-[0px_8px_16px_rgba(0,0,0,0.18)]"
+                    />
+                  </div>
+                ) : (
+                  /* Framer 3-image horizontal full-bleed row overflowing section padding to viewport edges */
+                  <div className="flex w-max shrink-0 flex-row items-center justify-center gap-[16px] py-1">
+                    {study.heroImages.map((imgSrc, idx) => {
+                      const isCenter = idx === 1;
+                      return (
+                        <div
+                          key={imgSrc}
+                          className={`shrink-0 overflow-hidden rounded-[8px] ${
+                            isCenter
+                              ? "w-[360px] md:w-[565px] lg:w-[646px]"
+                              : "w-[230px] md:w-[383px] lg:w-[533px]"
+                          }`}
+                        >
+                          <FramerImage
+                            src={imgSrc}
+                            alt={`${study.title} hero interface preview ${idx + 1}`}
+                            priority
+                            sizes="(max-width: 743px) 360px, (max-width: 1023px) 565px, 646px"
+                            className="w-full h-auto rounded-[8px] object-contain drop-shadow-[0px_4px_8px_rgba(0,0,0,0.16)]"
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </>
+            )}
+          </section>
+
+          {/* Above-the-Fold Executive Summary Card */}
+          {study.executiveSummary && (
+            <ExecutiveSummaryCard
+              summary={study.executiveSummary}
+              company={study.company}
+              timeline={study.timelineBadge}
+              roleType={study.roleType}
+            />
           )}
-        </section>
 
-        {/* Dynamic Case Study Bento Sections */}
-        {study.sections.map((section, idx) => (
-          <CaseStudySectionRenderer
-            key={`${section.type}-${idx}`}
-            section={section}
-            theme={study.theme}
-            sectionIndex={idx}
-          />
-        ))}
+          {/* Dynamic Case Study Bento Sections */}
+          {study.sections.map((section, idx) => (
+            <CaseStudySectionRenderer
+              key={`${section.type}-${idx}`}
+              section={section}
+              theme={study.theme}
+              sectionIndex={idx}
+            />
+          ))}
+        </article>
       </main>
 
       <Footer

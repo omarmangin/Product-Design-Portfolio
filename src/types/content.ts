@@ -17,11 +17,25 @@ export interface SiteConfig {
   nav: NavItem[];
   socials: SocialLink[];
   home: {
-    greeting: string;
-    bio: string[];
+    headline: string;
+    subheadline: string;
+    proofPills: string[];
+  };
+  aiWorkflow: {
+    heading: string;
+    description?: string;
+    items: {
+      title: string;
+      description: string;
+    }[];
   };
   footerMessage: string;
 }
+
+export type PrototypeDemoType =
+  | "ai-governance"
+  | "wcag-streaming-chat"
+  | "m365-confidence-store";
 
 export interface SlideItem {
   title: string;
@@ -85,6 +99,17 @@ export type CaseStudySection =
       }[];
       prototypeEmbedUrl?: string;
       prototypeCaption?: string;
+      prototypeDemo?: PrototypeDemoType;
+      prototypeTitle?: string;
+    }
+  | {
+      type: "prototype-embed";
+      heading?: string;
+      description?: string;
+      demoType?: PrototypeDemoType;
+      embedUrl?: string;
+      title?: string;
+      caption?: string;
     }
   | {
       type: "cards-grid";
@@ -226,6 +251,15 @@ export type CaseStudySection =
       };
     };
 
+export interface ExecutiveSummary {
+  role?: string;
+  timeline?: string;
+  roleAndScope: string;
+  coreDecision: string;
+  verifiedOutcome: string;
+  keywords: string[];
+}
+
 export interface CaseStudy {
   slug: string;
   order: number;
@@ -236,6 +270,12 @@ export interface CaseStudy {
   shortTitle?: string;
   subtitle: string;
   timelineBadge: string;
+  company: string;
+  roleType?: string;
+  cardOutcomeSummary: string;
+  domainTags: string[];
+  keywords: string[];
+  executiveSummary?: ExecutiveSummary;
   thumbnail: string;
   thumbnailHover?: string;
   thumbnailDescription: string;

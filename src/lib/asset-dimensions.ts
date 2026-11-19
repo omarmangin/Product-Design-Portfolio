@@ -535,6 +535,14 @@ export const ASSET_DIMENSIONS: Record<string, { width: number; height: number }>
   "/assets/framer/zNZqPEXXH40eA3wlrgaTY2jS4.png": {
     "width": 728,
     "height": 1400
+  },
+  "/assets/Agent store/Search.png": {
+    "width": 696,
+    "height": 445
+  },
+  "/assets/AI agents in M365/Recall.png": {
+    "width": 696,
+    "height": 445
   }
 };
 

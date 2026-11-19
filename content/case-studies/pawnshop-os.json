@@ -1,16 +1,42 @@
 {
   "slug": "pawnshop-os",
-  "order": 5,
+  "order": 4,
   "featuredOnHome": true,
   "showInFooterCarousel": true,
-  "title": "Multiapoyo’s Pawnshop OS",
-  "cardTitle": "Pawnshop OS",
-  "shortTitle": "Pawnshop OS",
-  "subtitle": "A SaaS for administrating and operating pawn shops and more.",
-  "timelineBadge": "2022 - 2024",
+  "title": "Retail finance end-to-end platform",
+  "cardTitle": "Retail finance end-to-end platform",
+  "shortTitle": "Retail finance platform",
+  "subtitle": "End-to-end B2B/B2C SaaS architecture and scalable design system for regulated financial and retail workflows.",
+  "timelineBadge": "Jun 2022 - Jul 2024",
+  "company": "Multiapoyo",
+  "cardOutcomeSummary": "-20% dev time via design system & 3-min faster shop workflows.",
+  "domainTags": [
+    "B2B/B2C SaaS",
+    "Design systems",
+    "Workflows"
+  ],
+  "keywords": [
+    "B2B/B2C SaaS",
+    "Design systems",
+    "Workflow optimization",
+    "Component architecture"
+  ],
+  "executiveSummary": {
+    "role": "Product Designer",
+    "timeline": "June 2022 - July 2024",
+    "roleAndScope": "Product Designer at Multiapoyo (June 2022 - July 2024). Within a 4-person design squad, I led end-to-end UX/UI architecture, on-site shop field testing, engineering handoff across three SaaS platforms (Admin, Ops, Customer), and co-authored the GoldenWeb Design System (V1 & V2).",
+    "coreDecision": "I built a variant-driven, atomic design system (GoldenWeb DS) before scaling feature screens and collapsed multi-screen legacy audits into linear confirmation flows, allowing engineering to absorb a mid-project corporate rebrand without stalling MVP delivery.",
+    "verifiedOutcome": "-20% MVP development cycle time (verified by frontend engineering leadership) and 3 to 4 minute faster product registration and sales (-30% clicks) validated via live shop field testing.",
+    "keywords": [
+      "B2B/B2C SaaS",
+      "Design systems",
+      "Workflow optimization",
+      "Component architecture"
+    ]
+  },
   "thumbnail": "/assets/framer/avmsKP4SvSkdItohGmWTIvSAI.png",
   "thumbnailHover": "/assets/framer/pLuLXr11B628gY0B154Ox9HjM.png",
-  "thumbnailDescription": "An OS for administrating, operating pawnshops… and more.",
+  "thumbnailDescription": "-20% dev time via design system & 3-min faster shop workflows.",
   "theme": {
     "gradient": "linear-gradient(-60deg, #0D166B -2.72%, rgba(90, 90, 255, 1) 84%)",
     "sectionGradient": "linear-gradient(-60deg, #0D166B -3.03%, rgba(90, 90, 255, 1) 55.28%)",
@@ -25,51 +51,44 @@
   ],
   "sections": [
     {
-      "type": "about",
-      "heading": "About the project",
-      "company": "Multiapoyo",
-      "timeline": "2022 - 2024",
-      "role": "UX & UI design, research and user testing in a 4 members team"
-    },
-    {
       "type": "challenges",
-      "heading": "The challenges",
-      "overviewTitle": "Problem",
-      "overviewBody": "Multiapoyo was developing solution for users to administrate and operate pawnshops, that also unlocks an online pawnshop experience for customers. The product is looking to become a SAAS for other companies.",
+      "heading": "The constraint and problem",
+      "overviewTitle": "Regulated multi-role operations under low-tech constraints",
+      "overviewBody": "Multiapoyo needed to modernize legacy lending and retail software into a multi-tenant B2B/B2C SaaS serving branch staff, store administrators, and retail borrowers. Store employees worked on low-resolution 1280x832 terminals, distrusted opaque digital states during cash and collateral transactions, and required zero-training clarity.",
       "items": [
         {
-          "title": "Challenge 1",
-          "description": "Take previous design and UX and adapt it to a new era without completely disrupting the previous one."
+          "title": "High-risk financial accuracy",
+          "description": "Missing confirmation feedback forced staff to double-check completed loans, audits, and cash movements manually."
         },
         {
-          "title": "Challenge 2",
-          "description": "Leave behind old practices, adapt the team to new workflows and show leadership the importance of UX process."
+          "title": "Engineering handoff bottlenecks",
+          "description": "Three interconnected platforms (Admin, Ops, Customer) risked UI drift and slow frontend velocity without shared tokens."
         },
         {
-          "title": "Challenge 3",
-          "description": "Create a design that works for multiple types of users, while preparing for the future expansion of the product."
+          "title": "Mid-project brand pivot",
+          "description": "Leadership introduced an external rebrand post-MVP, requiring rapid visual overhaul without breaking active production logic."
         }
       ]
     },
     {
       "type": "cards-grid",
-      "heading": "The solution",
-      "description": "A 3 platform solution unified by design and branding.",
+      "heading": "Key decisions and tradeoffs: 3-platform SaaS architecture",
+      "description": "I separated administrative configuration from high-velocity floor operations while unifying all three surfaces under shared interaction patterns.",
       "columns": 2,
       "cards": [
         {
-          "title": "Admin platform (B2B)",
-          "description": "For creating and administrating a new or existing pawnshop. Allows users to start from scratch or import their company data.",
+          "title": "Admin platform (B2B tenant control)",
+          "description": "Multi-branch setup, role permissions, and catalog import workflows separated cleanly from daily counter traffic.",
           "image": "/assets/framer/yTH5WgBYfBYKfbXu3rsqhb285Pc.png"
         },
         {
-          "title": "Ops platform",
-          "description": "For employees to operate online and physical shops. An all-in-one solution to buy, sell, audit, and manage products, clients and funds.",
+          "title": "Ops platform (point-of-sale and collateral audits)",
+          "description": "Streamlined counter terminal UI enabling staff to buy, sell, appraise, and audit inventory with 30% fewer clicks.",
           "image": "/assets/framer/5UtJSz2pLluyH1UwKwHbmzEVMI.png"
         },
         {
-          "title": "Customer platform (B2C)",
-          "description": "For customers to interact with the shops, have almost no need to visit a physical shop, and will be able to see all of their information online",
+          "title": "Customer platform (B2C online store and payments)",
+          "description": "Mobile-first portal letting borrowers track loan status, renew terms, and browse merchandise without visiting a branch.",
           "colSpan": 2,
           "horizontalSplit": true,
           "images": [
@@ -80,11 +99,121 @@
       ]
     },
     {
+      "type": "design-system-showcase",
+      "heading": "Design system: GoldenWeb DS V2",
+      "headingColor": "rgb(90, 90, 255)",
+      "description": "Tradeoff: Investing upfront in tokenized Figma component architecture slowed initial wireframing by one sprint, but accelerated overall MVP frontend development by 20% and let us execute a complete post-MVP corporate rebrand seamlessly.",
+      "variant": "default",
+      "versions": [
+        {
+          "typography": {
+            "description": "Field testing on V1 revealed small body text strained branch operators on 1280x832 monitors; in V2 we scaled base legibility up and paired Tragic Grotesk headings with Work Sans UI copy.",
+            "specimens": [
+              {
+                "fontName": "Tragic Grotesk",
+                "size": "32px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Tragic Grotesk",
+                "size": "24px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "20px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "16px",
+                "weightLabel": "Regular",
+                "weight": 400
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "16px",
+                "weightLabel": "Medium",
+                "weight": 500
+              },
+              {
+                "fontName": "Work Sans",
+                "size": "12px",
+                "weightLabel": "Medium",
+                "weight": 500
+              }
+            ]
+          },
+          "colors": {
+            "description": "Migrated from legacy green V1 tokens to vibrant V2 brand tokens tuned explicitly for accessible contrast across financial states.",
+            "groups": [
+              {
+                "title": "Brand and semantic",
+                "swatches": [
+                  "#5A5AFF",
+                  "#E5E5FF",
+                  "#FF6AE8",
+                  "#FFE5FB",
+                  "#30D8FF",
+                  "#D0F6FF",
+                  "#FF6357",
+                  "#FFBFBA"
+                ]
+              },
+              {
+                "title": "Neutrals",
+                "swatches": [
+                  "#2A2C2F",
+                  "#54575C",
+                  "#71767D",
+                  "#E8E9EA",
+                  "#F4F5F5",
+                  "#F9F9F9",
+                  "#FFFFFF"
+                ]
+              }
+            ]
+          },
+          "gridsCard": {
+            "title": "Terminal and mobile grids (1280x832 and 360x800)",
+            "description": "Calibrated breakpoints for low-resolution store desktops and large Android retail handsets.",
+            "image": "/assets/framer/enxVUKEqgdlO0joxvzi4s98.png"
+          },
+          "iconographyCard": {
+            "title": "Standardized Material iconography",
+            "description": "Adopted Material Symbols for rapid dev parity and instant visual recognition across counter operations.",
+            "image": "/assets/framer/e57niS0BBjOS9rNP81vkDqaGSI.png"
+          },
+          "componentsCard": {
+            "title": "Tokenized component architecture (atoms to templates)",
+            "image": "/assets/framer/v9yMpRorXmHGM4FT6Ab94HUMpc.png"
+          }
+        }
+      ],
+      "atomicNote": {
+        "title": "Atomic construction and engineering handoff",
+        "description": "Documented component variants and semantic states directly alongside React engineering leads.",
+        "categories": [
+          {
+            "title": "Atoms and tokens",
+            "description": "Semantic color tokens (#5A5AFF, #2A2C2F, #FFFFFF), accessible contrast scales, and typography presets."
+          },
+          {
+            "title": "Molecules and organisms",
+            "description": "Validated financial input groups, filter selects, inline error tooltips, and directional action controls."
+          }
+        ]
+      }
+    },
+    {
       "type": "research-showcase",
-      "heading": "The research",
+      "heading": "Competitive and field research",
       "leftCard": {
-        "title": "Competition",
-        "description": "We looked into platforms that similarly meet the needs, like:",
+        "title": "Competitive benchmarking",
+        "description": "Benchmarked industry incumbents and commerce workflows to eliminate training overhead:",
         "competitors": [
           {
             "name": "Golden Star",
@@ -110,67 +239,23 @@
       },
       "rightCards": [
         {
-          "title": "User interviews and surveys",
-          "description": "We interviewed business owners, pawnshop staff and customers as our 2 main users."
+          "title": "On-site shop field observation",
+          "description": "Observed branch clerks executing live transactions to compare time-on-task and error recovery against legacy software."
         },
         {
-          "title": "Data research and analysis",
-          "description": "Multiapoyo’s staff and customer behavioral data."
+          "title": "Behavioral and audit data",
+          "description": "Analyzed Multiapoyo support logs and double-entry mistakes to prioritize high-frequency sales and audit flows."
         }
       ]
     },
     {
       "type": "design-showcase",
-      "heading": "Information architecture",
+      "heading": "Operational workflows and engineering handoff",
+      "description": "Due to confidentiality, I can share scoped views of the critical inventory audit, onboarding, and return flows.",
       "flows": [
         {
-          "slides": [
-            {
-              "title": "Sitemap for Ops platform",
-              "image": "/assets/framer/z5xJSFhKMpLLYOGkg6xVLMFIEaY.png"
-            },
-            {
-              "title": "Sitemap for Admin platform",
-              "image": "/assets/framer/PQJgYigW21j77lZsojr45SVODbk.png"
-            },
-            {
-              "title": "Sitemap for customer platform",
-              "image": "/assets/framer/8H92QPUd4Je1pXeJaJsph4qWtt8.png"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "cards-grid",
-      "heading": "The insights",
-      "columns": 2,
-      "accentTitles": true,
-      "cards": [
-        {
-          "title": "Keep it simple",
-          "description": "Employees will go for the simplest, most straightforward process."
-        },
-        {
-          "title": "Security is key",
-          "description": "Guardrails, security and contingency features are a most."
-        },
-        {
-          "title": "Easy switch",
-          "description": "Admin users will feel the need to access Ops version from time to time."
-        },
-        {
-          "title": "Don’t get to techie",
-          "description": "Target customers will have limited access to tech and will rarely trust it."
-        }
-      ]
-    },
-    {
-      "type": "design-showcase",
-      "heading": "The design",
-      "description": "Due to confidentiality, I can only share a limited view of the project. Here are a few examples of the flows and designs our team created.\nI’d be happy to walk you through the details and answer any questions during a call.",
-      "flows": [
-        {
+          "title": "Core counter and compliance workflows",
+          "description": "Replaced nested legacy modals with sequential, reversible audit and product-return flows engineered for zero training.",
           "slides": [
             {
               "title": "Audit selection screen",
@@ -188,37 +273,43 @@
               "title": "Product return process",
               "image": "/assets/framer/clWo1Myo08ME69wZNHNcAjzjGk.png"
             }
+          ],
+          "whatIDid": [
+            "I consolidated redundant verification screens into contextual confirmation banners and structured modal templates.",
+            "I delivered documented component specs, keyboard tab order, and interaction prototypes directly to frontend engineering."
+          ],
+          "impact": [
+            "Cut item registration and sale completion time by 3 to 4 minutes (-30% clicks).",
+            "Reduced frontend MVP development cycle time by 20% via GoldenWeb Design System reuse."
           ]
         }
       ]
     },
     {
       "type": "video-showcase",
-      "heading": "Amazing interaction design",
+      "heading": "Interaction design and feedback states",
       "borderColor": "#5A5AFF",
       "items": [
         {
-          "title": "Pop ups",
-          "fullWidth": true,
+          "title": "Pop-up confirmation guardrails",
           "videos": [
             "/assets/framer/yr9JqaonaxMlveyKeviR75jmAYc.mp4"
           ]
         },
         {
-          "title": "Collapsable menus",
+          "title": "Collapsible navigation density",
           "videos": [
             "/assets/framer/Rx6ZXnsN44RplRsrCkQSotHAajc.mp4"
           ]
         },
         {
-          "title": "Banners",
+          "title": "Persistent transaction banners",
           "videos": [
             "/assets/framer/GXm4825qBmzeyl3RQsjYCgm8.mp4"
           ]
         },
         {
-          "title": "Micro interactions",
-          "horizontalSplit": true,
+          "title": "Micro-interactions and state confirmation",
           "videos": [
             "/assets/framer/QzJU0WNUPRoTwqnxzuZuQLt03Y.mp4",
             "/assets/framer/TnCLTRmNaMlBPAjVPh3nmYMCaBg.mp4"
@@ -228,17 +319,18 @@
     },
     {
       "type": "iterations-showcase",
-      "heading": "The iterations",
+      "heading": "Failure modes and edge cases",
+      "description": "Field testing exposed two critical edge cases: operators doubted whether cash transactions succeeded without persistent status banners, and V1 typography proved too small on low-DPI branch displays.",
       "cards": [
         {
-          "title": "First version",
+          "title": "V1 legacy adaptation",
           "images": [
             "/assets/framer/4RRWhSfX8O1fSTOk1IC4U8fg86U.png",
             "/assets/framer/vgDTbkHX0GZUr5KtW9nCGzpJW10.png"
           ]
         },
         {
-          "title": "Brand redesign",
+          "title": "V2 rebrand and contrast scaling",
           "images": [
             "/assets/framer/iBE9jQ7sKqBUMC2Htzibc3rrlI.png",
             "/assets/framer/jMIMDex7d5EQTD5XBDuZf8ek3oY.png"
@@ -246,79 +338,50 @@
         }
       ],
       "beforeAfter": {
-        "title": "Before vs after",
+        "title": "Before vs. after field validation",
+        "description": "Eliminated duplicate verification dialogs in favor of persistent alert banners and elevated typography.",
         "beforeImage": "/assets/framer/bRRtj8cjasAc23EleGpcrN2I.png",
         "afterImage": "/assets/framer/TrY7Yc6rF0tGxOpUxT5QgfWdZo.png"
       }
     },
     {
       "type": "results",
-      "heading": "The user testing and results",
+      "heading": "Verified outcomes and what I'd do differently",
       "leftColumn": {
-        "title": "User testing",
+        "title": "Operational impact",
         "items": [
           {
-            "number": "1",
-            "description": "Users tested the prototypes on virtual sessions for us to understand expectations and use of the product, the team asked the users to speak their mind out loud."
+            "title": "-20% dev cycle time",
+            "description": "Frontend engineering leadership confirmed the GoldenWeb Design System accelerated MVP build velocity by ~20% while surviving a full post-MVP rebrand."
           },
           {
-            "number": "2",
-            "description": "We interviewed the user about what their experience was, what worked and what didn’t."
-          },
-          {
-            "number": "3",
-            "description": "Field testing, we went to pawn shops to overview the user interacting with a first version of the product in real time and compare it to the previous solution."
+            "title": "3 to 4 min faster flows (-30% clicks)",
+            "description": "Usability and on-site shop field testing cut item registration and checkout time by 3 to 4 minutes and virtually eliminated employee training."
           }
         ]
       },
       "rightColumn": {
-        "title": "Results",
+        "title": "Validation methodology",
         "items": [
           {
-            "title": "Less time for most flows",
-            "description": "After the second user test, we were able to reduce the time and clicks it takes to register a product on the system and to sell a product by 3 to 4 minutes."
+            "title": "Live counter field testing",
+            "description": "Shadowed branch clerks processing live collateral and sales transactions to benchmark speed and error recovery against legacy software."
           },
           {
-            "title": "Less screens, more feedback",
-            "description": "After A/B testing, we got rid of redundant screens and provided key useful feedback using banners, alerts and confirmation screens, missing from the previous solution, that forced users to double check processes that were already completed."
+            "title": "A/B screen and banner testing",
+            "description": "Validated removal of redundant confirmation screens by replacing them with unmistakable inline banners and alerts."
+          }
+        ]
+      },
+      "bottomCard": {
+        "title": "What I'd do differently",
+        "items": [
+          {
+            "title": "Senior retrospective",
+            "description": "I would enforce strict WCAG contrast guardrails before accepting marketing's bright V2 brand palette and standardize Figma component documentation across all four designers from week one. I would also decouple Multiapoyo-specific sub-flows earlier via card sorting so external SaaS tenants received cleaner defaults out of the box."
           }
         ]
       }
-    },
-    {
-      "type": "cards-grid",
-      "heading": "Key takeaways",
-      "columns": 2,
-      "cards": [
-        {
-          "title": "Challenges along the way",
-          "description": "After the MVP was released, a brand design team was introduced, so we had to adapt and pivot our UI to accommodate the new branding.\nWe solved it by creating our own design system from the start so we could update the UI way faster."
-        },
-        {
-          "title": "Conclusion",
-          "description": "I believe the fact that the product is made by industry collaborators set the product apart.\nOur best achieved goal so far has been mostly eliminating the need for software training for shop employees."
-        },
-        {
-          "title": "What I would do differently",
-          "description": "I’ve would do more information architecture if possible, a card sorting for the menu organization, and I would limit some features and contain sub flows that were specific for Multiapoyo but not for the intended purpose of turning the product into a SAAS",
-          "colSpan": 2
-        }
-      ]
-    },
-    {
-      "type": "cards-grid",
-      "heading": "Next steps",
-      "columns": 1,
-      "cards": [
-        {
-          "title": "",
-          "description": "The customer platform is being deeloped, which will allows users to interact directly with the shop online, and even allowing other types of users to compete by selling used products on their own.",
-          "images": [
-            "/assets/framer/dHbrOZDSKZKdcMx7xALAxS86Ng.png",
-            "/assets/framer/fqzbYIPqyvecB7RdxIuNMU2MG04.png"
-          ]
-        }
-      ]
     }
   ]
 }

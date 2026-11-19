@@ -4,14 +4,42 @@
   "order": 3,
   "featuredOnHome": true,
   "showInFooterCarousel": true,
-  "title": "AI Agents in M365",
-  "cardTitle": "AI Agents in M365",
-  "shortTitle": "AI Agents in M365",
-  "subtitle": "Making AI agents easy to find, simple to create, and trusted collaborators.",
-  "timelineBadge": "2024 - 2026",
+  "title": "AI agents and Agent Store in M365",
+  "cardTitle": "AI agents and Agent Store in M365",
+  "shortTitle": "M365 AI agents & Store",
+  "subtitle": "Unifying contextual agent discovery, dedicated Store trust signals, template-first creation, and multi-agent oversight across Microsoft 365.",
+  "timelineBadge": "Aug 2024 - Feb 2026",
+  "company": "Microsoft",
+  "cardOutcomeSummary": "Contextual agent discovery, Agent Store trust UX & multi-agent flows.",
+  "domainTags": [
+    "Multi-agent UX",
+    "Agent Store",
+    "Trust UX"
+  ],
+  "keywords": [
+    "Agent Store architecture",
+    "Multi-agent collaboration",
+    "Contextual discovery",
+    "Trust signals",
+    "Enterprise SaaS"
+  ],
+  "executiveSummary": {
+    "role": "UX & AI Designer",
+    "timeline": "August 2024 - February 2026",
+    "roleAndScope": "UX & AI Designer at Microsoft (August 2024 - February 2026). Within the M365 Copilot and Agents team, I designed in-chat contextual recommendations, architected the dedicated M365 Agent Store and PDP trust hierarchy, introduced template-first Agent Builder flows, and concepted cross-surface agent activity oversight.",
+    "coreDecision": "I replaced passive Teams app catalog browsing with a confidence-calibrated discovery system, pairing just-in-time in-chat agent suggestions with a dedicated, tiered M365 Agent Store so users evaluate provenance and permissions without cognitive overload.",
+    "verifiedOutcome": "Reduced browse-to-activation friction across M365 discovery entry points, improved builder completion in internal usability testing, and shaped Microsoft's assistive-agent UX guidance.",
+    "keywords": [
+      "Agent Store architecture",
+      "Multi-agent collaboration",
+      "Contextual discovery",
+      "Trust signals",
+      "Enterprise SaaS"
+    ]
+  },
   "thumbnail": "/assets/framer/c9vJg1wA4IQvzq8cvStIpbCsSs.png",
   "thumbnailHover": "/assets/framer/kW3mezCo4tx5wtWNtwSMSG6EmgE.png",
-  "thumbnailDescription": "Making AI agents easy to find, simple to create, and trusted collaborators.",
+  "thumbnailDescription": "Contextual agent discovery, Agent Store trust UX & multi-agent flows.",
   "theme": {
     "gradient": "linear-gradient(-60deg, rgb(59, 63, 178) -2.72%, rgb(70, 79, 235) 84%)",
     "sectionGradient": "linear-gradient(-60deg, rgb(59, 63, 178) -2.72%, rgb(70, 79, 235) 84%)",
@@ -26,198 +54,194 @@
   ],
   "sections": [
     {
-      "type": "about",
-      "heading": "About the project",
-      "company": "Microsoft",
-      "timeline": "2024 - 2026",
-      "role": "UX designer, AI designer"
-    },
-    {
       "type": "challenges",
-      "heading": "Challenge",
-      "overviewTitle": "Context",
-      "overviewBody": "I worked on shaping how AI agents become part of everyday work, designing holistic experiences that let people discover the right agent, create their own, and collaborate with agents as trusted teammates. Focused on interaction design, system thinking, and trust-building for AI, ensuring these experiences feel seamless, useful, and human-centered. My impact is measured in 3 stages:",
+      "heading": "The constraint and problem",
+      "overviewTitle": "Catalog fatigue, blank-canvas drop-off, and opaque agent actions",
+      "overviewBody": "Previously, M365 agents were buried inside the dense Teams App Store, forcing enterprise users through uncurated lists without clear provenance or task relevance. Simultaneously, Agent Builder greeted non-developers with an intimidating blank canvas, and active agents executed background tasks with limited user visibility or override controls.",
       "items": [
         {
-          "title": "Discovery",
-          "description": "Helping users explore, find and acquire agents in context through smart recommendations and a curated Agent Store."
+          "title": "Discovery overload",
+          "description": "Users ignored static app directories and distrusted unfamiliar third-party agents without transparent authorship."
         },
         {
-          "title": "Creation",
-          "description": "Making agent creation approachable with template-first flows, vibe coding-style and a simplified builder experience."
+          "title": "Creation abandonment",
+          "description": "Blank-canvas configuration stalled non-technical employees before their first working agent."
         },
         {
-          "title": "Collaboration",
-          "description": "Giving users visibility and control of Agent capabilities that transforms how they collaborate with agents, unlocking new ways to get work done."
+          "title": "Collaboration opacity",
+          "description": "Multi-surface background execution left users unable to inspect, steer, or override agent actions in real time."
         }
       ]
     },
     {
       "type": "design-showcase",
-      "heading": "The designs",
-      "description": "Due to confidentiality, I can only share a limited view of the project. Here are a few examples of the flows and designs our team created.\nI’d be happy to walk you through the details and answer any questions during a call.",
+      "heading": "Key decisions and tradeoffs",
+      "description": "Due to confidentiality, I can share scoped flows spanning my individual ownership across the M365 Agent Store and multi-agent collaboration system.",
       "flows": [
         {
-          "title": "Agent Discovery",
-          "description": "Users were overwhelmed by a growing catalog of agents and unsure which one fit their task. Discovery needed to feel contextual, trustworthy, and lightweight.",
+          "title": "Part 1 · Contextual discovery and M365 Agent Store architecture",
+          "description": "Tradeoff: I rejected keeping agents inside a dense multi-column app grid in favor of a dedicated single-column Agent Store paired with in-chat task suggestions, trading off catalog density for rapid trust scanning and provenance clarity.",
           "slides": [
             {
-              "title": "Task-relevant agent suggestions",
+              "title": "Task-relevant in-chat agent suggestions",
               "image": "/assets/framer/EORYOp7S8WuoGjGqXXyY2P3VuQ.png"
             },
             {
-              "title": "Agent store homepage",
+              "title": "M365 Agent Store homepage",
               "image": "/assets/framer/olAW9B6yWbNsMuRbLrHIabWFeRc.png"
+            },
+            {
+              "title": "Agent Product Details Page (PDP) with trust signals",
+              "image": "/assets/framer/pTYYyIJT5dcS4XW8ufUR6iKTY.png"
+            },
+            {
+              "title": "Store-wide search and filtered discovery",
+              "image": "/assets/framer/cvXlnynuZgie4m1QfaDOCuNgY.png"
             }
           ],
           "whatIDid": [
-            "Designed in-chat recommendations for just-in-time discovery.",
-            "Created all-new Agent Store, entry points and added trust signals."
+            "I designed in-chat agent recommendation cards for just-in-time task discovery without forcing a context switch.",
+            "I architected the dedicated M365 Agent Store single-column layout, PDP capability and provenance hierarchy, and search filters alongside M365 discovery PM and engineering partners."
           ],
           "impact": [
-            "Reduced “catalog fatigue”.",
-            "Increased confidence in agent suggestions."
+            "Shifted discovery from manual list-browsing to explainable, context-driven acquisition.",
+            "Reduced catalog fatigue and raised user confidence through visible publisher verification and clear capability boundaries."
           ]
-        }
-      ]
-    },
-    {
-      "type": "split-cards",
-      "heading": "Considerations",
-      "cards": [
+        },
         {
-          "title": "Response confidence levels",
-          "accentTitle": true,
-          "description": "As the LLM presents recommendations based on user context, different UI is presented to highlight a high-confidence recommendation or be less loud if the confidence level is low.",
-          "image": "/assets/framer/ICyDO4PxVFYQgENciPUCwct8.png"
-        }
-      ]
-    },
-    {
-      "type": "design-showcase",
-      "heading": "",
-      "flows": [
-        {
-          "title": "Agent Creation",
-          "description": "Agent Builder had high drop-off rates; users felt intimidated by a blank canvas. Needed a guided, approachable flow that scales from simple templates to advanced customization.",
+          "title": "Part 2 · Template-first creation and multi-agent collaboration",
+          "description": "Rather than exposing full developer controls upfront, I introduced role-seeded templates in Agent Builder and concepted unified activity oversight across Copilot canvases.",
           "slides": [
             {
-              "title": "Suggested templates",
+              "title": "Suggested Agent Builder templates",
               "image": "/assets/framer/CvL9TjlYcKfCeoXyqY63F7wv54g.png"
             },
             {
               "title": "Personalized pre-created templates",
               "image": "/assets/framer/gfYuVHihmmvQ2bZqGSHpXsukMhY.png"
-            }
-          ],
-          "whatIDid": [
-            "Introduced template-first flow for quick starts.",
-            "Redesigned zero-state with clear guidance."
-          ],
-          "impact": [
-            "Lowered friction for non-dev users.",
-            "Improved completion rates in internal tests."
-          ]
-        },
-        {
-          "title": "Agent Collaboration",
-          "description": "Agents worked invisibly across apps; users lacked oversight and trust. Needed a way to see, steer, and audit agent actions across multiple surfaces.",
-          "slides": [
+            },
             {
-              "title": "Agent activity dashboard",
+              "title": "Cross-surface agent activity dashboard",
               "image": "/assets/framer/JNuzMpRiBJtDXV2qP965783kRHc.png"
             },
             {
-              "title": "In-chat activity overview",
+              "title": "In-chat multi-agent activity overview",
               "image": "/assets/framer/qukE3nf6IDBR5WrrZmL6JK1D90.png"
             }
           ],
           "whatIDid": [
-            "Concepted Agent overview for cross-surface activity.",
-            "Defined task delegation flows for Agents in multiple canvases."
+            "I designed the template-first zero state for Agent Builder so non-developers launch working agents before customizing instructions.",
+            "I concepted the cross-surface Agent Activity overview and task delegation/override flows adopted into M365's assistive agent guidance."
           ],
           "impact": [
-            "Made AI work visible & steerable.",
-            "Influenced Microsoft’s AI Agentic vision.",
-            "Contributed to guidance for assistive agents."
+            "Lowered creation friction for non-technical enterprise users and improved flow completion in internal usability tests.",
+            "Influenced Microsoft's internal multi-agent oversight standards and leadership vision demos."
           ]
+        }
+      ]
+    },
+    {
+      "type": "iterations-showcase",
+      "heading": "Store architecture shift: before vs. after",
+      "description": "Separating AI agents out of the legacy Teams App Store resolved enterprise confusion between traditional SaaS apps and autonomous conversational teammates.",
+      "cards": [
+        {
+          "title": "Before: legacy Teams App Store",
+          "images": [
+            "/assets/framer/rKVCGj8HkxPsQlT61Og7cKC2ac.png"
+          ]
+        },
+        {
+          "title": "After: dedicated M365 Agent Store",
+          "images": [
+            "/assets/framer/olAW9B6yWbNsMuRbLrHIabWFeRc.png"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cards-grid",
+      "heading": "Confidence-building Store tiers",
+      "description": "I structured Store discovery into three predictable tiers, anchoring users in familiar agents before introducing curated and personalized recommendations.",
+      "columns": 2,
+      "cards": [
+        {
+          "title": "1. Quick access to most used agents",
+          "image": "/assets/framer/PJhqlbGwiLc0Ar5v4Mm7WbAKFs0.png"
+        },
+        {
+          "title": "2. Featured and verified agents",
+          "image": "/assets/framer/9Kpxigsql02W1dV1bXtfzzicY.png"
+        },
+        {
+          "title": "3. Tailored role-based recommendations",
+          "colSpan": 2,
+          "horizontalSplit": true,
+          "image": "/assets/framer/BquH0g8gqQi9mIRytJW0KMtjHk.png"
+        }
+      ]
+    },
+    {
+      "type": "split-cards",
+      "heading": "Failure modes and edge cases",
+      "cards": [
+        {
+          "title": "Confidence calibration and cognitive overload guardrails",
+          "accentTitle": true,
+          "description": "Surfacing aggressive recommendation cards on low-confidence intent erodes trust fast. I calibrated UI salience directly to model confidence: high-confidence matches render rich in-chat cards with explicit data-scope provenance and 1-click dismiss or override, medium-confidence matches collapse to quiet inline chips, and low-confidence states fall back silently to curated Store search.",
+          "image": "/assets/framer/ICyDO4PxVFYQgENciPUCwct8.png"
         }
       ]
     },
     {
       "type": "results",
-      "heading": "Results",
+      "heading": "Verified outcomes and what I'd do differently",
       "leftColumn": {
-        "title": "Metrics",
+        "title": "Product and strategic impact",
         "items": [
           {
-            "title": "Higher engagement",
+            "title": "Streamlined discovery and activation",
             "bullets": [
-              "Engagement increased with recommended agents.",
-              "Increased number of agents created per active user."
+              "Transformed fragmented Teams catalog browsing into a dedicated, trust-forward M365 Agent Store paired with contextual in-chat suggestions.",
+              "Eliminated catalog fatigue by foregrounding publisher verification, permissions, and capability summaries directly on agent cards and PDPs."
             ]
           },
           {
-            "title": "Lower drop-off",
+            "title": "Creation velocity and guidance influence",
             "bullets": [
-              "Reduced drop-off from Store browse to agent activation.",
-              "Significant reduction in abandonment during Builder flow after template-first design."
-            ]
-          },
-          {
-            "title": "Positive internal sentiment",
-            "bullets": [
-              "Positive sentiment in leadership demos."
+              "Increased template-first Agent Builder flow completion in internal usability testing for non-developer users.",
+              "Multi-agent oversight patterns shaped Microsoft's broader assistive-agent UX standards and earned strong leadership demo reception."
             ]
           }
         ]
       },
       "rightColumn": {
-        "title": "Next steps",
+        "title": "Next evolution",
         "items": [
           {
-            "title": "Scale discovery",
-            "description": "Explore personalization for agent recommendations and richer context cues to improve trust and relevance."
+            "title": "Role and activity signal personalization",
+            "description": "Deepen recommendation grounding using real-time workspace context while preserving explicit opt-out controls."
           },
           {
-            "title": "Deepen collaboration",
-            "description": "Expand Agent reach with proactive insights and multi-agent coordination."
-          },
+            "title": "Cross-canvas agent handoffs",
+            "description": "Unify Store provenance badges and activity audit trails across Teams, Outlook, and Word."
+          }
+        ]
+      },
+      "bottomCard": {
+        "title": "What I'd do differently",
+        "items": [
           {
-            "title": "Measure and iterate",
-            "description": "Continue tracking engagement, completion rates, and sentiment to refine flows and validate design principles."
+            "title": "Senior retrospective",
+            "description": "I would unify the in-chat recommendation dismissal signal with Store ranking telemetry earlier so rejected agent suggestions never resurfaced across M365 endpoints. I would also push for standardized permission-diff previews inside the first Store beta instead of deferring granular scope controls to follow-up releases."
           }
         ]
       }
-    },
-    {
-      "type": "cards-grid",
-      "heading": "Key takeaways",
-      "columns": 2,
-      "accentTitles": true,
-      "cards": [
-        {
-          "title": "Discovery is powered by trust",
-          "description": "Users ignore catalogs; they respond to timely, explainable suggestions. Context beats quantity."
-        },
-        {
-          "title": "Creating is a confidence curve",
-          "description": "Start simple, then progressively reveal power. Blank canvases kill momentum."
-        },
-        {
-          "title": "Collaboration needs visibility",
-          "description": "AI “coworkers” succeed only when users can see what’s happening and intervene easily."
-        },
-        {
-          "title": "System thinking beats isolated screens",
-          "description": "Designing for AI means orchestrating flows across the system, not just polishing one UI."
-        }
-      ]
     }
   ]
 }
 ---
 
-# AI Agents in M365
+# AI agents and Agent Store in M365
 
-Making AI agents easy to find, simple to create, and trusted collaborators.
+Unifying contextual agent discovery, dedicated Store trust signals, template-first creation, and multi-agent oversight across Microsoft 365.

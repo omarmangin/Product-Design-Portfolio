@@ -4,7 +4,7 @@ import type { CaseStudy } from "@/types/content";
 
 interface ProjectCardProps {
   study: CaseStudy;
-  showDescription?: boolean;
+  showOutcome?: boolean;
   priority?: boolean;
   headingLevel?: "h2" | "h3";
   forcePageLoad?: boolean;
@@ -12,14 +12,21 @@ interface ProjectCardProps {
 
 export function ProjectCard({
   study,
-  showDescription = false,
+  showOutcome = true,
   priority = false,
   headingLevel: HeadingTag = "h3",
   forcePageLoad = false,
 }: ProjectCardProps) {
-  const cardClassName =
-    "group relative flex aspect-[1.28/1] w-full flex-col justify-end overflow-hidden rounded-[16px] bg-[#212529] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.12)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#3B52E6]";
-  const cardAriaLabel = `${study.title} (${study.timelineBadge}) — View case study`;
+  const metaLine = study.company
+    ? `${study.company}${study.roleType ? ` · ${study.roleType}` : ""} · ${study.timelineBadge}`
+    : study.timelineBadge;
+
+  const domainLine = (study.domainTags || []).slice(0, 3).join(" · ");
+  const cardAriaLabel = `${study.cardTitle || study.title} (${metaLine}), View case study`;
+
+  const cardClassName = showOutcome
+    ? "group relative flex aspect-[1.28/1] w-full flex-col justify-end overflow-hidden rounded-[16px] bg-[#212529] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.12)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#3B52E6]"
+    : "group relative flex aspect-[1.28/1] w-full flex-col justify-end overflow-hidden rounded-[16px] bg-[#212529] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.12)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#3B52E6]";
 
   const cardInner = (
     <>
@@ -30,9 +37,13 @@ export function ProjectCard({
         fill
         priority={priority}
         draggable={false}
-        sizes="(max-width: 743px) 100vw, (max-width: 1440px) 50vw, 708px"
+        sizes={
+          showOutcome
+            ? "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+            : "(max-width: 743px) 100vw, (max-width: 1440px) 33vw, 460px"
+        }
         quality={85}
-        className={`object-cover transition-opacity duration-500 ${
+        className={`object-cover object-top transition-opacity duration-500 ${
           study.thumbnailHover ? "group-hover:opacity-0" : ""
         }`}
       />
@@ -45,27 +56,33 @@ export function ProjectCard({
           aria-hidden="true"
           fill
           draggable={false}
-          sizes="(max-width: 743px) 100vw, (max-width: 1440px) 50vw, 708px"
+          sizes={
+            showOutcome
+              ? "(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+              : "(max-width: 743px) 100vw, (max-width: 1440px) 33vw, 460px"
+          }
           quality={80}
-          className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className="object-cover object-top opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
       )}
 
-      {/* Bottom Scrim Overlay: WCAG 2.2 AA compliant contrast (>= 7:1 for white text) */}
+      {/* Translucent Frosted-Glass Bottom Scrim: WCAG 2.2 AA compliant contrast */}
       <div
-        className="relative z-10 flex w-full flex-col px-[24px] py-[16px] backdrop-blur-md"
+        className="relative z-10 flex w-full flex-col gap-[4px] px-[18px] py-[14px] backdrop-blur-md"
         style={{ backgroundColor: "rgba(22, 27, 34, 0.72)" }}
       >
-        <span className="font-heading text-[12px] font-bold leading-[16px] text-white">
-          {study.timelineBadge}
+        <span className="font-sans text-[11px] font-medium leading-[16px] text-[#E9ECEF]">
+          {metaLine}
         </span>
-        <HeadingTag className="font-heading text-[20px] font-bold leading-[32px] text-white">
+
+        <HeadingTag className="font-heading text-[18px] font-bold leading-[24px] text-white">
           {study.cardTitle || study.title}
         </HeadingTag>
-        {showDescription && study.thumbnailDescription && (
-          <p className="mt-1 font-sans text-[16px] font-normal leading-[24px] text-white">
-            {study.thumbnailDescription}
-          </p>
+
+        {showOutcome && domainLine && (
+          <span className="pt-[2px] font-sans text-[11px] font-medium leading-[16px] text-[#DEE2E6]">
+            {domainLine}
+          </span>
         )}
       </div>
     </>

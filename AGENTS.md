@@ -13,6 +13,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Architecture: Set up an MDX content directory for scalable case studies.
 - Accessibility: Enforce strict semantic HTML, proper ARIA labels, and WCAG 2.2 AA contrast compliance.
 - Assets: Reference images exclusively from the `/public/assets` directory.
+- Typography & Capitalization: Enforce **Sentence case** by default across all case study titles, `<h2>`/`<h3>`/`<h4>` headings, card titles, and UI descriptions (preserving proper nouns like `Microsoft`, `Level Access`, `Multiapoyo`, `M365`, `Agent Store`, `Cursor`, `React` and acronyms like `AI`, `UX`, `UI`, `WCAG`, `AA`, `LLM`, `B2B`, `B2C`, `OS`, `ATS`). Reserve **Title Case** strictly for the formal role/identity title (`"Senior Product Designer · AI Systems & Agentic UX"`) and short 1–3 word navigation/button/metadata labels (`"My work"`, `"About me"`, `"Download Resume"`, `"Role & Scope"`, `"Core Decision"`, `"Verified Outcome"`).
 
 # Responsive Breakpoints & Layout Rules (Framer Baseline)
 - **Phone (base `< 744px`, design ref `390px`):** `padding: 40px 16px` (`hero` / `section` / `footer` `40px 16px 24px`).

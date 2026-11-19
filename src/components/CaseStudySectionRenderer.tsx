@@ -1,6 +1,8 @@
 import { BentoCard, BentoGrid, BentoSection } from "@/components/ui/BentoGrid";
 import { CompetitorCarousel } from "@/components/ui/CompetitorCarousel";
 import { FramerImage } from "@/components/ui/FramerImage";
+import { PrototypeEmbed } from "@/components/ui/PrototypeEmbed";
+import { VideoShowcaseSection } from "@/components/VideoShowcaseSection";
 import { getImageDimensions } from "@/lib/asset-dimensions";
 import type { CaseStudy, CaseStudySection } from "@/types/content";
 import { Slideshow } from "./Slideshow";
@@ -348,27 +350,28 @@ export function CaseStudySectionRenderer({
 
           {/* Optional Interactive Prototype Embed */}
           {section.prototypeEmbedUrl && (
-            <div className="mx-auto flex w-full max-w-[896px] flex-col justify-start gap-[16px] rounded-[24px] bg-white p-[24px]">
-              <div className="flex flex-col justify-start gap-[4px]">
-                <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
-                  Interactive prototype
-                </h3>
-                {section.prototypeCaption && (
-                  <span className="font-sans text-[12px] leading-[16px] text-[#495057]">
-                    {section.prototypeCaption}
-                  </span>
-                )}
-              </div>
-              <div className="aspect-video w-full overflow-hidden rounded-[16px] border border-[#5A5AFF]">
-                <iframe
-                  src={section.prototypeEmbedUrl}
-                  title="Interactive Figma Prototype"
-                  className="h-full w-full"
-                  allowFullScreen
-                />
-              </div>
-            </div>
+            <PrototypeEmbed
+              embedUrl={section.prototypeEmbedUrl}
+              title={section.prototypeTitle}
+              caption={section.prototypeCaption}
+            />
           )}
+        </BentoSection>
+      );
+
+    case "prototype-embed":
+      if (!section.embedUrl) return null;
+      return (
+        <BentoSection
+          heading={section.heading}
+          headingId={headingId}
+          description={section.description}
+        >
+          <PrototypeEmbed
+            embedUrl={section.embedUrl}
+            title={section.title}
+            caption={section.caption}
+          />
         </BentoSection>
       );
 
@@ -794,7 +797,7 @@ export function CaseStudySectionRenderer({
                     {ver.typography.specimens.map((spec, sIdx) => (
                       <div
                         key={`${spec.fontName}-${spec.size}-${spec.weightLabel}-${sIdx}`}
-                        className="flex items-center justify-between border-b border-black/5 pb-[8px] last:border-b-0 last:pb-0"
+                        className="grid grid-cols-[1.4fr_0.75fr_1fr] items-center gap-[12px] border-b border-black/5 pb-[8px] text-left last:border-b-0 last:pb-0"
                         style={{
                           fontSize: spec.size,
                           fontWeight: spec.weight,
@@ -866,29 +869,179 @@ export function CaseStudySectionRenderer({
                       title={ver.iconographyCard.title}
                       description={ver.iconographyCard.description}
                     >
-                      <div className="w-full overflow-hidden rounded-[12px]">
-                        <FramerImage
-                          src={ver.iconographyCard.image}
-                          alt={ver.iconographyCard.title}
-                          sizes="(max-width: 768px) 100vw, 680px"
-                          className="w-full h-auto rounded-[12px] object-contain"
-                        />
+                      <div
+                        role="img"
+                        aria-label="Sample of purple Material Design icons on light surface"
+                        className="grid grid-cols-4 gap-[16px] rounded-[12px] bg-[#F8F9FB] p-[24px] text-[#4B4BE6]"
+                      >
+                        {[
+                          <path key="menu" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />,
+                          <path key="check" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />,
+                          <path key="search" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />,
+                          <path key="heart" d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z" />,
+                          <path key="image" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />,
+                          <path key="sync" d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46A7.93 7.93 0 0 0 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74A7.93 7.93 0 0 0 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" />,
+                          <path key="store" d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z" />,
+                          <path key="mail" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z" />,
+                        ].map((iconPath, idx) => (
+                          <div
+                            key={idx}
+                            className="flex h-[56px] items-center justify-center rounded-[12px] bg-white shadow-[0px_1px_3px_rgba(0,0,0,0.06)]"
+                          >
+                            <svg
+                              width="28"
+                              height="28"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              aria-hidden="true"
+                            >
+                              {iconPath}
+                            </svg>
+                          </div>
+                        ))}
                       </div>
                     </BentoCard>
                   )}
                 </BentoGrid>
               )}
 
-              {/* Row 3: Full-width Components Card */}
+              {/* Row 3: Full-width Organized Tokenized Component Architecture */}
               {ver.componentsCard && (
                 <BentoCard title={ver.componentsCard.title}>
-                  <div className="w-full overflow-hidden rounded-[12px]">
-                    <FramerImage
-                      src={ver.componentsCard.image}
-                      alt={ver.componentsCard.title}
-                      sizes="(max-width: 1440px) 100vw, 1160px"
-                      className="mx-auto w-full max-w-[1160px] h-auto rounded-[12px] object-contain"
-                    />
+                  <div
+                    role="region"
+                    aria-label="GoldenWeb DS V2 tokenized component architecture"
+                    className="grid grid-cols-1 gap-[16px] lg:grid-cols-2"
+                  >
+                    {/* 1. Atoms: Buttons & Status */}
+                    <div className="flex flex-col gap-[12px] rounded-[16px] bg-[#F8F9FB] p-[20px]">
+                      <span className="font-heading text-[14px] font-bold text-[#212529]">
+                        Atoms: interactive buttons &amp; status indicators
+                      </span>
+                      <div className="flex flex-wrap items-center gap-[10px]">
+                        <span className="inline-flex items-center rounded-[60px] bg-[#4B4BE6] px-[16px] py-[8px] font-sans text-[13px] font-semibold text-white">
+                          Primary action
+                        </span>
+                        <span className="inline-flex items-center rounded-[60px] border border-[#4B4BE6] bg-white px-[16px] py-[8px] font-sans text-[13px] font-semibold text-[#4B4BE6]">
+                          Secondary
+                        </span>
+                        <span className="inline-flex items-center rounded-[60px] bg-[#E5E5FF] px-[16px] py-[8px] font-sans text-[13px] font-semibold text-[#2A2C2F]">
+                          Subtle
+                        </span>
+                        <span className="inline-flex items-center rounded-[60px] bg-[#C92A2A] px-[16px] py-[8px] font-sans text-[13px] font-semibold text-white">
+                          Destructive
+                        </span>
+                      </div>
+                      <div className="flex flex-wrap items-center gap-[10px] pt-[4px]">
+                        <span className="inline-flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#4B4BE6] font-sans text-[12px] font-bold text-white">
+                          1
+                        </span>
+                        <span className="inline-flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#2B8A3E] font-sans text-[12px] font-bold text-white">
+                          ✓
+                        </span>
+                        <span className="inline-flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#C92A2A] font-sans text-[12px] font-bold text-white">
+                          ✕
+                        </span>
+                        <span className="inline-flex h-[28px] w-[28px] items-center justify-center rounded-full border border-[#CED4DA] bg-white font-sans text-[12px] font-bold text-[#495057]">
+                          2
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 2. Molecules: Search & Form Field States */}
+                    <div className="flex flex-col gap-[12px] rounded-[16px] bg-[#F8F9FB] p-[20px]">
+                      <span className="font-heading text-[14px] font-bold text-[#212529]">
+                        Molecules: search bar &amp; validated input states
+                      </span>
+                      <div className="flex items-center overflow-hidden rounded-[60px] border border-[#CED4DA] bg-white">
+                        <span className="flex-1 px-[16px] py-[8px] font-sans text-[13px] text-[#495057]">
+                          Search inventory, SKUs, or clients...
+                        </span>
+                        <span className="bg-[#4B4BE6] px-[16px] py-[8px] font-sans text-[13px] font-semibold text-white">
+                          Search
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-1 gap-[10px] sm:grid-cols-2">
+                        <div className="rounded-[12px] border-2 border-[#4B4BE6] bg-white px-[12px] py-[8px]">
+                          <span className="block font-sans text-[11px] font-semibold text-[#4B4BE6]">
+                            Focused state
+                          </span>
+                          <span className="font-sans text-[13px] text-[#212529]">
+                            Branch #04 · Active
+                          </span>
+                        </div>
+                        <div className="rounded-[12px] border-2 border-[#C92A2A] bg-white px-[12px] py-[8px]">
+                          <span className="block font-sans text-[11px] font-semibold text-[#C92A2A]">
+                            Validation error
+                          </span>
+                          <span className="font-sans text-[13px] text-[#212529]">
+                            Amount required
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 3. Organisms: Semantic Feedback Banners */}
+                    <div className="flex flex-col gap-[10px] rounded-[16px] bg-[#F8F9FB] p-[20px]">
+                      <span className="font-heading text-[14px] font-bold text-[#212529]">
+                        Organisms: persistent transaction banners
+                      </span>
+                      <div className="flex items-center justify-between rounded-[12px] border border-[#2B8A3E]/25 bg-[#EBFBEE] px-[14px] py-[10px]">
+                        <span className="font-sans text-[13px] font-medium text-[#1B4332]">
+                          ✓ Loan contract #4821 registered
+                        </span>
+                        <span className="font-sans text-[12px] font-semibold text-[#1B4332]">
+                          View receipt
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-[12px] border border-[#C92A2A]/25 bg-[#FFF5F5] px-[14px] py-[10px]">
+                        <span className="font-sans text-[13px] font-medium text-[#7F1D1D]">
+                          ✕ Cash drawer mismatch detected
+                        </span>
+                        <span className="font-sans text-[12px] font-semibold text-[#7F1D1D]">
+                          Audit now
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-[12px] border border-[#4B4BE6]/25 bg-[#EEF2FF] px-[14px] py-[10px]">
+                        <span className="font-sans text-[13px] font-medium text-[#1E1B4B]">
+                          ⓘ Daily branch sync ready
+                        </span>
+                        <span className="font-sans text-[12px] font-semibold text-[#1E1B4B]">
+                          Dismiss
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 4. Templates: Multi-Role Navigation Shells */}
+                    <div className="flex flex-col gap-[10px] rounded-[16px] bg-[#F8F9FB] p-[20px]">
+                      <span className="font-heading text-[14px] font-bold text-[#212529]">
+                        Templates: role-scoped navigation headers
+                      </span>
+                      <div className="flex items-center justify-between rounded-[12px] bg-[#EEF2FF] px-[14px] py-[10px]">
+                        <span className="font-heading text-[13px] font-bold text-[#1E1B4B]">
+                          Admin · Tenant Control
+                        </span>
+                        <span className="rounded-[60px] bg-white px-[10px] py-[3px] font-sans text-[11px] font-semibold text-[#212529]">
+                          Branches · Roles
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-[12px] bg-white px-[14px] py-[10px] border border-black/10">
+                        <span className="font-heading text-[13px] font-bold text-[#212529]">
+                          Ops · Counter POS
+                        </span>
+                        <span className="rounded-[60px] bg-[#F8F9FB] px-[10px] py-[3px] font-sans text-[11px] font-semibold text-[#212529]">
+                          Cash $3,000 · Cart (0)
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-[12px] bg-[#0D166B] px-[14px] py-[10px] text-white">
+                        <span className="font-heading text-[13px] font-bold">
+                          Customer · B2C Portal
+                        </span>
+                        <span className="rounded-[60px] bg-white/15 px-[10px] py-[3px] font-sans text-[11px] font-semibold text-white">
+                          Catalog · Payments
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </BentoCard>
               )}
@@ -919,126 +1072,11 @@ export function CaseStudySectionRenderer({
 
     case "video-showcase":
       return (
-        <BentoSection heading={section.heading} headingId={headingId}>
-          <BentoGrid columns={2}>
-            {section.items.map((item) => {
-              if (item.horizontalSplit) {
-                return (
-                  <article
-                    key={item.title}
-                    className="grid grid-cols-1 items-center gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:col-span-2 lg:grid-cols-12"
-                  >
-                    <div className="flex flex-col justify-center self-center lg:col-span-4">
-                      <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
-                        {item.title}
-                      </h3>
-                    </div>
-                    <div className="grid grid-cols-1 gap-[24px] md:grid-cols-2 lg:col-span-8">
-                      {item.videos?.map((vSrc, i) => (
-                        <video
-                          key={vSrc}
-                          src={encodeURI(vSrc)}
-                          aria-label={`${item.title} demonstration ${i + 1}`}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          controls
-                          className="mx-auto max-h-[360px] w-full rounded-[16px] object-contain"
-                          style={{
-                            border: `2px solid ${
-                              section.borderColor ||
-                              theme.borderColor ||
-                              "#5A5AFF"
-                            }`,
-                          }}
-                        />
-                      ))}
-                      {item.images?.map((imgSrc, i) => (
-                        <div
-                          key={imgSrc}
-                          className="overflow-hidden rounded-[16px]"
-                          style={{
-                            border: `2px solid ${
-                              section.borderColor ||
-                              theme.borderColor ||
-                              "#455CFF"
-                            }`,
-                          }}
-                        >
-                          <FramerImage
-                            src={imgSrc}
-                            alt={`${item.title} preview ${i + 1}`}
-                            sizes="480px"
-                            className="w-full h-auto object-contain"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </article>
-                );
-              }
-
-              const isSingleHalfVideo =
-                !item.fullWidth && item.videos && item.videos.length === 1;
-              const borderColor =
-                section.borderColor || theme.borderColor || "#5A5AFF";
-
-              return (
-                <BentoCard
-                  key={item.title}
-                  title={item.title}
-                  titleAlign="center"
-                  colSpan={item.fullWidth ? 2 : 1}
-                >
-                  {item.videos && item.videos.length > 0 && (
-                    <div
-                      className={`grid grid-cols-1 gap-[24px] ${
-                        item.videos.length > 1 ? "md:grid-cols-2" : ""
-                      }`}
-                    >
-                      {item.videos.map((vSrc, i) =>
-                        isSingleHalfVideo ? (
-                          <div
-                            key={vSrc}
-                            className="aspect-[1.83/1] w-full overflow-hidden rounded-[16px]"
-                            style={{ border: `2px solid ${borderColor}` }}
-                          >
-                            <video
-                              src={encodeURI(vSrc)}
-                              aria-label={`${item.title} interaction demonstration`}
-                              autoPlay
-                              loop
-                              muted
-                              playsInline
-                              controls
-                              className="h-full w-full object-cover"
-                            />
-                          </div>
-                        ) : (
-                          <video
-                            key={vSrc}
-                            src={encodeURI(vSrc)}
-                            aria-label={`${item.title} interaction demonstration ${
-                              item.videos && item.videos.length > 1 ? i + 1 : ""
-                            }`}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            controls
-                            className="w-full rounded-[16px] object-contain"
-                            style={{ border: `2px solid ${borderColor}` }}
-                          />
-                        )
-                      )}
-                    </div>
-                  )}
-                </BentoCard>
-              );
-            })}
-          </BentoGrid>
-        </BentoSection>
+        <VideoShowcaseSection
+          section={section}
+          theme={theme}
+          headingId={headingId}
+        />
       );
 
     case "results":

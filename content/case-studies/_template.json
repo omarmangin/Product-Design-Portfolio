@@ -4,42 +4,62 @@
   "featuredOnHome": true,
   "showInFooterCarousel": true,
   "title": "New Case Study Title",
+  "cardTitle": "New Case Study Title",
+  "shortTitle": "Case Study",
   "subtitle": "One-sentence summary shown in the Hero section.",
   "timelineBadge": "2026",
+  "company": "Company Name",
+  "roleType": "Contract",
+  "cardOutcomeSummary": "1-line Decision/Outcome summary for homepage project card.",
+  "domainTags": [
+    "AI UX",
+    "WCAG 2.2 AA",
+    "Design Systems"
+  ],
+  "keywords": [
+    "AI UX",
+    "WCAG 2.2 AA",
+    "Design Systems"
+  ],
+  "executiveSummary": {
+    "roleAndScope": "Lead Product Designer (Contract) at Company (Dates). I owned...",
+    "coreDecision": "I chose X over Y, trading off Z to achieve...",
+    "verifiedOutcome": "Concrete outcome and validation method.",
+    "keywords": [
+      "AI UX",
+      "WCAG 2.2 AA",
+      "Design Systems"
+    ]
+  },
   "thumbnail": "/assets/Thumbnails/Vision.png",
   "thumbnailHover": "/assets/Thumbnails/Vision 2.png",
   "thumbnailDescription": "Short description for the project thumbnail card.",
   "theme": {
     "gradient": "linear-gradient(-60deg, rgb(0, 163, 224) -2.72%, rgb(0, 43, 73) 84%)",
-    "accentColor": "rgb(0, 163, 224)"
+    "accentColor": "rgb(0, 119, 178)"
   },
+  "heroLayout": "three-equal",
   "heroImages": [
     "/assets/Thumbnails/Vision.png"
   ],
   "sections": [
     {
-      "type": "about",
-      "company": "Company Name",
-      "timeline": "2026",
-      "role": "Lead Product Designer"
-    },
-    {
       "type": "challenges",
-      "heading": "Challenge",
+      "heading": "The Constraint & Problem",
       "overviewTitle": "Context",
-      "overviewBody": "High-level problem statement and background context.",
+      "overviewBody": "High-level problem statement and background constraints.",
       "items": [
         {
-          "title": "Challenge 1",
-          "description": "First core challenge."
+          "title": "Constraint 1",
+          "description": "First core constraint."
         },
         {
-          "title": "Challenge 2",
-          "description": "Second core challenge."
+          "title": "Constraint 2",
+          "description": "Second core constraint."
         },
         {
-          "title": "Challenge 3",
-          "description": "Third core challenge."
+          "title": "Constraint 3",
+          "description": "Third core constraint."
         }
       ]
     }

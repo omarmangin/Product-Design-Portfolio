@@ -1,6 +1,6 @@
 {
   "title": "Omar Mangin",
-  "description": "Omar Mangin's product design portfolio. A compilation of UX & UI projects.",
+  "description": "Senior Product Designer specializing in end-to-end SaaS, design systems, AI & multi-agent UX, and WCAG 2.2 AA accessibility. Previously at Microsoft and Level Access.",
   "author": "Omar Mangin",
   "nav": [
     {
@@ -12,7 +12,7 @@
       "href": "/about-me"
     },
     {
-      "label": "Resume",
+      "label": "Download Resume",
       "href": "https://drive.google.com/file/d/1_-aqx1dRtBPv_UxuLV1JtrcHjIfCtKbC/view?usp=share_link",
       "external": true
     }
@@ -30,10 +30,30 @@
     }
   ],
   "home": {
-    "greeting": "Hello there!",
-    "bio": [
-      "I’m a product designer crafting user-centered products that improve lives, meet business needs, and encourage tech adoption. I collaborate closely with teams and stakeholders, leveraging systems thinking, conversational design and digital accessibility to deliver scalable, inclusive, and high-quality user experiences.",
-      "Here’s a compilation of some of the work that best represent my skills and experience."
+    "headline": "Senior Product Designer · AI Systems & Agentic UX",
+    "subheadline": "I design end-to-end SaaS products, scalable design systems, and trustworthy AI workflows, combining user research, systems thinking, and WCAG 2.2 AA accessibility to ship intuitive experiences. Previously AI UX at Microsoft and Level Access.",
+    "proofPills": [
+      "+23% AI report generation (Level Access)",
+      "Multi-Agent & Store UX (Microsoft M365)",
+      "Design Systems · Research · WCAG 2.2 AA · React Prototyping"
+    ]
+  },
+  "aiWorkflow": {
+    "heading": "How I build with AI",
+    "description": "Combining AI-native prototyping speed with deterministic enterprise guardrails and WCAG 2.2 AA rigor.",
+    "items": [
+      {
+        "title": "AI-native rapid prototyping",
+        "description": "Spec-driven prototyping across AI coding and vibe-coding tools (Cursor, Claude Code, v0, Lovable, Replit) to ship WCAG 2.2 AA React interfaces."
+      },
+      {
+        "title": "Trust and human-in-the-loop UI",
+        "description": "Designing for probabilistic interfaces: trust signals, prompt versioning, latency states, and human-in-the-loop overrides."
+      },
+      {
+        "title": "Automated and manual validation",
+        "description": "Accessibility validation with Axe DevTools alongside manual testing in VoiceOver, NVDA, and JAWS."
+      }
     ]
   },
   "footerMessage": "Thanks for checking my work, let’s talk soon!"
