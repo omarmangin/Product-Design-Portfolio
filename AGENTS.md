@@ -23,4 +23,18 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - **Hero Bleed:** Case study hero image rows overflow page padding to the viewport edges (`w-screen`) and reveal more as screen size widens (`230px/360px` Phone → `383px/565px` Tablet → `533px/646px` Desktop).
 - **Carousels & Slideshows:** Must include accessible navigation (clickable prev/next chevrons, keyboard `ArrowLeft`/`ArrowRight`, and/or scrollbar), reserve 2 lines of heading copy (`min-h-[48px]`), and lock uniform slide media height so switching slides never jumps vertically.
 
+# Dark Mode & Semantic Token Rules
+- **Semantic Tokens Only:** Always use CSS custom properties from `src/app/globals.css` (`--bg-primary`, `--bg-surface`, `--bg-surface-subtle`, `--bg-surface-hover`, `--text-primary`, `--text-secondary`, `--border-subtle`, `--border-interactive`, `--focus-ring`, `--cta-bg`, `--cta-fg`, `--accent-teal`, `--accent-indigo`, `--accent-purple`) instead of hardcoded light-mode hex values (`#FFFFFF`, `#F5F5F5`, `#212529`, `#495057`).
+- **Elevation & Borders:** Keep `Header`, `Footer`, portraits, and Back-to-Top buttons borderless in light mode. Dark-mode card elevation is handled automatically via `--shadow-card` and `--shadow-card-sm` under `:root[data-theme="dark"]`.
+- **Theme Architecture:** Theme defaults to `"system"` with zero-FOUC pre-hydration resolution in `src/app/layout.tsx`, live `prefers-color-scheme: dark` sync in `src/components/ThemeProvider.tsx`, and the icon-only `ThemeToggle` (`src/components/ui/ThemeToggle.tsx`) placed in `Footer.tsx` (not `Header.tsx`).
+- **Media & Transparent Diagrams:** Transparent dark-ink diagrams must set `"transparentDiagram": true` (renders `.transparent-diagram-frame` on `#F8FAFC` in dark mode). Case study UI screenshots use `.case-study-media` (`brightness(0.92)` in dark mode); portraits remain undimmed.
+
+# WCAG 2.2 Level AA & Mobile Layout Guardrails
+- **Contrast (`1.4.3`, `1.4.11`, `2.4.7`):** Maintain `>= 4.5:1` for normal text and `>= 3:1` for large text, UI components, and focus rings in both light and dark modes. Glass cards over brand gradients use `bg-black/25`; focus outlines use `outline-[var(--focus-ring)]`.
+- **Target Size (`2.5.8`):** All interactive controls (including slideshow pagination dots) must have a minimum `24×24px` hit target.
+- **Sticky Header & Focus Management (`2.4.11`, `2.1.1`, `2.4.3`):** Keep `html { scroll-padding-top: 84px; }` so focused elements are not obscured by the sticky header, restore focus to trigger buttons on `Escape` when closing menus, and never attach `onClick` to non-button `<div>` elements.
+- **Reduced Motion (`2.3.3`, `2.2.2`):** Respect `prefers-reduced-motion: reduce` on looping videos (`VideoShowcaseSection.tsx`) and programmatic scrolling (`behavior: "auto"`).
+- **Mobile Layout:** Scope equal-height `flex-1` on stacked cards to `lg:flex-1`, scale large typography specimens (`min(size, 5.2vw)` with `leading-[1.2]`), and keep search/banner action buttons `shrink-0` with `items-stretch` pill containers.
+
+
 

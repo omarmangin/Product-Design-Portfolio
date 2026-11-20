@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SocialIcon } from "@/components/SocialIcons";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import type { CaseStudy, SocialLink } from "@/types/content";
 import { ProjectCard } from "./ProjectCard";
 
@@ -52,9 +53,12 @@ export function Footer({
   const scrollByCard = (direction: -1 | 1) => {
     const track = trackRef.current;
     if (!track) return;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
     track.scrollBy({
       left: direction * 278,
-      behavior: "smooth",
+      behavior: prefersReducedMotion ? "auto" : "smooth",
     });
   };
 
@@ -93,7 +97,7 @@ export function Footer({
   return (
     <footer
       className="footer-padding flex w-full flex-col items-center gap-[40px] overflow-x-hidden"
-      style={{ backgroundColor: "rgba(245, 245, 245, 0.88)" }}
+      style={{ backgroundColor: "var(--surface-overlay)" }}
     >
       {showOtherProjects && otherProjects.length > 0 && (
         <section
@@ -102,7 +106,7 @@ export function Footer({
         >
           <h2
             id="other-projects-heading"
-            className="w-full text-left font-display text-[32px] font-normal leading-[1.4] text-[#212529]"
+            className="w-full text-left font-display text-[32px] font-normal leading-[1.4] text-[var(--text-primary)]"
           >
             Check some of my other projects
           </h2>
@@ -226,7 +230,7 @@ export function Footer({
                       ? `${social.label} (opens in a new tab)`
                       : `Send an email (${social.label})`
                   }
-                  className="inline-flex rounded-[8px] p-1 text-[#212529] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6]"
+                  className="inline-flex rounded-[8px] p-1 text-[var(--text-primary)] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
                 >
                   <SocialIcon platform={social.platform} size={32} />
                 </a>
@@ -235,9 +239,11 @@ export function Footer({
           </ul>
         </nav>
 
-        <p className="text-center font-sans text-[16px] font-normal leading-[24px] text-[#212529]">
+        <p className="text-center font-sans text-[16px] font-normal leading-[24px] text-[var(--text-primary)]">
           {footerMessage}
         </p>
+
+        <ThemeToggle className="mt-[4px]" />
       </div>
     </footer>
   );

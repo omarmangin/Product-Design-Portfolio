@@ -39,7 +39,7 @@ export default function HomePage() {
   const featuredStudies = allStudies.filter((s) => s.featuredOnHome);
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-[#F5F5F5]">
+    <div className="flex min-h-screen w-full flex-col items-center bg-[var(--bg-primary)]">
       <Header author={site.author} nav={site.nav} socials={site.socials} />
 
       <main
@@ -54,12 +54,12 @@ export default function HomePage() {
           <div className="flex w-full max-w-[1440px] flex-col gap-[16px]">
             <h1
               id="home-intro-heading"
-              className="w-full font-display text-[32px] font-normal leading-[1.25] tracking-[-0.04em] text-[#212529] md:text-[40px]"
+              className="w-full font-display text-[32px] font-normal leading-[1.25] tracking-[-0.04em] text-[var(--text-primary)] md:text-[40px]"
             >
               {site.home.headline}
             </h1>
 
-            <p className="w-full font-sans text-[16px] font-normal leading-[26px] text-[#212529] md:text-[18px] md:leading-[28px]">
+            <p className="w-full font-sans text-[16px] font-normal leading-[26px] text-[var(--text-primary)] md:text-[18px] md:leading-[28px]">
               {site.home.subheadline}
             </p>
 
@@ -72,7 +72,7 @@ export default function HomePage() {
                 {site.home.proofPills.map((pill) => (
                   <li
                     key={pill}
-                    className="rounded-[60px] bg-[#E9ECEF] px-[14px] py-[6px] font-sans text-[13px] font-medium leading-[18px] text-[#495057]"
+                    className="rounded-[60px] bg-[var(--pill-bg)] px-[14px] py-[6px] font-sans text-[13px] font-medium leading-[18px] text-[var(--text-secondary)]"
                   >
                     {pill}
                   </li>

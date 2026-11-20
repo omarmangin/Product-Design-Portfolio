@@ -97,7 +97,7 @@ export default async function CaseStudyPage({
   return (
     <div
       id="hero"
-      className="flex min-h-screen w-full flex-col items-center overflow-x-clip bg-[#F5F5F5]"
+      className="flex min-h-screen w-full flex-col items-center overflow-x-clip bg-[var(--bg-primary)]"
     >
       <script
         type="application/ld+json"
@@ -207,8 +207,8 @@ export default async function CaseStudyPage({
       <a
         href="#hero"
         aria-label="Back to top of case study"
-        className="fixed bottom-6 right-6 z-40 flex items-center justify-center rounded-[50px] p-[8px] text-[#212529] shadow-md backdrop-blur-md transition-colors hover:bg-[#e9ecef] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6] md:p-[16px]"
-        style={{ backgroundColor: "rgba(245, 245, 245, 0.88)" }}
+        className="fixed bottom-6 right-6 z-40 flex items-center justify-center rounded-[50px] p-[8px] text-[var(--text-primary)] shadow-md backdrop-blur-md transition-colors hover:bg-[var(--bg-surface-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)] md:p-[16px]"
+        style={{ backgroundColor: "var(--surface-overlay)" }}
       >
         <svg
           width="24"

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SocialIcon } from "@/components/SocialIcons";
 import type { NavItem, SocialLink } from "@/types/content";
 
@@ -15,11 +15,13 @@ interface HeaderProps {
 export function Header({ author, nav, socials = [] }: HeaderProps) {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && menuOpen) {
         setMenuOpen(false);
+        menuButtonRef.current?.focus();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -29,12 +31,12 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
   return (
     <header
       className="sticky top-0 z-50 w-full header-padding backdrop-blur-md transition-colors"
-      style={{ backgroundColor: "rgba(245, 245, 245, 0.88)" }}
+      style={{ backgroundColor: "var(--surface-overlay)" }}
     >
       {/* Skip to main content link for keyboard and screen-reader users */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-[60px] focus:bg-[#212529] focus:px-4 focus:py-2 focus:font-heading focus:text-[14px] focus:font-bold focus:text-white focus:shadow-lg"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-[60px] focus:bg-[var(--cta-bg)] focus:px-4 focus:py-2 focus:font-heading focus:text-[14px] focus:font-bold focus:text-[var(--cta-fg)] focus:shadow-lg"
       >
         Skip to main content
       </a>
@@ -43,7 +45,7 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
         <Link
           href="/"
           aria-label={`${author}, Home`}
-          className="shrink-0 rounded-[8px] font-heading text-[24px] font-bold leading-[32px] text-[#111111] transition-colors hover:text-[#444444] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#3B52E6]"
+          className="shrink-0 rounded-[8px] font-heading text-[24px] font-bold leading-[32px] text-[var(--text-heading)] transition-colors hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)]"
         >
           {author}
         </Link>
@@ -77,9 +79,9 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
                     }
                     className={
                       isResumeCta
-                        ? "inline-flex items-center whitespace-nowrap rounded-[60px] bg-[#212529] px-[18px] py-[8px] font-heading text-[14px] font-bold leading-[20px] text-white transition-colors hover:bg-[#111111] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6]"
-                        : `inline-flex items-center whitespace-nowrap rounded-[60px] px-[16px] py-[8px] font-heading text-[16px] font-bold leading-[24px] text-[#212529] transition-colors hover:bg-[#e9ecef] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6] ${
-                            isCurrent ? "bg-[#e9ecef]" : ""
+                        ? "inline-flex items-center whitespace-nowrap rounded-[60px] bg-[var(--cta-bg)] px-[18px] py-[8px] font-heading text-[14px] font-bold leading-[20px] text-[var(--cta-fg)] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
+                        : `inline-flex items-center whitespace-nowrap rounded-[60px] px-[16px] py-[8px] font-heading text-[16px] font-bold leading-[24px] text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-surface-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)] ${
+                            isCurrent ? "bg-[var(--bg-surface-hover)]" : ""
                           }`
                     }
                   >
@@ -110,7 +112,7 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
                         ? `${social.label} (opens in a new tab)`
                         : `Send an email (${social.label})`
                     }
-                    className="inline-flex rounded-[8px] p-[6px] text-[#212529] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6]"
+                    className="inline-flex rounded-[8px] p-[6px] text-[var(--text-primary)] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
                   >
                     <SocialIcon platform={social.platform} size={24} />
                   </a>
@@ -123,6 +125,7 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
         {/* Tablet & Mobile Navigation (< 1024px) */}
         <div className="relative lg:hidden">
           <button
+            ref={menuButtonRef}
             type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
             aria-label={
@@ -130,7 +133,7 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
             }
             aria-expanded={menuOpen}
             aria-controls="mobile-nav-menu"
-            className="flex items-center justify-center rounded-[12px] p-[6px] text-[#212529] transition-colors hover:bg-[#e9ecef] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6]"
+            className="flex items-center justify-center rounded-[12px] p-[6px] text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-surface-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
           >
             {menuOpen ? (
               <svg
@@ -170,7 +173,7 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
             <nav
               id="mobile-nav-menu"
               aria-label="Mobile navigation"
-              className="absolute right-0 mt-2 min-w-[240px] rounded-[16px] bg-white p-3 shadow-lg ring-1 ring-black/10"
+              className="absolute right-0 mt-2 min-w-[260px] rounded-[16px] bg-[var(--bg-surface)] p-3 shadow-lg ring-1 ring-[var(--border-subtle)]"
             >
               <ul className="flex flex-col gap-1.5 list-none p-0 m-0">
                 {nav.map((item) => {
@@ -196,9 +199,9 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
                         onClick={() => setMenuOpen(false)}
                         className={
                           isResumeCta
-                            ? "mt-1 block rounded-[60px] bg-[#212529] px-[16px] py-[8px] text-center font-heading text-[14px] font-bold leading-[20px] text-white transition-colors hover:bg-[#111111] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6]"
-                            : `block rounded-[60px] px-[16px] py-[8px] font-heading text-[16px] font-bold leading-[24px] text-[#212529] transition-colors hover:bg-[#e9ecef] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6] ${
-                                isCurrent ? "bg-[#e9ecef]" : ""
+                            ? "mt-1 block rounded-[60px] bg-[var(--cta-bg)] px-[16px] py-[8px] text-center font-heading text-[14px] font-bold leading-[20px] text-[var(--cta-fg)] transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
+                            : `block rounded-[60px] px-[16px] py-[8px] font-heading text-[16px] font-bold leading-[24px] text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-surface-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)] ${
+                                isCurrent ? "bg-[var(--bg-surface-hover)]" : ""
                               }`
                         }
                       >
@@ -212,10 +215,10 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
               {socials.length > 0 && (
                 <ul
                   aria-label="Mobile contact links"
-                  className="mt-2 flex items-center gap-[12px] border-t border-black/10 px-[8px] pt-2 list-none m-0"
+                  className="mt-2 flex w-full items-center gap-[8px] border-t border-[var(--border-subtle)] pt-2 list-none p-0 m-0"
                 >
                   {socials.map((social) => (
-                    <li key={social.platform}>
+                    <li key={social.platform} className="flex-1">
                       <a
                         href={social.href}
                         target={
@@ -232,7 +235,7 @@ export function Header({ author, nav, socials = [] }: HeaderProps) {
                             : `Send an email (${social.label})`
                         }
                         onClick={() => setMenuOpen(false)}
-                        className="inline-flex rounded-[8px] p-[6px] text-[#212529] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6]"
+                        className="flex w-full items-center justify-center rounded-[12px] px-[12px] py-[8px] text-[var(--text-primary)] transition-colors hover:bg-[var(--bg-surface-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
                       >
                         <SocialIcon platform={social.platform} size={24} />
                       </a>

@@ -40,9 +40,9 @@
   "thumbnailHover": "/assets/framer/vR0eiEs3TY74UpesIk0o5b4gCw.png",
   "thumbnailDescription": "+23% report exports via WCAG 2.2 AA chat & prompt versioning.",
   "theme": {
-    "gradient": "linear-gradient(-60deg, rgb(0, 163, 224) -2.72%, rgb(0, 43, 73) 84%)",
-    "sectionGradient": "linear-gradient(-60deg, rgb(0, 163, 224) -2.72%, rgb(0, 43, 73) 84%)",
-    "accentColor": "rgb(0, 119, 178)",
+    "gradient": "linear-gradient(-60deg, rgb(0, 110, 168) -2.72%, rgb(0, 43, 73) 84%)",
+    "sectionGradient": "linear-gradient(-60deg, rgb(0, 110, 168) -2.72%, rgb(0, 43, 73) 84%)",
+    "accentColor": "var(--accent-teal)",
     "borderColor": "rgb(0, 163, 224)"
   },
   "heroLayout": "three-equal",
@@ -139,7 +139,8 @@
           "title": "Streaming focus management and polite ARIA live regions",
           "accentTitle": true,
           "description": "Raw token streaming interrupts VoiceOver, NVDA, and JAWS mid-sentence. I engineered semantic announcement batching via aria-live=\"polite\" status summaries, prevented automatic focus hijacking during generation, and enforced explicit Cmd/Ctrl+Enter submission rules so keyboard users never misfire incomplete prompts.",
-          "image": "/assets/framer/MgvFfw5tdVta4ztxLqxfgKncZk.png"
+          "image": "/assets/framer/MgvFfw5tdVta4ztxLqxfgKncZk.png",
+          "transparentDiagram": true
         }
       ]
     },

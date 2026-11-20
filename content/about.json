@@ -3,12 +3,12 @@
   "greeting": "Hello, I'm Omar",
   "portrait": "/assets/framer/xAqjhbyCb3R1ILsiQUHqIhJM.jpeg",
   "bio": [
-    "I’m a product designer with 4+ years of experience crafting user-centered SaaS platforms and AI-powered products that improve lives, meet business needs, and encourage tech adoption. I collaborate closely with multidisciplinary international teams and cross-functional stakeholders, leveraging systems thinking, conversational design, and WCAG-compliant accessibility standards to deliver scalable, inclusive, and high-quality user experiences.",
-    "Thanks for taking the time to get to know me, I look forward to get to know you too!"
+    "I'm a Senior Product Designer shipping end-to-end B2B/B2C SaaS platforms, scalable design systems, and trustworthy AI workflows, combining user research, systems thinking, and WCAG 2.2 AA accessibility. Previously AI UX at Microsoft and Level Access, I'm currently building AI-native React and WCAG 2.2 AA prototypes with Cursor and Claude Code.",
+    "Thanks for taking the time to get to know me. I look forward to connecting!"
   ],
   "focus": {
     "heading": "My focus",
-    "body": "In 2 words, tech and people. I strongly believe that technology should be as invisible as possible, working to enhance lives. That’s why I majored in industrial design, where I was eager to create consumer electronics, but eventually found my way into UX & UI design and fell in love with it. That’s where I realized the lasting impact that I can have through technology and software."
+    "body": "In two words: tech and people. I strongly believe that technology should be as invisible as possible, working to enhance lives. That’s why I majored in industrial design, where I was eager to create consumer electronics, but eventually found my way into UX & UI design and fell in love with it. That’s where I realized the lasting impact that I can have through technology and software."
   },
   "mentors": {
     "heading": "My mentors",
@@ -40,15 +40,15 @@
     "items": [
       {
         "title": "Good design",
-        "description": "I am a firm believer of Dieter Ram’s 10 rules for good design, and they are specially important with products in the digital age."
+        "description": "I am a firm believer of Dieter Rams' 10 principles for good design, and they are specially important with products in the digital age."
       },
       {
         "title": "Nature",
-        "description": "I am one of those “Let’s go for a walk in nature” type of person, I love cold weather, dipping my feet on a river and feeling a morning breeze."
+        "description": "I am one of those “Let’s go for a walk in nature” type of person, I love cold weather, dipping my feet in a river and feeling a morning breeze."
       },
       {
         "title": "Movies",
-        "description": "Have you ever watch “The secret life of Walter Mitty”? I love talking about movies, composition, directors, scripts and how impactful a story can be."
+        "description": "Have you ever watched “The Secret Life of Walter Mitty”? I love talking about movies, composition, directors, scripts and how impactful a story can be."
       },
       {
         "title": "Philosophy",
@@ -60,44 +60,26 @@
       },
       {
         "title": "Family",
-        "description": "I'm always looking forward to hangout with my family, my partner and my dogs, I will bring them anywhere I can."
+        "description": "I'm always looking forward to hanging out with my family, my partner and my dogs, I will bring them anywhere I can."
       }
     ]
   },
   "skills": {
     "heading": "My skills",
     "productSkills": [
-      "Systems thinking and design systems",
-      "AI UX and LLM interaction design",
-      "Conversational design and prompt UX",
-      "Digital accessibility (WCAG 2.2 AA)",
-      "Inclusive design and screen reader architecture",
-      "Information architecture",
-      "Wireframing",
-      "Rapid interactive prototyping",
-      "User research & usability testing",
-      "Cross-platform & responsive design",
-      "Product strategy and vision mapping",
-      "Executive stakeholder alignment",
-      "Cross-functional collaboration",
-      "Vision framing and strategic storytelling",
-      "User advocacy and inclusive design leadership",
-      "Ambiguity management in emerging tech"
+      "AI UX & LLM Interaction",
+      "Multi-Agent & Conversational UX",
+      "Design Systems & Systems Thinking",
+      "Product Strategy & Vision Framing",
+      "WCAG 2.2 AA Accessibility",
+      "User Research & Usability Testing",
+      "Information Architecture",
+      "AI-Native Prototyping"
     ],
     "toolkit": [
-      "Figma, FigJam, Dev Mode",
-      "Framer",
-      "Lovable, UXPilot, V0",
-      "Claude Code, Cursor",
-      "Copilot, ChatGPT, Gemini",
-      "AI Agents",
-      "Storybook",
-      "Miro",
-      "ProtoPie",
-      "Axe DevTools, VoiceOver, NVDA, JAWS, WAVE",
-      "Maze",
-      "UserTesting",
-      "Hotjar"
+      "Design & Systems: Figma, Dev Mode, Figma MCP, Storybook, Framer",
+      "AI & Code Prototyping: React, Cursor, Claude Code, v0, Lovable",
+      "Accessibility Testing: Axe DevTools, VoiceOver, NVDA, JAWS"
     ]
   }
 }

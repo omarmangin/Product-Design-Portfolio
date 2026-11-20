@@ -40,7 +40,7 @@
   "theme": {
     "gradient": "linear-gradient(-60deg, #0D166B -2.72%, rgba(90, 90, 255, 1) 84%)",
     "sectionGradient": "linear-gradient(-60deg, #0D166B -3.03%, rgba(90, 90, 255, 1) 55.28%)",
-    "accentColor": "rgb(90, 90, 255)",
+    "accentColor": "var(--accent-purple)",
     "borderColor": "#5A5AFF"
   },
   "heroLayout": "three-equal",
@@ -101,7 +101,7 @@
     {
       "type": "design-system-showcase",
       "heading": "Design system: GoldenWeb DS V2",
-      "headingColor": "rgb(90, 90, 255)",
+      "headingColor": "var(--accent-purple)",
       "description": "Tradeoff: Investing upfront in tokenized Figma component architecture slowed initial wireframing by one sprint, but accelerated overall MVP frontend development by 20% and let us execute a complete post-MVP corporate rebrand seamlessly.",
       "variant": "default",
       "versions": [

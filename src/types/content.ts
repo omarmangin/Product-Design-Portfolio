@@ -74,6 +74,7 @@ export type CaseStudySection =
         bullets?: { title: string; description: string; accentTitle?: boolean }[];
         image?: string;
         images?: string[];
+        transparentDiagram?: boolean;
       }[];
     }
   | {
@@ -125,6 +126,7 @@ export type CaseStudySection =
         horizontalSplit?: boolean;
         image?: string;
         images?: string[];
+        transparentDiagram?: boolean;
       }[];
     }
   | {

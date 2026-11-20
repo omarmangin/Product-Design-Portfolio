@@ -27,28 +27,28 @@ export function CaseStudySectionRenderer({
           heading={section.heading || "About the project"}
           headingId={headingId}
         >
-          <div className="grid grid-cols-1 items-start gap-[24px] rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:grid-cols-3">
+          <div className="grid grid-cols-1 items-start gap-[24px] rounded-[24px] bg-[var(--bg-surface)] p-[24px] shadow-[var(--shadow-card-sm)] md:grid-cols-3">
             <div className="flex flex-col justify-start gap-[8px]">
-              <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
+              <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[var(--text-primary)]">
                 Company
               </h3>
-              <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+              <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                 {section.company}
               </p>
             </div>
             <div className="flex flex-col justify-start gap-[8px]">
-              <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
+              <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[var(--text-primary)]">
                 Timeline
               </h3>
-              <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+              <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                 {section.timeline}
               </p>
             </div>
             <div className="flex flex-col justify-start gap-[8px]">
-              <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
+              <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[var(--text-primary)]">
                 My role
               </h3>
-              <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+              <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                 {section.role}
               </p>
             </div>
@@ -63,19 +63,19 @@ export function CaseStudySectionRenderer({
             {/* In Framer, Problem/Context & Challenge 1..3 headings are dark #212529 */}
             <BentoCard
               title={section.overviewTitle}
-              titleColor="#212529"
+              titleColor="var(--text-primary)"
               description={section.overviewBody}
             />
-            <div className="grid grid-cols-1 items-start gap-[24px] rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:grid-cols-3">
+            <div className="grid grid-cols-1 items-start gap-[24px] rounded-[24px] bg-[var(--bg-surface)] p-[24px] shadow-[var(--shadow-card-sm)] md:grid-cols-3">
               {section.items.map((item) => (
                 <article
                   key={item.title}
                   className="flex flex-col justify-start gap-[8px]"
                 >
-                  <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
+                  <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[var(--text-primary)]">
                     {item.title}
                   </h3>
-                  <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                  <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                     {item.description}
                   </p>
                 </article>
@@ -99,7 +99,7 @@ export function CaseStudySectionRenderer({
               return (
                 <article
                   key={`${card.title}-${cardIdx}`}
-                  className={`grid grid-cols-1 items-center gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] ${
+                  className={`grid grid-cols-1 items-center gap-[24px] overflow-hidden rounded-[24px] bg-[var(--bg-surface)] p-[24px] shadow-[var(--shadow-card-sm)] ${
                     hasBullets ? "lg:grid-cols-12" : "lg:grid-cols-2"
                   }`}
                 >
@@ -121,15 +121,15 @@ export function CaseStudySectionRenderer({
                                 b.accentTitle === true
                                   ? theme.accentColor
                                   : b.accentTitle === false
-                                  ? "#212529"
+                                  ? "var(--text-primary)"
                                   : card.accentTitle
                                   ? theme.accentColor
-                                  : "#212529",
+                                  : "var(--text-primary)",
                             }}
                           >
                             {b.title}
                           </h3>
-                          <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                          <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                             {b.description}
                           </p>
                         </div>
@@ -141,12 +141,12 @@ export function CaseStudySectionRenderer({
                           style={{
                             color: card.accentTitle
                               ? theme.accentColor
-                              : "#212529",
+                              : "var(--text-primary)",
                           }}
                         >
                           {card.title}
                         </h3>
-                        <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                        <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                           {card.description}
                         </p>
                       </div>
@@ -155,21 +155,37 @@ export function CaseStudySectionRenderer({
 
                   {card.image && (
                     hasBullets ? (
-                      <div className="mx-auto -mb-[24px] aspect-[1/0.98] w-full self-end overflow-hidden rounded-t-[12px] md:w-[80%] lg:col-span-6 lg:w-full xl:col-span-5">
+                      <div
+                        className={`mx-auto -mb-[24px] aspect-[1/0.98] w-full self-end overflow-hidden rounded-t-[12px] md:w-[80%] lg:col-span-6 lg:w-full xl:col-span-5 ${
+                          card.transparentDiagram
+                            ? "transparent-diagram-frame p-[12px]"
+                            : "dark:border dark:border-[var(--border-subtle)]"
+                        }`}
+                      >
                         <FramerImage
                           src={card.image}
                           alt={card.title || section.heading}
                           sizes="(max-width: 1023px) 85vw, 560px"
-                          className="h-full w-full object-cover object-top"
+                          className={`h-full w-full object-cover object-top ${
+                            card.transparentDiagram ? "" : "case-study-media"
+                          }`}
                         />
                       </div>
                     ) : (
-                      <div className="w-full overflow-hidden rounded-[16px]">
+                      <div
+                        className={`w-full overflow-hidden rounded-[16px] ${
+                          card.transparentDiagram
+                            ? "transparent-diagram-frame p-[12px]"
+                            : "dark:border dark:border-[var(--border-subtle)]"
+                        }`}
+                      >
                         <FramerImage
                           src={card.image}
                           alt={card.title || section.heading}
                           sizes="(max-width: 1023px) 100vw, 680px"
-                          className="w-full h-auto rounded-[16px] object-cover object-top"
+                          className={`w-full h-auto rounded-[16px] object-cover object-top ${
+                            card.transparentDiagram ? "" : "case-study-media"
+                          }`}
                         />
                       </div>
                     )
@@ -208,12 +224,12 @@ export function CaseStudySectionRenderer({
         <BentoSection heading={section.heading} headingId={headingId}>
           <div className="grid grid-cols-1 items-stretch gap-[24px] lg:grid-cols-2">
             {/* Left Column: Competition + Logo Row */}
-            <article className="flex min-w-0 flex-col justify-start gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)]">
+            <article className="flex min-w-0 flex-col justify-start gap-[24px] overflow-hidden rounded-[24px] bg-[var(--bg-surface)] p-[24px] shadow-[var(--shadow-card-sm)]">
               <div className="flex flex-col justify-start gap-[8px]">
-                <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
+                <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[var(--text-primary)]">
                   {section.leftCard.title}
                 </h3>
-                <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                   {section.leftCard.description}
                 </p>
               </div>
@@ -226,9 +242,9 @@ export function CaseStudySectionRenderer({
                 <BentoCard
                   key={rc.title}
                   title={rc.title}
-                  titleColor="#212529"
+                  titleColor="var(--text-primary)"
                   description={rc.description}
-                  className="flex-1"
+                  className="lg:flex-1"
                 />
               ))}
             </div>
@@ -264,9 +280,9 @@ export function CaseStudySectionRenderer({
                 {section.featureGrid.map((feat) => (
                   <article
                     key={feat.title}
-                    className="flex flex-col justify-start gap-[16px] rounded-[24px] bg-white p-[24px] shadow-[0px_4px_8px_rgba(0,0,0,0.12)]"
+                    className="flex flex-col justify-start gap-[16px] rounded-[24px] bg-[var(--bg-surface)] p-[24px] shadow-[var(--shadow-card)]"
                   >
-                    <h4 className="line-clamp-2 min-h-[48px] font-display text-[16px] font-normal leading-[24px] text-[#212529]">
+                    <h4 className="line-clamp-2 min-h-[48px] font-display text-[16px] font-normal leading-[24px] text-[var(--text-primary)]">
                       {feat.title}
                     </h4>
                     <div className="w-full overflow-hidden rounded-[8px]">
@@ -319,11 +335,11 @@ export function CaseStudySectionRenderer({
                 return (
                   <BentoGrid columns={2}>
                     {flow.whatIDid && (
-                      <article className="flex flex-col justify-start gap-[12px] rounded-[24px] bg-white p-[24px] text-[#212529] shadow-[0px_4px_8px_rgba(0,0,0,0.12)]">
-                        <SubHeading className="font-display text-[16px] font-normal leading-[24px] text-[#212529]">
+                      <article className="flex flex-col justify-start gap-[12px] rounded-[24px] bg-[var(--bg-surface)] p-[24px] text-[var(--text-primary)] shadow-[var(--shadow-card)]">
+                        <SubHeading className="font-display text-[16px] font-normal leading-[24px] text-[var(--text-primary)]">
                           What I did
                         </SubHeading>
-                        <ul className="list-disc space-y-2 pl-5 font-sans text-[16px] leading-[24px] text-[#212529]">
+                        <ul className="list-disc space-y-2 pl-5 font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                           {flow.whatIDid.map((item) => (
                             <li key={item}>{item}</li>
                           ))}
@@ -331,11 +347,11 @@ export function CaseStudySectionRenderer({
                       </article>
                     )}
                     {flow.impact && (
-                      <article className="flex flex-col justify-start gap-[12px] rounded-[24px] bg-white p-[24px] text-[#212529] shadow-[0px_4px_8px_rgba(0,0,0,0.12)]">
-                        <SubHeading className="font-display text-[16px] font-normal leading-[24px] text-[#212529]">
+                      <article className="flex flex-col justify-start gap-[12px] rounded-[24px] bg-[var(--bg-surface)] p-[24px] text-[var(--text-primary)] shadow-[var(--shadow-card)]">
+                        <SubHeading className="font-display text-[16px] font-normal leading-[24px] text-[var(--text-primary)]">
                           Impact
                         </SubHeading>
-                        <ul className="list-disc space-y-2 pl-5 font-sans text-[16px] leading-[24px] text-[#212529]">
+                        <ul className="list-disc space-y-2 pl-5 font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                           {flow.impact.map((item) => (
                             <li key={item}>{item}</li>
                           ))}
@@ -397,7 +413,7 @@ export function CaseStudySectionRenderer({
                 return (
                   <article
                     key={card.title}
-                    className={`grid grid-cols-1 items-center gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] lg:grid-cols-12 ${
+                    className={`grid grid-cols-1 items-center gap-[24px] overflow-hidden rounded-[24px] bg-[var(--bg-surface)] p-[24px] shadow-[var(--shadow-card-sm)] lg:grid-cols-12 ${
                       resolvedSpan === 2
                         ? "md:col-span-2"
                         : resolvedSpan === 3
@@ -411,13 +427,13 @@ export function CaseStudySectionRenderer({
                         style={{
                           color: section.accentTitles
                             ? theme.accentColor
-                            : "#212529",
+                            : "var(--text-primary)",
                         }}
                       >
                         {card.title}
                       </h3>
                       {card.description && (
-                        <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                        <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                           {card.description}
                         </p>
                       )}
@@ -467,7 +483,7 @@ export function CaseStudySectionRenderer({
                 return (
                   <article
                     key={card.title || `card-${idx}`}
-                    className={`flex flex-col justify-start gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] text-[#212529] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:h-[294px] lg:h-[338px] xl:h-[384px] ${
+                    className={`flex flex-col justify-start gap-[24px] overflow-hidden rounded-[24px] bg-[var(--bg-surface)] p-[24px] text-[var(--text-primary)] shadow-[var(--shadow-card-sm)] md:h-[294px] lg:h-[338px] xl:h-[384px] ${
                       resolvedSpan === 2
                         ? "md:col-span-2"
                         : resolvedSpan === 3
@@ -483,14 +499,14 @@ export function CaseStudySectionRenderer({
                             style={{
                               color: section.accentTitles
                                 ? theme.accentColor
-                                : "#212529",
+                                : "var(--text-primary)",
                             }}
                           >
                             {card.title}
                           </h3>
                         )}
                         {card.description && (
-                          <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                          <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                             {card.description}
                           </p>
                         )}
@@ -528,7 +544,7 @@ export function CaseStudySectionRenderer({
                 return (
                   <article
                     key={card.title}
-                    className={`flex h-[550px] flex-col justify-between gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] text-[#212529] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:h-[479px] ${
+                    className={`flex h-[550px] flex-col justify-between gap-[24px] overflow-hidden rounded-[24px] bg-[var(--bg-surface)] p-[24px] text-[var(--text-primary)] shadow-[var(--shadow-card-sm)] md:h-[479px] ${
                       resolvedSpan === 2
                         ? "md:col-span-2"
                         : resolvedSpan === 3
@@ -542,13 +558,13 @@ export function CaseStudySectionRenderer({
                         style={{
                           color: section.accentTitles
                             ? theme.accentColor
-                            : "#212529",
+                            : "var(--text-primary)",
                         }}
                       >
                         {card.title}
                       </h3>
                       {card.description && (
-                        <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                        <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                           {card.description}
                         </p>
                       )}
@@ -580,7 +596,7 @@ export function CaseStudySectionRenderer({
                   key={card.title}
                   title={card.title}
                   titleColor={
-                    section.accentTitles ? theme.accentColor : "#212529"
+                    section.accentTitles ? theme.accentColor : "var(--text-primary)"
                   }
                   description={card.description}
                   colSpan={resolvedSpan}
@@ -642,7 +658,7 @@ export function CaseStudySectionRenderer({
                   <BentoCard
                     key={card.title}
                     title={card.title}
-                    titleColor="#212529"
+                    titleColor="var(--text-primary)"
                     description={card.description}
                     className={isWidePair ? "md:h-[351px]" : ""}
                   >
@@ -696,13 +712,13 @@ export function CaseStudySectionRenderer({
           )}
 
           {section.beforeAfter && (
-            <article className="flex flex-col items-center justify-between gap-[24px] rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:flex-row">
+            <article className="flex flex-col items-center justify-between gap-[24px] rounded-[24px] bg-[var(--bg-surface)] p-[24px] shadow-[var(--shadow-card-sm)] md:flex-row">
               <div className="flex w-full flex-col justify-center self-center gap-[8px] md:w-auto">
-                <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
+                <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[var(--text-primary)]">
                   {section.beforeAfter.title}
                 </h3>
                 {section.beforeAfter.description && (
-                  <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                  <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                     {section.beforeAfter.description}
                   </p>
                 )}
@@ -769,12 +785,12 @@ export function CaseStudySectionRenderer({
                 <div className="flex flex-col justify-start gap-[8px]">
                   <h3
                     className="font-display text-[32px] font-normal leading-[1.3]"
-                    style={{ color: ver.titleColor || "#212529" }}
+                    style={{ color: ver.titleColor || "var(--text-primary)" }}
                   >
                     {ver.title}
                   </h3>
                   {ver.description && (
-                    <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                    <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                       {ver.description}
                     </p>
                   )}
@@ -784,57 +800,57 @@ export function CaseStudySectionRenderer({
               {/* Row 1: Typography + Colors side-by-side */}
               <BentoGrid columns={2}>
                 {/* Typography Card */}
-                <article className="flex flex-col justify-start gap-[20px] rounded-[24px] bg-white p-[24px] text-[#212529] shadow-[0px_2px_6px_rgba(0,0,0,0.04)]">
+                <article className="flex flex-col justify-start gap-[20px] rounded-[24px] bg-[var(--bg-surface)] p-[24px] text-[var(--text-primary)] shadow-[var(--shadow-card-sm)]">
                   <div className="flex flex-col justify-start gap-[8px]">
-                    <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
+                    <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[var(--text-primary)]">
                       Typography
                     </h3>
-                    <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                    <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                       {ver.typography.description}
                     </p>
                   </div>
-                  <div className="flex flex-col gap-[12px] rounded-[16px] bg-[#F8F9FB] p-[16px]">
+                  <div className="flex flex-col gap-[12px] rounded-[16px] bg-[var(--bg-surface-subtle)] p-[16px]">
                     {ver.typography.specimens.map((spec, sIdx) => (
                       <div
                         key={`${spec.fontName}-${spec.size}-${spec.weightLabel}-${sIdx}`}
-                        className="grid grid-cols-[1.4fr_0.75fr_1fr] items-center gap-[12px] border-b border-black/5 pb-[8px] text-left last:border-b-0 last:pb-0"
+                        className="grid grid-cols-[1.4fr_0.75fr_1fr] items-center gap-[8px] border-b border-[var(--border-subtle)] pb-[8px] text-left leading-[1.2] last:border-b-0 last:pb-0 sm:gap-[12px]"
                         style={{
-                          fontSize: spec.size,
+                          fontSize: `min(${spec.size}, 5.2vw)`,
                           fontWeight: spec.weight,
                         }}
                       >
-                        <span className="text-[#212529]">{spec.fontName}</span>
-                        <span className="text-[#495057]">{spec.size}</span>
-                        <span className="text-[#212529]">{spec.weightLabel}</span>
+                        <span className="min-w-0 text-[var(--text-primary)]">{spec.fontName}</span>
+                        <span className="text-[var(--text-secondary)]">{spec.size}</span>
+                        <span className="text-[var(--text-primary)]">{spec.weightLabel}</span>
                       </div>
                     ))}
                   </div>
                 </article>
 
                 {/* Colors Card */}
-                <article className="flex flex-col justify-start gap-[20px] rounded-[24px] bg-white p-[24px] text-[#212529] shadow-[0px_2px_6px_rgba(0,0,0,0.04)]">
+                <article className="flex flex-col justify-start gap-[20px] rounded-[24px] bg-[var(--bg-surface)] p-[24px] text-[var(--text-primary)] shadow-[var(--shadow-card-sm)]">
                   <div className="flex flex-col justify-start gap-[8px]">
-                    <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
+                    <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[var(--text-primary)]">
                       Colors
                     </h3>
-                    <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                    <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                       {ver.colors.description}
                     </p>
                   </div>
                   <div className="grid grid-cols-1 gap-[16px] sm:grid-cols-2">
                     {ver.colors.groups.map((grp) => (
                       <div key={grp.title} className="flex flex-col gap-[8px]">
-                        <span className="font-sans text-[13px] font-semibold text-[#495057]">
+                        <span className="font-sans text-[13px] font-semibold text-[var(--text-secondary)]">
                           {grp.title}
                         </span>
                         <div className="grid grid-cols-2 gap-[8px]">
                           {grp.swatches.map((hex) => (
                             <div
                               key={`${grp.title}-${hex}`}
-                              className="flex h-[52px] flex-col items-start justify-end rounded-[8px] border border-black/10 p-[6px] shadow-2xs"
+                              className="flex h-[52px] flex-col items-start justify-end rounded-[8px] border border-[var(--border-subtle)] p-[6px] shadow-2xs"
                               style={{ backgroundColor: hex }}
                             >
-                              <span className="rounded bg-white/85 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-[#212529]">
+                              <span className="rounded bg-white/90 px-1.5 py-0.5 font-mono text-[10px] font-semibold text-[#212529]">
                                 {hex}
                               </span>
                             </div>
@@ -872,7 +888,7 @@ export function CaseStudySectionRenderer({
                       <div
                         role="img"
                         aria-label="Sample of purple Material Design icons on light surface"
-                        className="grid grid-cols-4 gap-[16px] rounded-[12px] bg-[#F8F9FB] p-[24px] text-[#4B4BE6]"
+                        className="grid grid-cols-4 gap-[16px] rounded-[12px] bg-[var(--bg-surface-subtle)] p-[24px] text-[#4B4BE6]"
                       >
                         {[
                           <path key="menu" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z" />,
@@ -886,7 +902,7 @@ export function CaseStudySectionRenderer({
                         ].map((iconPath, idx) => (
                           <div
                             key={idx}
-                            className="flex h-[56px] items-center justify-center rounded-[12px] bg-white shadow-[0px_1px_3px_rgba(0,0,0,0.06)]"
+                            className="flex h-[56px] items-center justify-center rounded-[12px] bg-[var(--bg-surface)] shadow-[0px_1px_3px_rgba(0,0,0,0.06)]"
                           >
                             <svg
                               width="28"
@@ -914,15 +930,15 @@ export function CaseStudySectionRenderer({
                     className="grid grid-cols-1 gap-[16px] lg:grid-cols-2"
                   >
                     {/* 1. Atoms: Buttons & Status */}
-                    <div className="flex flex-col gap-[12px] rounded-[16px] bg-[#F8F9FB] p-[20px]">
-                      <span className="font-heading text-[14px] font-bold text-[#212529]">
+                    <div className="flex flex-col gap-[12px] rounded-[16px] bg-[var(--bg-surface-subtle)] p-[20px]">
+                      <span className="font-heading text-[14px] font-bold text-[var(--text-primary)]">
                         Atoms: interactive buttons &amp; status indicators
                       </span>
                       <div className="flex flex-wrap items-center gap-[10px]">
                         <span className="inline-flex items-center rounded-[60px] bg-[#4B4BE6] px-[16px] py-[8px] font-sans text-[13px] font-semibold text-white">
                           Primary action
                         </span>
-                        <span className="inline-flex items-center rounded-[60px] border border-[#4B4BE6] bg-white px-[16px] py-[8px] font-sans text-[13px] font-semibold text-[#4B4BE6]">
+                        <span className="inline-flex items-center rounded-[60px] border border-[#4B4BE6] bg-[var(--bg-surface)] px-[16px] py-[8px] font-sans text-[13px] font-semibold text-[#4B4BE6]">
                           Secondary
                         </span>
                         <span className="inline-flex items-center rounded-[60px] bg-[#E5E5FF] px-[16px] py-[8px] font-sans text-[13px] font-semibold text-[#2A2C2F]">
@@ -942,39 +958,39 @@ export function CaseStudySectionRenderer({
                         <span className="inline-flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#C92A2A] font-sans text-[12px] font-bold text-white">
                           ✕
                         </span>
-                        <span className="inline-flex h-[28px] w-[28px] items-center justify-center rounded-full border border-[#CED4DA] bg-white font-sans text-[12px] font-bold text-[#495057]">
+                        <span className="inline-flex h-[28px] w-[28px] items-center justify-center rounded-full border border-[var(--border-interactive)] bg-[var(--bg-surface)] font-sans text-[12px] font-bold text-[var(--text-secondary)]">
                           2
                         </span>
                       </div>
                     </div>
 
                     {/* 2. Molecules: Search & Form Field States */}
-                    <div className="flex flex-col gap-[12px] rounded-[16px] bg-[#F8F9FB] p-[20px]">
-                      <span className="font-heading text-[14px] font-bold text-[#212529]">
+                    <div className="flex flex-col gap-[12px] rounded-[16px] bg-[var(--bg-surface-subtle)] p-[20px]">
+                      <span className="font-heading text-[14px] font-bold text-[var(--text-primary)]">
                         Molecules: search bar &amp; validated input states
                       </span>
-                      <div className="flex items-center overflow-hidden rounded-[60px] border border-[#CED4DA] bg-white">
-                        <span className="flex-1 px-[16px] py-[8px] font-sans text-[13px] text-[#495057]">
+                      <div className="flex items-stretch overflow-hidden rounded-[60px] border border-[var(--border-interactive)] bg-[var(--bg-surface)]">
+                        <span className="min-w-0 flex-1 truncate px-[16px] py-[10px] font-sans text-[13px] leading-[20px] text-[var(--text-secondary)]">
                           Search inventory, SKUs, or clients...
                         </span>
-                        <span className="bg-[#4B4BE6] px-[16px] py-[8px] font-sans text-[13px] font-semibold text-white">
+                        <span className="flex shrink-0 items-center bg-[#4B4BE6] px-[16px] py-[10px] font-sans text-[13px] font-semibold leading-[20px] text-white">
                           Search
                         </span>
                       </div>
                       <div className="grid grid-cols-1 gap-[10px] sm:grid-cols-2">
-                        <div className="rounded-[12px] border-2 border-[#4B4BE6] bg-white px-[12px] py-[8px]">
+                        <div className="rounded-[12px] border-2 border-[#4B4BE6] bg-[var(--bg-surface)] px-[12px] py-[8px]">
                           <span className="block font-sans text-[11px] font-semibold text-[#4B4BE6]">
                             Focused state
                           </span>
-                          <span className="font-sans text-[13px] text-[#212529]">
+                          <span className="font-sans text-[13px] text-[var(--text-primary)]">
                             Branch #04 · Active
                           </span>
                         </div>
-                        <div className="rounded-[12px] border-2 border-[#C92A2A] bg-white px-[12px] py-[8px]">
+                        <div className="rounded-[12px] border-2 border-[#C92A2A] bg-[var(--bg-surface)] px-[12px] py-[8px]">
                           <span className="block font-sans text-[11px] font-semibold text-[#C92A2A]">
                             Validation error
                           </span>
-                          <span className="font-sans text-[13px] text-[#212529]">
+                          <span className="font-sans text-[13px] text-[var(--text-primary)]">
                             Amount required
                           </span>
                         </div>
@@ -982,54 +998,54 @@ export function CaseStudySectionRenderer({
                     </div>
 
                     {/* 3. Organisms: Semantic Feedback Banners */}
-                    <div className="flex flex-col gap-[10px] rounded-[16px] bg-[#F8F9FB] p-[20px]">
-                      <span className="font-heading text-[14px] font-bold text-[#212529]">
+                    <div className="flex flex-col gap-[10px] rounded-[16px] bg-[var(--bg-surface-subtle)] p-[20px]">
+                      <span className="font-heading text-[14px] font-bold text-[var(--text-primary)]">
                         Organisms: persistent transaction banners
                       </span>
-                      <div className="flex items-center justify-between rounded-[12px] border border-[#2B8A3E]/25 bg-[#EBFBEE] px-[14px] py-[10px]">
-                        <span className="font-sans text-[13px] font-medium text-[#1B4332]">
+                      <div className="flex items-center justify-between gap-[12px] rounded-[12px] border border-[#2B8A3E]/25 bg-[#EBFBEE] px-[14px] py-[10px]">
+                        <span className="min-w-0 font-sans text-[13px] font-medium text-[#1B4332]">
                           ✓ Loan contract #4821 registered
                         </span>
-                        <span className="font-sans text-[12px] font-semibold text-[#1B4332]">
+                        <span className="shrink-0 whitespace-nowrap font-sans text-[12px] font-semibold text-[#1B4332]">
                           View receipt
                         </span>
                       </div>
-                      <div className="flex items-center justify-between rounded-[12px] border border-[#C92A2A]/25 bg-[#FFF5F5] px-[14px] py-[10px]">
-                        <span className="font-sans text-[13px] font-medium text-[#7F1D1D]">
+                      <div className="flex items-center justify-between gap-[12px] rounded-[12px] border border-[#C92A2A]/25 bg-[#FFF5F5] px-[14px] py-[10px]">
+                        <span className="min-w-0 font-sans text-[13px] font-medium text-[#7F1D1D]">
                           ✕ Cash drawer mismatch detected
                         </span>
-                        <span className="font-sans text-[12px] font-semibold text-[#7F1D1D]">
+                        <span className="shrink-0 whitespace-nowrap font-sans text-[12px] font-semibold text-[#7F1D1D]">
                           Audit now
                         </span>
                       </div>
-                      <div className="flex items-center justify-between rounded-[12px] border border-[#4B4BE6]/25 bg-[#EEF2FF] px-[14px] py-[10px]">
-                        <span className="font-sans text-[13px] font-medium text-[#1E1B4B]">
+                      <div className="flex items-center justify-between gap-[12px] rounded-[12px] border border-[#4B4BE6]/25 bg-[#EEF2FF] px-[14px] py-[10px]">
+                        <span className="min-w-0 font-sans text-[13px] font-medium text-[#1E1B4B]">
                           ⓘ Daily branch sync ready
                         </span>
-                        <span className="font-sans text-[12px] font-semibold text-[#1E1B4B]">
+                        <span className="shrink-0 whitespace-nowrap font-sans text-[12px] font-semibold text-[#1E1B4B]">
                           Dismiss
                         </span>
                       </div>
                     </div>
 
                     {/* 4. Templates: Multi-Role Navigation Shells */}
-                    <div className="flex flex-col gap-[10px] rounded-[16px] bg-[#F8F9FB] p-[20px]">
-                      <span className="font-heading text-[14px] font-bold text-[#212529]">
+                    <div className="flex flex-col gap-[10px] rounded-[16px] bg-[var(--bg-surface-subtle)] p-[20px]">
+                      <span className="font-heading text-[14px] font-bold text-[var(--text-primary)]">
                         Templates: role-scoped navigation headers
                       </span>
                       <div className="flex items-center justify-between rounded-[12px] bg-[#EEF2FF] px-[14px] py-[10px]">
                         <span className="font-heading text-[13px] font-bold text-[#1E1B4B]">
                           Admin · Tenant Control
                         </span>
-                        <span className="rounded-[60px] bg-white px-[10px] py-[3px] font-sans text-[11px] font-semibold text-[#212529]">
+                        <span className="rounded-[60px] bg-[var(--bg-surface)] px-[10px] py-[3px] font-sans text-[11px] font-semibold text-[var(--text-primary)]">
                           Branches · Roles
                         </span>
                       </div>
-                      <div className="flex items-center justify-between rounded-[12px] bg-white px-[14px] py-[10px] border border-black/10">
-                        <span className="font-heading text-[13px] font-bold text-[#212529]">
+                      <div className="flex items-center justify-between rounded-[12px] bg-[var(--bg-surface)] px-[14px] py-[10px] border border-[var(--border-subtle)]">
+                        <span className="font-heading text-[13px] font-bold text-[var(--text-primary)]">
                           Ops · Counter POS
                         </span>
-                        <span className="rounded-[60px] bg-[#F8F9FB] px-[10px] py-[3px] font-sans text-[11px] font-semibold text-[#212529]">
+                        <span className="rounded-[60px] bg-[var(--bg-surface-subtle)] px-[10px] py-[3px] font-sans text-[11px] font-semibold text-[var(--text-primary)]">
                           Cash $3,000 · Cart (0)
                         </span>
                       </div>
@@ -1052,7 +1068,7 @@ export function CaseStudySectionRenderer({
           {section.atomicNote && (
             <div className="flex flex-col gap-[24px]">
               {section.atomicNote.description && (
-                <p className="w-full max-w-[1440px] font-sans text-[16px] leading-[24px] text-[#212529]">
+                <p className="w-full max-w-[1440px] font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                   {section.atomicNote.description}
                 </p>
               )}
@@ -1113,12 +1129,12 @@ export function CaseStudySectionRenderer({
                       </h4>
                     )}
                     {item.description && (
-                      <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                      <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                         {item.description}
                       </p>
                     )}
                     {item.bullets && item.bullets.length > 0 && (
-                      <ul className="list-disc space-y-1 pl-5 font-sans text-[16px] leading-[24px] text-[#212529]">
+                      <ul className="list-disc space-y-1 pl-5 font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                         {item.bullets.map((b) => (
                           <li key={b}>{b}</li>
                         ))}
@@ -1144,12 +1160,12 @@ export function CaseStudySectionRenderer({
                       {item.title}
                     </h4>
                     {item.description && (
-                      <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                      <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                         {item.description}
                       </p>
                     )}
                     {item.bullets && item.bullets.length > 0 && (
-                      <ul className="list-disc space-y-1 pl-5 font-sans text-[16px] leading-[24px] text-[#212529]">
+                      <ul className="list-disc space-y-1 pl-5 font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                         {item.bullets.map((b) => (
                           <li key={b}>{b}</li>
                         ))}
@@ -1175,7 +1191,7 @@ export function CaseStudySectionRenderer({
                     >
                       {item.title}
                     </h4>
-                    <p className="font-sans text-[16px] leading-[24px] text-[#212529]">
+                    <p className="font-sans text-[16px] leading-[24px] text-[var(--text-primary)]">
                       {item.description}
                     </p>
                   </div>

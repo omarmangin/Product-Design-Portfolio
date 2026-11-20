@@ -121,14 +121,14 @@ export function Slideshow({
   const renderSlideCard = (slide: SlideItem, isPriority = false) => (
     <div
       onDragStart={(e) => e.preventDefault()}
-      className={`flex h-full w-full flex-col gap-[16px] rounded-[24px] bg-white shadow-[0px_4px_12px_0px_rgba(0,0,0,0.16)] ${
+      className={`flex h-full w-full flex-col gap-[16px] rounded-[24px] bg-[var(--bg-surface)] shadow-[var(--shadow-card)] ${
         total > 1
           ? "p-[20px] pb-[40px] sm:p-[24px] sm:pb-[44px]"
           : "p-[20px] sm:p-[24px]"
       }`}
     >
       {/* Subtitles 2 preset: Archivo Black 16px, line-height 24px — always reserve 2 lines so card height never jumps */}
-      <HeadingTag className="line-clamp-2 min-h-[48px] font-display text-[16px] font-normal leading-[24px] text-[#212529]">
+      <HeadingTag className="line-clamp-2 min-h-[48px] font-display text-[16px] font-normal leading-[24px] text-[var(--text-primary)]">
         {slide.title}
       </HeadingTag>
 
@@ -218,8 +218,7 @@ export function Slideshow({
         {total > 1 && (
           <div
             aria-hidden="true"
-            onClick={prev}
-            className="pointer-events-auto absolute top-1/2 right-[calc(100%+8px)] w-full -translate-y-1/2 origin-right scale-[0.8] cursor-pointer opacity-50 transition-all duration-500 ease-out hover:opacity-70 md:right-[calc(100%+24px)]"
+            className="pointer-events-none absolute top-1/2 right-[calc(100%+8px)] w-full -translate-y-1/2 origin-right scale-[0.8] opacity-50 transition-all duration-500 ease-out md:right-[calc(100%+24px)]"
           >
             {renderSlideCard(slides[prevIndex], false)}
           </div>
@@ -234,8 +233,7 @@ export function Slideshow({
         {total > 1 && (
           <div
             aria-hidden="true"
-            onClick={next}
-            className="pointer-events-auto absolute top-1/2 left-[calc(100%+8px)] w-full -translate-y-1/2 origin-left scale-[0.8] cursor-pointer opacity-50 transition-all duration-500 ease-out hover:opacity-70 md:left-[calc(100%+24px)]"
+            className="pointer-events-none absolute top-1/2 left-[calc(100%+8px)] w-full -translate-y-1/2 origin-left scale-[0.8] opacity-50 transition-all duration-500 ease-out md:left-[calc(100%+24px)]"
           >
             {renderSlideCard(slides[nextIndex], false)}
           </div>
@@ -248,7 +246,7 @@ export function Slideshow({
               type="button"
               onClick={prev}
               aria-label={`Previous slide (currently ${activeIndex + 1} of ${total})`}
-              className="pointer-events-auto flex h-[36px] w-[36px] items-center justify-center rounded-[40px] text-white backdrop-blur-md transition-all hover:scale-105 hover:bg-black/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="pointer-events-auto flex h-[36px] w-[36px] items-center justify-center rounded-[40px] text-white backdrop-blur-md transition-all hover:scale-105 hover:bg-black/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
               style={{ backgroundColor: "rgba(33, 37, 41, 0.45)" }}
             >
               <svg
@@ -269,7 +267,7 @@ export function Slideshow({
               type="button"
               onClick={next}
               aria-label={`Next slide (currently ${activeIndex + 1} of ${total})`}
-              className="pointer-events-auto flex h-[36px] w-[36px] items-center justify-center rounded-[40px] text-white backdrop-blur-md transition-all hover:scale-105 hover:bg-black/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="pointer-events-auto flex h-[36px] w-[36px] items-center justify-center rounded-[40px] text-white backdrop-blur-md transition-all hover:scale-105 hover:bg-black/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
               style={{ backgroundColor: "rgba(33, 37, 41, 0.45)" }}
             >
               <svg
@@ -292,23 +290,25 @@ export function Slideshow({
         {/* Inset Pagination Dots matching Framer Slideshow progressOptions */}
         {total > 1 && (
           <div
-            role="tablist"
             aria-label="Slide selector"
-            className="absolute bottom-[8px] left-1/2 z-20 flex -translate-x-1/2 items-center gap-[16px] rounded-[50px] px-[12px] py-[8px] backdrop-blur-[4px]"
+            className="absolute bottom-[8px] left-1/2 z-20 flex -translate-x-1/2 items-center gap-[4px] rounded-[50px] px-[8px] py-[4px] backdrop-blur-[4px]"
             style={{ backgroundColor: "rgba(33, 37, 41, 0.24)" }}
           >
             {slides.map((slide, idx) => (
               <button
                 key={`${slide.title}-${idx}`}
                 type="button"
-                role="tab"
-                aria-selected={idx === activeIndex}
+                aria-current={idx === activeIndex ? "true" : undefined}
                 aria-label={`Slide ${idx + 1}: ${slide.title}`}
                 onClick={() => goToSlide(idx)}
-                className={`h-[8px] w-[8px] rounded-full bg-white transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${
-                  idx === activeIndex ? "scale-125 opacity-100" : "opacity-50"
-                }`}
-              />
+                className="flex h-[24px] w-[24px] items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
+              >
+                <span
+                  className={`h-[8px] w-[8px] rounded-full bg-white transition-all ${
+                    idx === activeIndex ? "scale-125 opacity-100" : "opacity-50"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         )}

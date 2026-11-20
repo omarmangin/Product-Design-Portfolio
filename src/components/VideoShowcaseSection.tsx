@@ -72,7 +72,7 @@ export function VideoShowcaseSection({
             type="button"
             onClick={() => setUserPaused(!isPaused)}
             aria-pressed={isPaused}
-            className="inline-flex items-center gap-[8px] rounded-[60px] border border-black/15 bg-white px-[14px] py-[6px] font-sans text-[13px] font-medium leading-[18px] text-[#495057] transition-colors hover:bg-[#E9ECEF] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B52E6]"
+            className="inline-flex items-center gap-[8px] rounded-[60px] border border-[var(--border-interactive)] bg-[var(--bg-surface)] px-[14px] py-[6px] font-sans text-[13px] font-medium leading-[18px] text-[var(--text-secondary)] transition-colors hover:bg-[var(--bg-surface-hover)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
           >
             {isPaused ? (
               <>
@@ -111,10 +111,10 @@ export function VideoShowcaseSection({
               return (
                 <article
                   key={item.title}
-                  className="grid grid-cols-1 items-center gap-[24px] overflow-hidden rounded-[24px] bg-white p-[24px] shadow-[0px_2px_6px_rgba(0,0,0,0.04)] md:col-span-2 lg:grid-cols-12"
+                  className="grid grid-cols-1 items-center gap-[24px] overflow-hidden rounded-[24px] bg-[var(--bg-surface)] p-[24px] shadow-[var(--shadow-card-sm)] md:col-span-2 lg:grid-cols-12"
                 >
                   <div className="flex flex-col justify-center self-center lg:col-span-4">
-                    <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[#212529]">
+                    <h3 className="font-heading text-[24px] font-bold leading-[32px] text-[var(--text-primary)]">
                       {item.title}
                     </h3>
                   </div>
@@ -167,7 +167,7 @@ export function VideoShowcaseSection({
                     {item.videos.map((vSrc, i) => (
                       <div
                         key={vSrc}
-                        className="flex h-[220px] w-full items-center justify-center overflow-hidden rounded-[16px] bg-[#F8F9FB] lg:h-[250px]"
+                        className="flex h-[220px] w-full items-center justify-center overflow-hidden rounded-[16px] bg-[var(--bg-surface-subtle)] lg:h-[250px]"
                         style={{ border: `2px solid ${borderColor}` }}
                       >
                         <video

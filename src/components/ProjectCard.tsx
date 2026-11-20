@@ -25,8 +25,8 @@ export function ProjectCard({
   const cardAriaLabel = `${study.cardTitle || study.title} (${metaLine}), View case study`;
 
   const cardClassName = showOutcome
-    ? "group relative flex aspect-[1.28/1] w-full flex-col justify-end overflow-hidden rounded-[16px] bg-[#212529] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.12)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#3B52E6]"
-    : "group relative flex aspect-[1.28/1] w-full flex-col justify-end overflow-hidden rounded-[16px] bg-[#212529] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.12)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[#3B52E6]";
+    ? "group relative flex aspect-[1.28/1] w-full flex-col justify-end overflow-hidden rounded-[16px] bg-[#212529] shadow-[var(--shadow-card)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)]"
+    : "group relative flex aspect-[1.28/1] w-full flex-col justify-end overflow-hidden rounded-[16px] bg-[#212529] shadow-[var(--shadow-card)] focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-[var(--focus-ring)]";
 
   const cardInner = (
     <>

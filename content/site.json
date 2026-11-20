@@ -44,7 +44,7 @@
     "items": [
       {
         "title": "AI-native rapid prototyping",
-        "description": "Spec-driven prototyping across AI coding and vibe-coding tools (Cursor, Claude Code, v0, Lovable, Replit) to ship WCAG 2.2 AA React interfaces."
+        "description": "Spec-driven prototyping across Figma MCP and AI coding tools (Cursor, Claude Code, v0, Lovable) to ship WCAG 2.2 AA React interfaces."
       },
       {
         "title": "Trust and human-in-the-loop UI",

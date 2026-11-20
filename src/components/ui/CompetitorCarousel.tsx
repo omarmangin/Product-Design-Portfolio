@@ -52,9 +52,12 @@ export function CompetitorCarousel({ competitors }: CompetitorCarouselProps) {
   const scrollByStep = (direction: -1 | 1) => {
     const track = trackRef.current;
     if (!track) return;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
     track.scrollBy({
       left: direction * 288,
-      behavior: "smooth",
+      behavior: prefersReducedMotion ? "auto" : "smooth",
     });
   };
 
@@ -125,7 +128,7 @@ export function CompetitorCarousel({ competitors }: CompetitorCarouselProps) {
             key={comp.name}
             className="flex shrink-0 snap-start flex-col items-center gap-[8px]"
           >
-            <div className="flex h-[120px] w-[120px] items-center justify-center overflow-hidden rounded-[16px] bg-[#F5F5F5] p-[8px]">
+            <div className="flex h-[120px] w-[120px] items-center justify-center overflow-hidden rounded-[16px] border border-[var(--border-subtle)] bg-[#F8FAFC] p-[8px]">
               <FramerImage
                 src={comp.logo}
                 alt={comp.name}
@@ -133,7 +136,7 @@ export function CompetitorCarousel({ competitors }: CompetitorCarouselProps) {
                 className="h-auto max-h-[104px] w-[104px] object-contain select-none"
               />
             </div>
-            <span className="text-center font-heading text-[12px] font-bold leading-[16px] text-[#212529]">
+            <span className="text-center font-heading text-[12px] font-bold leading-[16px] text-[var(--text-primary)]">
               {comp.name}
             </span>
           </li>

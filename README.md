@@ -39,7 +39,8 @@ A Next.js App Router + Tailwind CSS v4 product design portfolio featuring an MDX
 │   │   │   ├── BentoGrid.tsx             # Semantic BentoSection, BentoGrid, and BentoCard primitives
 │   │   │   ├── CompetitorCarousel.tsx    # Accessible horizontal competitor logo carousel
 │   │   │   ├── FramerImage.tsx           # Aspect-ratio-preserving next/image wrapper
-│   │   │   └── PrototypeEmbed.tsx        # Optional external prototype iframe embed
+│   │   │   ├── PrototypeEmbed.tsx        # Optional external prototype iframe embed
+│   │   │   └── ThemeToggle.tsx           # Accessible System / Light / Dark pill switcher (used in Footer)
 │   │   ├── CaseStudySectionRenderer.tsx  # Renders all case study section types & GoldenWeb DS V2 views
 │   │   ├── ExecutiveSummaryCard.tsx      # Portfolio-styled Role & Scope, Core Decision, Verified Outcome card
 │   │   ├── HowIBuildWithAI.tsx           # 3-card AI prototyping, probabilistic UI & accessibility QA section
@@ -62,17 +63,29 @@ A Next.js App Router + Tailwind CSS v4 product design portfolio featuring an MDX
 
 ## Design System & Patterns (`src/app/globals.css`)
 
-### Colors & Surfaces
-| Token | Value | Usage |
-| :--- | :--- | :--- |
-| `--background` | `#f5f5f5` | Page canvas background |
-| `--surface` | `#ffffff` | Bento card background |
-| `--surface-hover` | `#e9ecef` | Discrete proof/keyword pills & interactive hover state |
-| `--foreground` | `#212529` | Primary body & heading text |
-| `--foreground-inverse` | `#f8f9fb` | Text on dark gradient hero & design sections |
-| `--accent-teal` | `#00a3e0` / `rgb(0, 119, 178)` | Level Access gradients & AA-compliant accent text |
-| `--accent-indigo` | `#464feb` | Microsoft M365 case study |
-| `--accent-purple` | `#5a5aff` / `#4b4be6` | Multiapoyo Retail finance end-to-end platform & GoldenWeb DS V2 |
+### Colors & Surfaces (Light & Dark Mode Tokens)
+Theme tokens are defined in `src/app/globals.css` under `:root` (light mode default) and `:root[data-theme="dark"]` with `color-scheme: light dark` and zero-FOUC initialization in `src/app/layout.tsx`:
+
+| Token | Light Mode | Dark Mode (`[data-theme="dark"]`) | Usage / WCAG 2.2 AA Notes |
+| :--- | :--- | :--- | :--- |
+| `--bg-primary` (`--background`) | `#f5f5f5` | `#0f1115` | Page canvas background (slate-charcoal in dark mode) |
+| `--bg-surface` (`--surface`) | `#ffffff` | `#171a21` | Elevated cards, header, and nav surfaces |
+| `--bg-surface-subtle` (`--surface-subtle`) | `#f8f9fb` | `#1e232d` | Nested DS specimen panels & video containers |
+| `--bg-surface-hover` (`--surface-hover`) | `#e9ecef` | `#242936` | Interactive hover states & active nav pills |
+| `--border-subtle` | `rgba(0, 0, 0, 0.08)` | `#2d3340` | Decorative card/section dividers & dark-mode bezels |
+| `--border-interactive` | `#ced4da` | `#6e788c` | Input/button borders (>= 3:1 contrast on `#171a21`) |
+| `--text-primary` (`--foreground`) | `#212529` | `#f1f5f9` | Primary body & heading text (> 14:1 contrast on `#0f1115`) |
+| `--text-secondary` (`--foreground-muted`) | `#495057` | `#a3b1c6` | Muted metadata, dates & pills (> 7:1 contrast) |
+| `--accent-primary` | `#3b52e6` | `#60a5fa` | Link/CTA accent (~6.5:1 on `#171a21`, pairs with `#0f1115`) |
+| `--focus-ring` | `#3b52e6` | `#93c5fd` | `2px solid var(--focus-ring)` keyboard focus indicator |
+| `--diagram-surface` | `#ffffff` | `#f8fafc` | Neutral light surface (`.transparent-diagram-frame`) for transparent dark-ink diagrams |
+| `--accent-teal` | `#00a3e0` / `rgb(0, 119, 178)` | `#00a3e0` | Level Access gradients & AA-compliant accent text |
+| `--accent-indigo` | `#464feb` | `#464feb` | Microsoft M365 case study |
+| `--accent-purple` | `#5a5aff` / `#4b4be6` | `#5a5aff` | Multiapoyo Retail finance end-to-end platform & GoldenWeb DS V2 |
+
+### Dark Mode Architecture & Asset Adaptation
+- **Zero-FOUC & OS Sync:** `src/app/layout.tsx` sets `<meta name="color-scheme" content="light dark" />` and runs a synchronous inline `<script>` in `<head>` to resolve `localStorage.getItem('theme')` (`'system' | 'light' | 'dark'`) before hydration. `ThemeProvider` (`src/components/ThemeProvider.tsx`) listens to `prefers-color-scheme: dark` changes live when in `system` mode, and `ThemeToggle` (`src/components/ui/ThemeToggle.tsx`) provides an accessible `System / Light / Dark` pill switcher in `Footer.tsx`.
+- **Media & Transparent Diagrams:** Case study UI screenshots use `.case-study-media` (`filter: brightness(0.92)` in dark mode) with subtle `var(--border-subtle)` bezels, while portraits remain undimmed. Transparent dark-ink diagrams (such as the Accessibility agents `Ask anything` annotation flow) use `transparentDiagram: true` (`.transparent-diagram-frame`) to render on `--diagram-surface` (`#f8fafc`) with `1px solid var(--border-subtle)` in dark mode.
 
 ### Typography, Capitalization & Pill System
 - **Display (`--font-display` — Archivo Black):** `40px` (`h1` titles, `-0.04em` tracking), `32px` (`h2` section headings), `16px` (`Subtitles 2` card/slide labels)

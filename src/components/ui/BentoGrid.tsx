@@ -56,7 +56,7 @@ export function BentoSection({
               <h2
                 id={resolvedHeadingId}
                 className={`font-display text-[32px] font-normal leading-[1.3] ${
-                  isInverse ? "text-[#F8F9FB]" : "text-[#212529]"
+                  isInverse ? "text-[var(--text-inverse)]" : "text-[var(--text-primary)]"
                 }`}
                 style={headingColor ? { color: headingColor } : undefined}
               >
@@ -66,7 +66,7 @@ export function BentoSection({
             {description && (
               <p
                 className={`w-full max-w-[1440px] font-sans text-[16px] font-normal leading-[24px] ${
-                  isInverse ? "text-[#F8F9FB]" : "text-[#212529]"
+                  isInverse ? "text-[var(--text-inverse)]" : "text-[var(--text-primary)]"
                 }`}
               >
                 {description}
@@ -164,10 +164,10 @@ export function BentoCard({
 
   const surfaceClass =
     variant === "surface"
-      ? "bg-white text-[#212529] shadow-[0px_2px_6px_rgba(0,0,0,0.04)]"
+      ? "bg-[var(--bg-surface)] text-[var(--text-primary)] shadow-[var(--shadow-card-sm)]"
       : variant === "glass"
-      ? "bg-white/12 text-[#F8F9FB] backdrop-blur-md ring-1 ring-white/20"
-      : "bg-[#F5F5F5] text-[#212529]";
+      ? "bg-black/25 text-[#F8F9FB] backdrop-blur-md ring-1 ring-white/25"
+      : "bg-[var(--bg-surface-subtle)] text-[var(--text-primary)]";
 
   const HeadingTag = titleTag;
 

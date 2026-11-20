@@ -1,24 +1,49 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
-  /* Framer Baseline Color & Surface Tokens */
-  --background: #f5f5f5;
-  --surface: #ffffff;
-  --surface-subtle: #f5f5f5;
-  --surface-hover: #e9ecef;
-  --surface-overlay: rgba(245, 245, 245, 0.8);
+  color-scheme: light dark;
+
+  /* Semantic Theme Tokens — Light Mode (Default) */
+  --bg-primary: #f5f5f5;
+  --bg-surface: #ffffff;
+  --bg-surface-subtle: #f8f9fb;
+  --bg-surface-hover: #e9ecef;
+  --surface-overlay: rgba(245, 245, 245, 0.88);
   --scrim-thumbnail: rgba(71, 88, 105, 0.24);
   --control-pill: rgba(33, 37, 41, 0.16);
 
-  /* Framer Baseline Typography Colors */
-  --foreground: #212529;
-  --foreground-inverse: #f8f9fb;
-  --foreground-muted: #71767d;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-interactive: #ced4da;
+
+  --text-primary: #212529;
+  --text-heading: #111111;
+  --text-secondary: #495057;
+  --text-inverse: #f8f9fb;
+
+  --accent-primary: #3b52e6;
+  --accent-primary-fg: #ffffff;
+  --focus-ring: #3b52e6;
+
+  --pill-bg: #e9ecef;
+  --cta-bg: #212529;
+  --cta-fg: #ffffff;
+  --diagram-surface: #ffffff;
+
+  /* Framer Baseline Aliases */
+  --background: var(--bg-primary);
+  --surface: var(--bg-surface);
+  --surface-subtle: var(--bg-surface-subtle);
+  --surface-hover: var(--bg-surface-hover);
+  --foreground: var(--text-primary);
+  --foreground-inverse: var(--text-inverse);
+  --foreground-muted: var(--text-secondary);
 
   /* Framer Baseline Case Study Accent Tokens */
-  --accent-teal: #00a3e0;
-  --accent-indigo: #464feb;
-  --accent-purple: #5a5aff;
+  --accent-teal: rgb(0, 119, 178);
+  --accent-indigo: rgb(70, 79, 235);
+  --accent-purple: rgb(90, 90, 255);
   --accent-blue: #455cff;
   --accent-green: #35cf44;
 
@@ -26,7 +51,59 @@
   --radius-card: 24px;
   --radius-media: 16px;
   --radius-pill: 60px;
+  --shadow-card-sm: 0px 2px 6px rgba(0, 0, 0, 0.04);
   --shadow-card: 0px 4px 8px 0px rgba(0, 0, 0, 0.16);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Semantic Theme Tokens — Dark Mode (WCAG 2.2 AA) */
+  --bg-primary: #0f1115;
+  --bg-surface: #171a21;
+  --bg-surface-subtle: #1e232d;
+  --bg-surface-hover: #242936;
+  --surface-overlay: rgba(23, 26, 33, 0.88);
+  --scrim-thumbnail: rgba(15, 17, 21, 0.48);
+  --control-pill: rgba(241, 245, 249, 0.16);
+
+  --border-subtle: #2d3340;
+  --border-interactive: #6e788c;
+
+  --text-primary: #f1f5f9;
+  --text-heading: #f1f5f9;
+  --text-secondary: #a3b1c6;
+  --text-inverse: #f8f9fb;
+
+  --accent-primary: #60a5fa;
+  --accent-primary-fg: #0f1115;
+  --focus-ring: #93c5fd;
+
+  --pill-bg: #242936;
+  --cta-bg: #f1f5f9;
+  --cta-fg: #0f1115;
+  --diagram-surface: #f8fafc;
+
+  --shadow-card-sm: 0 0 0 1px #2d3340;
+  --shadow-card: 0 0 0 1px #2d3340;
+
+  /* Dark Mode Case Study Accent Tokens (WCAG 2.2 AA >= 4.5:1 on #171a21) */
+  --accent-teal: #38bdf8;
+  --accent-indigo: #818cf8;
+  --accent-purple: #a5b4fc;
+}
+
+html {
+  scroll-padding-top: 84px;
+}
+
+:root[data-theme="dark"] .case-study-media {
+  filter: brightness(0.92);
+}
+
+:root[data-theme="dark"] .transparent-diagram-frame {
+  background-color: var(--diagram-surface);
+  border: 1px solid var(--border-subtle);
 }
 
 @theme {
